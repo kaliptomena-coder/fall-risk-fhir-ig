@@ -1,7 +1,29 @@
+# OS files
 .DS_Store
 Thumbs.db
-/fsh-generated
-/input-cache
-/output
-/temp
-/template
+
+# Node / SUSHI
+node_modules/
+npm-debug.log*
+fsh-generated/
+
+# IG Publisher output
+output/
+temp/
+temp-pages/
+
+# FHIR IG build artifacts
+input-cache/
+package-cache/
+**/package.tgz
+
+# Logs
+*.log
+
+# IDEs
+.idea/
+.vscode/
+
+# Jekyll
+.jekyll-cache/
+_site/
