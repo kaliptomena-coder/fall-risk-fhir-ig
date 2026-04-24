@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?><ImplementationGuide xmlns="http://hl7.org/fhir"><id value="fall-risk-ig"/><language value="en"/><text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide fall-risk-ig</b></p><a name="fall-risk-ig"> </a><a name="hcfall-risk-ig"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>FallRiskIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/fhir/fall-risk/ImplementationGuide/fall-risk-ig</pre></div></text><url value="http://example.org/fhir/fall-risk/ImplementationGuide/fall-risk-ig"/><version value="0.1.0"/><name value="FallRiskIG"/><status value="draft"/><date value="2026-04-24T21:02:45+02:00"/><publisher value="R"/><contact><name value="R"/><telecom><system value="url"/><value value="http://example.org/example-publisher"/></telecom></contact><packageId value="fall-risk-ig"/><license value="CC0-1.0"/><fhirVersion value="4.0.1"/><dependsOn id="hl7tx"><extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"><valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/></extension><uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/><packageId value="hl7.terminology.r4"/><version value="7.1.0"/></dependsOn><dependsOn id="hl7ext"><extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"><valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/></extension><uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/><packageId value="hl7.fhir.uv.extensions.r4"/><version value="5.2.0"/></dependsOn><definition><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="copyrightyear"/></extension><extension url="value"><valueString value="2026+"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="releaselabel"/></extension><extension url="value"><valueString value="ci-build"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="autoload-resources"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="path-liquid"/></extension><extension url="value"><valueString value="template/liquid"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="path-liquid"/></extension><extension url="value"><valueString value="input/liquid"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="path-qa"/></extension><extension url="value"><valueString value="temp/qa"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="path-temp"/></extension><extension url="value"><valueString value="temp/pages"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="path-output"/></extension><extension url="value"><valueString value="output"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="path-suppressed-warnings"/></extension><extension url="value"><valueString value="input/ignoreWarnings.txt"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="path-history"/></extension><extension url="value"><valueString value="http://example.org/fhir/fall-risk/history.html"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="template-html"/></extension><extension url="value"><valueString value="template-page.html"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="template-md"/></extension><extension url="value"><valueString value="template-page-md.html"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-contact"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-context"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-copyright"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-jurisdiction"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-license"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-publisher"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-version"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="apply-wg"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="active-tables"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="fmm-definition"/></extension><extension url="value"><valueString value="http://hl7.org/fhir/versions.html#maturity"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="propagate-status"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="excludelogbinaryformat"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="tabbed-snapshots"/></extension><extension url="value"><valueString value="true"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"><extension url="code"><valueString value="i18n-default-lang"/></extension><extension url="value"><valueString value="en"/></extension></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"><valueCode value="hl7.fhir.uv.tools.r4#1.1.2"/></extension><translations>
+<translation name="ADL" en="ADL"/>
+<translation name="Abstract" en="Abstract"/>
+<translation name="Actors" en="Actors"/>
+<translation name="AllTables" en="All"/>
+<translation name="ArtifactsIntro" en="This page provides a list of the FHIR artifacts defined as part of this implementation guide."/>
+<translation name="ArtifactsSummary" en="Artifacts Summary"/>
+<translation name="CSV" en="CSV"/>
+<translation name="ChangeHistory" en="Change History"/>
+<translation name="ChangesIn" en="Changes in the %ID% %TYPE%."/>
+<translation name="CodeSystemValuesets" en="This Code system is referenced in the definition of the following value sets:"/>
+<translation name="ComputableName" en="Computable Name"/>
+<translation name="Contained" en="Contained resources"/>
+<translation name="Content" en="Content"/>
+<translation name="Contents" en="Contents"/>
+<translation name="CopyURL" en="Click to copy URL"/>
+<translation name="CopyVersioned" en="Click to copy versioned URL"/>
+<translation name="CopyrightLegal" en="Copyright/Legal"/>
+<translation name="CountryFlag" en="flag"/>
+<translation name="DataTypeProfile" en="Data Type Profile"/>
+<translation name="DefinitionsFor" en="Definitions for the %MODEL%"/>
+<translation name="Derive" en="This structure is derived from %ARTIFACT%"/>
+<translation name="DetailedDescriptions" en="Detailed Descriptions"/>
+<translation name="Diagram" en="Diagram"/>
+<translation name="DifferentialTable" en="Differential Table"/>
+<translation name="DifferentialView" en="Differential View"/>
+<translation name="Download" en="Download"/>
+<translation name="Example" en="Example"/>
+<translation name="Examples" en="Examples"/>
+<translation name="ExamplesForProfile" en="Examples for the %ID% Profile."/>
+<translation name="ExamplesForResource" en="Examples for the %ID% Resource."/>
+<translation name="Excel" en="Excel"/>
+<translation name="Expansion" en="Expansion"/>
+<translation name="Experimental" en="Experimental"/>
+<translation name="Extension" en="Extension"/>
+<translation name="FormalExtension" en="Formal Views of Extension Content"/>
+<translation name="FormalProfile" en="Formal Views of Profile Content"/>
+<translation name="FormalResource" en="Formal Views of Resource Content"/>
+<translation name="FormatProfile" en="%FMT% Profile"/>
+<translation name="FormatRep" en="%FMT% representation of the %ID% %TYPE%."/>
+<translation name="FormatResource" en="%FMT% Resource"/>
+<translation name="FromNormative" en="from v%NORMVER%"/>
+<translation name="GeneratedDate" en="Generated %DATE%"/>
+<translation name="GlobalProfiles" en="Global Profiles"/>
+<translation name="Globals" en="Globals"/>
+<translation name="HighlightChanges" en="Highlight text changes?"/>
+<translation name="HighlightChangesHelp" en="Enable this to see changes since the last official release"/>
+<translation name="History" en="History"/>
+<translation name="HistoryOfChange" en="History of changes for %ARTIFACT%."/>
+<translation name="IGCopyright" en="IG © %YEAR%"/>
+<translation name="IGPackage" en="Package %PKG% based on %FHIRVER%."/>
+<translation name="Instances" en="Instances"/>
+<translation name="JSON" en="JSON"/>
+<translation name="JSONTemplate" en="JSON Template"/>
+<translation name="KeyElementsTable" en="Key Elements Table"/>
+<translation name="KeyElementsView" en="Key Elements View"/>
+<translation name="Keywords" en="Keywords"/>
+<translation name="Language" en="Language"/>
+<translation name="Links" en="Links"/>
+<translation name="LogicalModel" en="Logical Model"/>
+<translation name="Mappings" en="Mappings"/>
+<translation name="MappingsFor" en="Mappings for the %ID% %TYPE%."/>
+<translation name="MaturityLevel" en="Maturity Level"/>
+<translation name="ModelOf" en="Instance of logical model"/>
+<translation name="ModifiedContent" en="Modified Content"/>
+<translation name="NO_TRANS" en="There is no translation page available for the current page, so it has been rendered in the default language"/>
+<translation name="NarrativeContent" en="Narrative Content"/>
+<translation name="NewContent" en="New Content"/>
+<translation name="NextPage" en="next &gt;"/>
+<translation name="NoExamples" en="No examples are currently available for the %ID% Profile."/>
+<translation name="NoQuestionnaireResponses" en="There are currently no QuestionnaireResponse instances for this Questionnaire defined in this IG."/>
+<translation name="NoTestPlan" en="No test plans are currently available for the %ARTIFACT%."/>
+<translation name="NoTestScript" en="No test scripts are currently available for the %ARTIFACT%."/>
+<translation name="Notes" en="Notes"/>
+<translation name="Obligations" en="Obligations"/>
+<translation name="OfficialURL" en="Official URL"/>
+<translation name="OpenEHR" en="openEHR View"/>
+<translation name="OtherIdentifiers" en="Other Identifiers"/>
+<translation name="OtherReps" en="Other representations of profile:"/>
+<translation name="PageBottom" en="bottom"/>
+<translation name="PageStandardsStatus" en="Page standards status"/>
+<translation name="PageTop" en="top"/>
+<translation name="PrevPage" en="&lt; prev"/>
+<translation name="Processes" en="Processes"/>
+<translation name="PseudoJSON" en="Pseudo JSON"/>
+<translation name="PseudoTTL" en="Pseudo TTL"/>
+<translation name="PseudoXML" en="Pseudo XML"/>
+<translation name="QAReport" en="QA Report"/>
+<translation name="QuestionnaireLogic" en="Form Logic"/>
+<translation name="QuestionnaireResponses" en="Sample completed form"/>
+<translation name="QuestionnaireSample" en="Sample Rendering"/>
+<translation name="QuestionnaireTree" en="Tree view"/>
+<translation name="Raw" en="Raw %FMT%"/>
+<translation name="ReadingStructures" en="Description Differentials, Snapshots, and other representations"/>
+<translation name="ReadingTerminology" en="Description of the above table(s)"/>
+<translation name="Realm" en="Realm"/>
+<translation name="ResourceDate" en="as of %RESDATE%"/>
+<translation name="ResourceModel" en="Resource"/>
+<translation name="ResourceNoExamples" en="No examples are currently available for the %ID% Resource"/>
+<translation name="ResourceOtherReps" en="Other representations of resource:"/>
+<translation name="ResourceProfile" en="Resource Profile"/>
+<translation name="ResponsesQuestionnaire" en="Responses for this Questionnaire"/>
+<translation name="Responsible" en="Responsible"/>
+<translation name="Schematron" en="Schematron"/>
+<translation name="SearchParameters" en="Search Parameters"/>
+<translation name="SnapshotTable" en="Snapshot Table"/>
+<translation name="SnapshotView" en="Snapshot View"/>
+<translation name="StandardsStatus" en="Standards Status"/>
+<translation name="StatisticsReferences" en="Statistics/References"/>
+<translation name="Structure" en="Structure"/>
+<translation name="Swagger" en="Raw OpenAPI-Swagger Definition file"/>
+<translation name="TRANS_HLP" en="This page includes translations from the original source language in which the guide was authored.  Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html)."/>
+<translation name="TTL" en="TTL"/>
+<translation name="TTLTemplate" en="TTL Template"/>
+<translation name="TableOfContents" en="Table of Contents"/>
+<translation name="TermParameters" en="Terminology Parameters"/>
+<translation name="TestPlans" en="Test Plans"/>
+<translation name="TestQuestionnaire" en="Test this Questionnaire"/>
+<translation name="TestScripts" en="Test Scripts"/>
+<translation name="Testing" en="Testing"/>
+<translation name="UMLDiagram" en="UML Diagram"/>
+<translation name="Usage" en="Usage"/>
+<translation name="Version" en="Version"/>
+<translation name="VisitFCP" en="Visit the FHIR Community Process Specification Registry"/>
+<translation name="WorkInProgress" en="The content in this section has not undergone work group review and may be significantly revised prior to the next ballot."/>
+<translation name="XML" en="XML"/>
+<translation name="XMLTemplate" en="XML Template"/>
+</translations><groups><grouping xmlns="http://hl7.org/fhir" id="-req-actordefinition" name="ActorDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-req-requirements" name="Requirements"/>
+<grouping xmlns="http://hl7.org/fhir" id="-dyn-capabilitystatement" name="CapabilityStatement"/>
+<grouping xmlns="http://hl7.org/fhir" id="-dyn-operationdefinition" name="OperationDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-dyn-eventdefinition" name="EventDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-dyn-messagedefinition" name="MessageDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-dyn-searchparameter" name="SearchParameter"/>
+<grouping xmlns="http://hl7.org/fhir" id="-dyn-subscriptiontopic" name="SubscriptionTopic"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ka-activitydefinition" name="ActivityDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ka-plandefinition" name="PlanDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ka-measure" name="Measure"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ka-library" name="Library"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ka-evidence" name="Evidence"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ka-evidencevariable" name="EvidenceVariable"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ka-citation" name="Citation"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-resource" name="Resource"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-graphdefinition" name="GraphDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-logicalmodel" name="LogicalModel"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-questionnaire" name="Questionnaire"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-abstractprofile" name="AbstractProfile"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-profile" name="ResourceProfile"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-datatype" name="DataType"/>
+<grouping xmlns="http://hl7.org/fhir" id="-str-extension" name="Extension"/>
+<grouping xmlns="http://hl7.org/fhir" id="-term-valueset" name="ValueSet"/>
+<grouping xmlns="http://hl7.org/fhir" id="-term-codesystem" name="CodeSystem"/>
+<grouping xmlns="http://hl7.org/fhir" id="-term-namingsystem" name="NamingSystem"/>
+<grouping xmlns="http://hl7.org/fhir" id="-term-terminologycapabilities" name="TerminologyCap"/>
+<grouping xmlns="http://hl7.org/fhir" id="-map-structuremap" name="StructureMap"/>
+<grouping xmlns="http://hl7.org/fhir" id="-map-conceptmap" name="ConceptMap"/>
+<grouping xmlns="http://hl7.org/fhir" id="-test-testplan" name="TestPlan"/>
+<grouping xmlns="http://hl7.org/fhir" id="-test-testscript" name="TestScript"/>
+<grouping xmlns="http://hl7.org/fhir" id="-clin-conditiondefinition" name="ConditionDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-clin-observationdefinition" name="ObservationDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-clin-specimendefinition" name="SpecimenDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-clin-chargeitemdefinition" name="ChargeItemDefinition"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ex-examplescenario" name="ExampleScenario"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ex-example" name="Example"/>
+<grouping xmlns="http://hl7.org/fhir" id="-ex-examplesup" name="ExampleSupporting"/>
+<grouping xmlns="http://hl7.org/fhir" id="-other" name="Other"/>
+</groups><artifactTranslations><translations>
+<translation name="AbstractProfileDesc" en="These are profiles on resources or data types that describe patterns used by other profiles but cannot be instantiated directly.  I.e. instances can conform to profiles *based* on these abstract profiles, but do not declare conformance to the abstract profiles themselves."/>
+<translation name="AbstractProfileName" en="Structures: Abstract Profiles"/>
+<translation name="ActivityDefinitionDesc" en="These define activities that can be performed as part of content in this implementation guide."/>
+<translation name="ActivityDefinitionName" en="Knowledge Artifacts: Activity Definitions"/>
+<translation name="ActorDefinitionDesc" en="The following artifacts define the types of individuals and/or systems that will interact as part of the use cases covered by this implementation guide."/>
+<translation name="ActorDefinitionName" en="Requirements: Actor Definitions"/>
+<translation name="CapabilityStatementDesc" en="The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements."/>
+<translation name="CapabilityStatementName" en="Behavior: Capability Statements"/>
+<translation name="ChargeItemDefinitionDesc" en="Definitions of chargeable costs relevant to the use of this implementation guide."/>
+<translation name="ChargeItemDefinitionName" en="Clinical: Charge Item Definitions"/>
+<translation name="CitationDesc" en="Supports referencing artifacts defined in this implementation guide."/>
+<translation name="CitationName" en="Knowledge Artifacts: Citations"/>
+<translation name="CodeSystemDesc" en="These define new code systems used by systems conforming to this implementation guide."/>
+<translation name="CodeSystemName" en="Terminology: Code Systems"/>
+<translation name="ConceptMapDesc" en="These define transformations to convert between codes by systems conforming with this implementation guide."/>
+<translation name="ConceptMapName" en="Terminology: Concept Maps"/>
+<translation name="ConditionDefinitionDesc" en="Formal descriptions of conditions and symptoms relevant to the use of this implementation guide."/>
+<translation name="ConditionDefinitionName" en="Clinical: Condition Definitions"/>
+<translation name="DataTypeDesc" en="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
+<translation name="DataTypeName" en="Structures: Data Type Profiles"/>
+<translation name="EventDefinitionDesc" en="Defines system and business occurrences that drive a need for data to flow from systems in this implementation guide."/>
+<translation name="EventDefinitionName" en="Behavior: Event Definitions"/>
+<translation name="EvidenceDesc" en="Indicates research or other information that justifies or support the information exchange defined in this implemetnation guide"/>
+<translation name="EvidenceName" en="Knowledge Artifacts: Evidence"/>
+<translation name="EvidenceVariableDesc" en="Components of the research that justify or support the information exchange defined in this implementation guide"/>
+<translation name="EvidenceVariableName" en="Knowledge Artifacts: Evidence Variables"/>
+<translation name="ExampleDesc" en="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like."/>
+<translation name="ExampleName" en="Example: Example Instances"/>
+<translation name="ExampleScenarioDesc" en="These define groups of interrelated examples that demonstrate one or more of the workflows supported by this implementation guide."/>
+<translation name="ExampleScenarioName" en="Example: Example Scenarios"/>
+<translation name="ExampleSupportingDesc" en="These are example instances that are not governed by this implementation guide, but which are necessary to support other examples defined in the IG."/>
+<translation name="ExampleSupportingName" en="Example: Example Supporting Instances"/>
+<translation name="ExtensionDesc" en="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
+<translation name="ExtensionName" en="Structures: Extension Definitions"/>
+<translation name="GraphDefinitionDesc" en="These define collections of interrelated resources that are useful to pass around as a group."/>
+<translation name="GraphDefinitionName" en="Structures: Graph Definitions"/>
+<translation name="LibraryDesc" en="These define logic, asset collections and other libraries as part of content in this implementation guide."/>
+<translation name="LibraryName" en="Knowledge Artifacts: Libraries"/>
+<translation name="LogicalModelDesc" en="These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources."/>
+<translation name="LogicalModelName" en="Structures: Logical Models"/>
+<translation name="MeasureDesc" en="These define measures as part of content in this implementation guide."/>
+<translation name="MeasureName" en="Knowledge Artifacts: Measure"/>
+<translation name="MessageDefinitionDesc" en="These define the types of messages that can be sent and/or received by systems conforming to this implementation guide."/>
+<translation name="MessageDefinitionName" en="Behavior: Message Definitions"/>
+<translation name="NamingSystemDesc" en="These define identifier and/or code system identities used by systems conforming to this implementation guide."/>
+<translation name="NamingSystemName" en="Terminology: Naming Systems"/>
+<translation name="ObservationDefinitionDesc" en="Formal descriptions of types of observations relevant to the use of this implementation guide."/>
+<translation name="ObservationDefinitionName" en="Clinical: Observation Definitions"/>
+<translation name="OperationDefinitionDesc" en="These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide."/>
+<translation name="OperationDefinitionName" en="Behavior: Operation Definitions"/>
+<translation name="OtherDesc" en="These are resources that are used within this implementation guide that do not fit into one of the other categories."/>
+<translation name="OtherName" en="Other"/>
+<translation name="PlanDefinitionDesc" en="These define workflows, rules, strategies, or protocols as part of content in this implementation guide."/>
+<translation name="PlanDefinitionName" en="Knowledge Artifacts: Plan Definitions"/>
+<translation name="QuestionnaireDesc" en="These define forms used by systems conforming to this implementation guide to capture or expose data to end users."/>
+<translation name="QuestionnaireName" en="Structures: Questionnaires"/>
+<translation name="RequirementsDesc" en="The following artifacts describe the specific requirements to be met by systems compliant with the implementation guide."/>
+<translation name="RequirementsName" en="Requirements: Formal Requirements"/>
+<translation name="ResourceDesc" en="'Additional' resources that are not yet published in the FHIR core specification."/>
+<translation name="ResourceName" en="Structures: Additional Resources"/>
+<translation name="ResourceProfileDesc" en="These define constraints on FHIR resources for systems conforming to this implementation guide."/>
+<translation name="ResourceProfileName" en="Structures: Resource Profiles"/>
+<translation name="SearchParameterDesc" en="These define the properties by which a RESTful server can be searched.  They can also be used for sorting and including related resources."/>
+<translation name="SearchParameterName" en="Behavior: Search Parameters"/>
+<translation name="SpecimenDefinitionDesc" en="Formal descriptions of the types of specimens relevant to the use of this implementation guide."/>
+<translation name="SpecimenDefinitionName" en="Clinical: Specimen Definitions"/>
+<translation name="StructureMapDesc" en="These define transformations to convert between data structures used by systems conforming to this implementation guide."/>
+<translation name="StructureMapName" en="Terminology: Structure Maps"/>
+<translation name="SubscriptionTopicDesc" en="These define the types of information that can be subscribed to on systems conforming to this this implementation guide."/>
+<translation name="SubscriptionTopicName" en="Behavior: Subscription Topics"/>
+<translation name="TerminologyCapDesc" en="Parameters that define the expansion of value sets used within the implementation guide."/>
+<translation name="TerminologyCapName" en="Terminology: Terminology Capabilities"/>
+<translation name="TestPlanDesc" en="These test plans are available to verify test coverage for this implementation guide."/>
+<translation name="TestPlanName" en="Testing Artifacts: TestPlans"/>
+<translation name="TestScriptDesc" en="These test definitions are available to FHIR test engines to verify systems are conforming to this implementation guide."/>
+<translation name="TestScriptName" en="Testing Artifacts: TestScripts"/>
+<translation name="ValueSetDesc" en="These define sets of codes used by systems conforming to this implementation guide."/>
+<translation name="ValueSetName" en="Terminology: Value Sets"/>
+</translations></artifactTranslations><resource><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort"><valueInteger value="999999999"/></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information"><valueString value="StructureDefinition:resource"/></extension><extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page"><valueUri value="StructureDefinition-fall-risk-factor-observation.html"/></extension><reference><reference value="StructureDefinition/fall-risk-factor-observation"/></reference><name value="Fall Risk Factor Observation"/><description value="Standardized representation of all fall risk contributing factors"/><exampleBoolean value="false"/><groupingId value="-str-profile"/></resource><resource><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort"><valueInteger value="999999999"/></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information"><valueString value="ValueSet"/></extension><extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page"><valueUri value="ValueSet-fall-risk-factors-vs.html"/></extension><reference><reference value="ValueSet/fall-risk-factors-vs"/></reference><name value="Fall Risk Factors ValueSet"/><description value="All standardized codes used in fall risk assessment"/><exampleBoolean value="false"/><groupingId value="-term-valueset"/></resource><resource><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort"><valueInteger value="999999999"/></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information"><valueString value="StructureDefinition:resource"/></extension><extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page"><valueUri value="StructureDefinition-fall-risk-observation.html"/></extension><reference><reference value="StructureDefinition/fall-risk-observation"/></reference><name value="Fall Risk Observation"/><description value="Assessment of patient fall risk using standardized scoring"/><exampleBoolean value="false"/><groupingId value="-str-profile"/></resource><resource><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort"><valueInteger value="999999999"/></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information"><valueString value="StructureDefinition:resource"/></extension><extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page"><valueUri value="StructureDefinition-fall-risk-score-observation.html"/></extension><reference><reference value="StructureDefinition/fall-risk-score-observation"/></reference><name value="Fall Risk Score Observation"/><description value="Aggregated fall risk score derived from multiple clinical factors"/><exampleBoolean value="false"/><groupingId value="-str-profile"/></resource><resource><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort"><valueInteger value="999999999"/></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information"><valueString value="StructureDefinition:resource"/></extension><extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page"><valueUri value="StructureDefinition-MyPatient.html"/></extension><reference><reference value="StructureDefinition/MyPatient"/></reference><name value="MyPatient"/><description value="An example profile of the Patient resource."/><exampleBoolean value="false"/><groupingId value="-str-profile"/></resource><resource><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort"><valueInteger value="999999999"/></extension><extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information"><valueString value="Patient"/></extension><extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page"><valueUri value="Patient-PatientExample.html"/></extension><reference><reference value="Patient/PatientExample"/></reference><name value="PatientExample"/><description value="An example of a patient with a license to krill."/><exampleCanonical value="http://example.org/fhir/fall-risk/StructureDefinition/MyPatient"/><groupingId value="-ex-example"/></resource><page><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"><valueUrl value="toc.html"/></extension><nameUrl value="toc.html"/><title value="Table of Contents"/><generation value="html"/><page><extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"><valueUrl value="index.html"/></extension><nameUrl value="index.html"/><title value="Home"/><generation value="markdown"/></page></page><parameter><code value="path-resource"/><value value="input/capabilities"/></parameter><parameter><code value="path-resource"/><value value="input/examples"/></parameter><parameter><code value="path-resource"/><value value="input/extensions"/></parameter><parameter><code value="path-resource"/><value value="input/models"/></parameter><parameter><code value="path-resource"/><value value="input/operations"/></parameter><parameter><code value="path-resource"/><value value="input/profiles"/></parameter><parameter><code value="path-resource"/><value value="input/resources"/></parameter><parameter><code value="path-resource"/><value value="input/vocabulary"/></parameter><parameter><code value="path-resource"/><value value="input/maps"/></parameter><parameter><code value="path-resource"/><value value="input/testing"/></parameter><parameter><code value="path-resource"/><value value="input/history"/></parameter><parameter><code value="path-resource"/><value value="fsh-generated/resources"/></parameter><parameter><code value="path-pages"/><value value="template/config"/></parameter><parameter><code value="path-pages"/><value value="input/assets"/></parameter><parameter><code value="path-pages"/><value value="input/images"/></parameter><parameter><code value="path-tx-cache"/><value value="input-cache/txcache"/></parameter><parameter><code value="copyrightyear"/><value value="2026+"/></parameter><parameter><code value="releaselabel"/><value value="ci-build"/></parameter><parameter><code value="autoload-resources"/><value value="true"/></parameter><parameter><code value="path-liquid"/><value value="template/liquid"/></parameter><parameter><code value="path-liquid"/><value value="input/liquid"/></parameter><parameter><code value="path-qa"/><value value="temp/qa"/></parameter><parameter><code value="path-temp"/><value value="temp/pages"/></parameter><parameter><code value="path-output"/><value value="output"/></parameter><parameter><code value="path-suppressed-warnings"/><value value="input/ignoreWarnings.txt"/></parameter><parameter><code value="path-history"/><value value="http://example.org/fhir/fall-risk/history.html"/></parameter><parameter><code value="template-html"/><value value="template-page.html"/></parameter><parameter><code value="template-md"/><value value="template-page-md.html"/></parameter><parameter><code value="apply-contact"/><value value="true"/></parameter><parameter><code value="apply-context"/><value value="true"/></parameter><parameter><code value="apply-copyright"/><value value="true"/></parameter><parameter><code value="apply-jurisdiction"/><value value="true"/></parameter><parameter><code value="apply-license"/><value value="true"/></parameter><parameter><code value="apply-publisher"/><value value="true"/></parameter><parameter><code value="apply-version"/><value value="true"/></parameter><parameter><code value="apply-wg"/><value value="true"/></parameter><parameter><code value="active-tables"/><value value="true"/></parameter><parameter><code value="fmm-definition"/><value value="http://hl7.org/fhir/versions.html#maturity"/></parameter><parameter><code value="propagate-status"/><value value="true"/></parameter><parameter><code value="excludelogbinaryformat"/><value value="true"/></parameter><parameter><code value="tabbed-snapshots"/><value value="true"/></parameter><parameter><code value="i18n-default-lang"/><value value="en"/></parameter></definition></ImplementationGuide>
