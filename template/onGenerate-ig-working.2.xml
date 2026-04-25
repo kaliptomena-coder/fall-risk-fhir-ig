@@ -25,7 +25,7 @@
    <name value="FallRiskAssessmentIG"/>
    <title value="Fall Risk Assessment Implementation Guide"/>
    <status value="draft"/>
-   <date value="2026-04-25T18:19:01+02:00"/>
+   <date value="2026-04-25T18:48:49+02:00"/>
    <publisher value="Fall Risk IG Authors"/>
    <contact>
       <name value="Fall Risk IG Authors"/>
@@ -578,7 +578,7 @@
             <reference value="Observation/obs-fear-of-falling"/>
          </reference>
          <name value="Example – Fear of Falling (Factor 2)"/>
-         <description value="Patient reports 55% confidence on the ABC Scale."/>
+         <description value="Patient reports whether they are worried about falling."/>
          <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -632,7 +632,7 @@
             <reference value="StructureDefinition/fall-risk-factor-observation"/>
          </reference>
          <name value="Fall Risk Factor Observation"/>
-         <description value="A standardized FHIR Observation representing a single contributing factor&#xA;to fall risk (e.g., fear of falling, walking ability, alcohol use).&#xA;&#xA;Both auto-populated EHR data and manually entered questionnaire answers&#xA;are ultimately stored in this format, ensuring a uniform interface for&#xA;the scoring algorithm."/>
+         <description value="A standardized FHIR Observation representing a single contributing factor&#xA;to fall risk (e.g., fear of falling, walking ability, medication use).&#xA;&#xA;This profile supports both automated EHR data extraction and manual &#xA;questionnaire responses, providing a consistent structure for &#xA;clinical risk scoring algorithms."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -704,7 +704,7 @@
             <reference value="StructureDefinition/fall-risk-performance-observation"/>
          </reference>
          <name value="Fall Risk Performance Test Observation"/>
-         <description value="Objective physical performance measurements used in fall risk assessment:&#xA;30-Second Chair Stand Test, 4-Stage Balance Test, and Timed Up &amp; Go (TUG).&#xA;&#xA;TUG uses LOINC 30945-0 (validated). Chair Stand and Balance Test use local&#xA;codes because the commonly cited LOINC codes 82755-5 and 92631-9 are not&#xA;present in the currently licensed LOINC 2.82 release."/>
+         <description value="Objective physical performance measurements used in fall risk assessment, &#xA;including the 30-Second Chair Stand Test, 4-Stage Balance Test, and the &#xA;Timed Up &amp; Go (TUG) test."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -740,7 +740,7 @@
             <reference value="StructureDefinition/fall-risk-score-observation"/>
          </reference>
          <name value="Fall Risk Score Observation"/>
-         <description value="The aggregated fall risk score (0–30) computed from all individual&#xA;Fall Risk Factor Observations. hasMember links back to every&#xA;contributing factor so the chain of evidence is traceable."/>
+         <description value="An aggregated fall risk score derived from individual Fall Risk Factor &#xA;Observations. The 'hasMember' element links to the contributing factors, &#xA;ensuring full traceability of the clinical evidence."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>

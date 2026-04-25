@@ -38,11 +38,11 @@ Id: fall-risk-factor-observation
 Title: "Fall Risk Factor Observation"
 Description: """
 A standardized FHIR Observation representing a single contributing factor
-to fall risk (e.g., fear of falling, walking ability, alcohol use).
+to fall risk (e.g., fear of falling, walking ability, medication use).
 
-Both auto-populated EHR data and manually entered questionnaire answers
-are ultimately stored in this format, ensuring a uniform interface for
-the scoring algorithm.
+This profile supports both automated EHR data extraction and manual 
+questionnaire responses, providing a consistent structure for 
+clinical risk scoring algorithms.
 """
 * status 1..1 MS
 * status = #final
@@ -65,17 +65,15 @@ Parent: Observation
 Id: fall-risk-score-observation
 Title: "Fall Risk Score Observation"
 Description: """
-The aggregated fall risk score (0–30) computed from all individual
-Fall Risk Factor Observations. hasMember links back to every
-contributing factor so the chain of evidence is traceable.
+An aggregated fall risk score derived from individual Fall Risk Factor 
+Observations. The 'hasMember' element links to the contributing factors, 
+ensuring full traceability of the clinical evidence.
 """
 * status 1..1 MS
 * status = #final
 * category 1..* MS
 * category = $OBS_CAT#survey "Survey"
 * code 1..1 MS
-// FIX: LOINC 89062-2 does not exist in LOINC 2.82.
-//      Using local code instead.
 * code = $LOCAL#fall-risk-score "Fall Risk Score"
 * subject 1..1 MS
 * subject only Reference(Patient)
@@ -84,7 +82,7 @@ contributing factor so the chain of evidence is traceable.
 * value[x] 1..1 MS
 * value[x] only Quantity
 * valueQuantity.system = $UCUM
-// FIX: UCUM does not have "score" — use the annotation unit {score}
+// UCUM does not have "score" — use the annotation unit {score}
 * valueQuantity.unit = "{score}"
 * valueQuantity.code = #{score}
 * performer 1..* MS
@@ -97,12 +95,9 @@ Parent: Observation
 Id: fall-risk-performance-observation
 Title: "Fall Risk Performance Test Observation"
 Description: """
-Objective physical performance measurements used in fall risk assessment:
-30-Second Chair Stand Test, 4-Stage Balance Test, and Timed Up & Go (TUG).
-
-TUG uses LOINC 30945-0 (validated). Chair Stand and Balance Test use local
-codes because the commonly cited LOINC codes 82755-5 and 92631-9 are not
-present in the currently licensed LOINC 2.82 release.
+Objective physical performance measurements used in fall risk assessment, 
+including the 30-Second Chair Stand Test, 4-Stage Balance Test, and the 
+Timed Up & Go (TUG) test.
 """
 * status 1..1 MS
 * status = #final
@@ -155,7 +150,7 @@ Title: "Fall Risk Factors ValueSet"
 Description: "Standardized LOINC and SNOMED codes for fall risk assessment inputs. Display names use the official terminology display text."
 * ^experimental = true
 // LOINC codes — using official LOINC display names exactly as returned by tx.fhir.org
-* $LOINC#95418-0  "Whether patient is employed in a healthcare setting" // ABC scale
+* $LOINC#97878-3  "Worried about falling"
 * $LOINC#72107-6  "Mini-Mental State Examination [MMSE]"
 * $LOINC#74013-4  "Alcoholic drinks per day"
 * $LOINC#80582-0  "LOINC Document Ontology associated observations panel"
@@ -214,22 +209,18 @@ Usage: #example
 Instance: ExampleFearOfFallingObservation
 InstanceOf: FallRiskFactorObservation
 Title: "Example – Fear of Falling (Factor 2)"
-Description: "Patient reports 55% confidence on the ABC Scale."
+Description: "Patient reports whether they are worried about falling."
 Usage: #example
 * id = "obs-fear-of-falling"
 * status = #final
 * category = $OBS_CAT#survey "Survey"
-// FIX: use official LOINC display for 95418-0
-* code = $LOINC#95418-0 "Whether patient is employed in a healthcare setting"
+// LOINC code for worried-about-falling
+* code = $LOINC#97878-3 "Worried about falling"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2024-11-15T10:30:00+01:00"
 // FIX: add performer (required by best practice, avoids warning)
 * performer[0] = Reference(ExamplePractitioner)
-* valueQuantity
-  * value = 55
-  * unit = "%"
-  * system = $UCUM
-  * code = #%
+* valueCodeableConcept = $SNOMED#373066001 "Yes (qualifier value)"
 
 Instance: ExampleTUGObservation
 InstanceOf: FallRiskPerformanceObservation
