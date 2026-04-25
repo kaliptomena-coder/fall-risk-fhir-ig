@@ -1,36 +1,52 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-   <id value="fall-risk-ig"/>
+   <id value="hl7.fhir.uv.fall-risk"/>
    <language value="en"/>
    <text>
       <status value="generated"/>
       <div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
          <p class="res-header-id">
-            <b>Generated Narrative: ImplementationGuide fall-risk-ig</b>
+            <b>Generated Narrative: ImplementationGuide hl7.fhir.uv.fall-risk</b>
          </p>
-         <a name="fall-risk-ig"> </a>
-         <a name="hcfall-risk-ig"> </a>
+         <a name="hl7.fhir.uv.fall-risk"> </a>
+         <a name="hchl7.fhir.uv.fall-risk"> </a>
          <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
             <p style="margin-bottom: 0px">Language: en</p>
          </div>
-         <h2>FallRiskIG</h2>
+         <h2>FallRiskAssessmentIG</h2>
          <p>The official URL for this implementation guide is: </p>
-         <pre>http://example.org/fhir/fall-risk/ImplementationGuide/fall-risk-ig</pre>
+         <pre>https://example.org/fhir/fall-risk/ImplementationGuide/hl7.fhir.uv.fall-risk</pre>
+         <div>
+            <p>Interoperable FHIR-based fall risk assessment for older adults using standardized scoring, objective performance tests, and EHR-derived data.</p>
+         </div>
       </div>
    </text>
-   <url value="http://example.org/fhir/fall-risk/ImplementationGuide/fall-risk-ig"/>
+   <url value="https://example.org/fhir/fall-risk/ImplementationGuide/hl7.fhir.uv.fall-risk"/>
    <version value="0.1.0"/>
-   <name value="FallRiskIG"/>
+   <name value="FallRiskAssessmentIG"/>
+   <title value="Fall Risk Assessment Implementation Guide"/>
    <status value="draft"/>
-   <date value="2026-04-24T21:02:45+02:00"/>
-   <publisher value="R"/>
+   <date value="2026-04-25T14:27:28+02:00"/>
+   <publisher value="Fall Risk IG Authors"/>
    <contact>
-      <name value="R"/>
+      <name value="Fall Risk IG Authors"/>
       <telecom>
          <system value="url"/>
-         <value value="http://example.org/example-publisher"/>
+         <value value="https://example.org/fall-risk"/>
+      </telecom>
+      <telecom>
+         <system value="email"/>
+         <value value="info@example.org"/>
       </telecom>
    </contact>
-   <packageId value="fall-risk-ig"/>
+   <description value="Interoperable FHIR-based fall risk assessment for older adults using standardized scoring, objective performance tests, and EHR-derived data."/>
+   <jurisdiction>
+      <coding>
+         <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+         <code value="001"/>
+         <display value="World"/>
+      </coding>
+   </jurisdiction>
+   <packageId value="hl7.fhir.uv.fall-risk"/>
    <license value="CC0-1.0"/>
    <fhirVersion value="4.0.1"/>
    <dependsOn id="hl7tx">
@@ -55,7 +71,7 @@
             <valueString value="copyrightyear"/>
          </extension>
          <extension url="value">
-            <valueString value="2026+"/>
+            <valueString value="2025+"/>
          </extension>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -64,6 +80,14 @@
          </extension>
          <extension url="value">
             <valueString value="ci-build"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="show-inherited-invariants"/>
+         </extension>
+         <extension url="value">
+            <valueString value="false"/>
          </extension>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -127,7 +151,7 @@
             <valueString value="path-history"/>
          </extension>
          <extension url="value">
-            <valueString value="http://example.org/fhir/fall-risk/history.html"/>
+            <valueString value="https://example.org/fhir/fall-risk/history.html"/>
          </extension>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -265,18 +289,12 @@
       <grouping id="-req-requirements" name="Requirements"/>
       <grouping id="-dyn-capabilitystatement" name="CapabilityStatement"/>
       <grouping id="-dyn-operationdefinition" name="OperationDefinition"/>
-      <grouping id="-dyn-eventdefinition" name="EventDefinition"/>
       <grouping id="-dyn-messagedefinition" name="MessageDefinition"/>
       <grouping id="-dyn-searchparameter" name="SearchParameter"/>
-      <grouping id="-dyn-subscriptiontopic" name="SubscriptionTopic"/>
       <grouping id="-ka-activitydefinition" name="ActivityDefinition"/>
       <grouping id="-ka-plandefinition" name="PlanDefinition"/>
       <grouping id="-ka-measure" name="Measure"/>
       <grouping id="-ka-library" name="Library"/>
-      <grouping id="-ka-evidence" name="Evidence"/>
-      <grouping id="-ka-evidencevariable" name="EvidenceVariable"/>
-      <grouping id="-ka-citation" name="Citation"/>
-      <grouping id="-str-resource" name="Resource"/>
       <grouping id="-str-graphdefinition" name="GraphDefinition"/>
       <grouping id="-str-logicalmodel" name="LogicalModel"/>
       <grouping id="-str-questionnaire" name="Questionnaire"/>
@@ -287,15 +305,10 @@
       <grouping id="-term-valueset" name="ValueSet"/>
       <grouping id="-term-codesystem" name="CodeSystem"/>
       <grouping id="-term-namingsystem" name="NamingSystem"/>
-      <grouping id="-term-terminologycapabilities" name="TerminologyCap"/>
       <grouping id="-map-structuremap" name="StructureMap"/>
       <grouping id="-map-conceptmap" name="ConceptMap"/>
       <grouping id="-test-testplan" name="TestPlan"/>
       <grouping id="-test-testscript" name="TestScript"/>
-      <grouping id="-clin-conditiondefinition" name="ConditionDefinition"/>
-      <grouping id="-clin-observationdefinition" name="ObservationDefinition"/>
-      <grouping id="-clin-specimendefinition" name="SpecimenDefinition"/>
-      <grouping id="-clin-chargeitemdefinition" name="ChargeItemDefinition"/>
       <grouping id="-ex-examplescenario" name="ExampleScenario"/>
       <grouping id="-ex-example" name="Example"/>
       <grouping id="-ex-examplesup" name="ExampleSupporting"/>
@@ -332,24 +345,18 @@
          <translation name="Example" en="Example"/>
          <translation name="Examples" en="Examples"/>
          <translation name="ExamplesForProfile" en="Examples for the %ID% Profile."/>
-         <translation name="ExamplesForResource" en="Examples for the %ID% Resource."/>
          <translation name="Excel" en="Excel"/>
          <translation name="Expansion" en="Expansion"/>
          <translation name="Experimental" en="Experimental"/>
          <translation name="Extension" en="Extension"/>
          <translation name="FormalExtension" en="Formal Views of Extension Content"/>
          <translation name="FormalProfile" en="Formal Views of Profile Content"/>
-         <translation name="FormalResource" en="Formal Views of Resource Content"/>
          <translation name="FormatProfile" en="%FMT% Profile"/>
          <translation name="FormatRep" en="%FMT% representation of the %ID% %TYPE%."/>
-         <translation name="FormatResource" en="%FMT% Resource"/>
          <translation name="FromNormative" en="from v%NORMVER%"/>
          <translation name="GeneratedDate" en="Generated %DATE%"/>
          <translation name="GlobalProfiles" en="Global Profiles"/>
          <translation name="Globals" en="Globals"/>
-         <translation name="HighlightChanges" en="Highlight text changes?"/>
-         <translation name="HighlightChangesHelp"
-                      en="Enable this to see changes since the last official release"/>
          <translation name="History" en="History"/>
          <translation name="HistoryOfChange" en="History of changes for %ARTIFACT%."/>
          <translation name="IGCopyright" en="IG © %YEAR%"/>
@@ -366,12 +373,9 @@
          <translation name="Mappings" en="Mappings"/>
          <translation name="MappingsFor" en="Mappings for the %ID% %TYPE%."/>
          <translation name="MaturityLevel" en="Maturity Level"/>
-         <translation name="ModelOf" en="Instance of logical model"/>
-         <translation name="ModifiedContent" en="Modified Content"/>
          <translation name="NO_TRANS"
                       en="There is no translation page available for the current page, so it has been rendered in the default language"/>
          <translation name="NarrativeContent" en="Narrative Content"/>
-         <translation name="NewContent" en="New Content"/>
          <translation name="NextPage" en="next &gt;"/>
          <translation name="NoExamples"
                       en="No examples are currently available for the %ID% Profile."/>
@@ -402,31 +406,24 @@
          <translation name="QuestionnaireTree" en="Tree view"/>
          <translation name="Raw" en="Raw %FMT%"/>
          <translation name="ReadingStructures"
-                      en="Description Differentials, Snapshots, and other representations"/>
+                      en="Description of Profiles, Differentials, Snapshots, and their representations"/>
          <translation name="ReadingTerminology" en="Description of the above table(s)"/>
          <translation name="Realm" en="Realm"/>
          <translation name="ResourceDate" en="as of %RESDATE%"/>
-         <translation name="ResourceModel" en="Resource"/>
-         <translation name="ResourceNoExamples"
-                      en="No examples are currently available for the %ID% Resource"/>
-         <translation name="ResourceOtherReps" en="Other representations of resource:"/>
          <translation name="ResourceProfile" en="Resource Profile"/>
          <translation name="ResponsesQuestionnaire" en="Responses for this Questionnaire"/>
          <translation name="Responsible" en="Responsible"/>
          <translation name="Schematron" en="Schematron"/>
-         <translation name="SearchParameters" en="Search Parameters"/>
          <translation name="SnapshotTable" en="Snapshot Table"/>
          <translation name="SnapshotView" en="Snapshot View"/>
          <translation name="StandardsStatus" en="Standards Status"/>
          <translation name="StatisticsReferences" en="Statistics/References"/>
-         <translation name="Structure" en="Structure"/>
          <translation name="Swagger" en="Raw OpenAPI-Swagger Definition file"/>
          <translation name="TRANS_HLP"
                       en="This page includes translations from the original source language in which the guide was authored.  Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html)."/>
          <translation name="TTL" en="TTL"/>
          <translation name="TTLTemplate" en="TTL Template"/>
          <translation name="TableOfContents" en="Table of Contents"/>
-         <translation name="TermParameters" en="Terminology Parameters"/>
          <translation name="TestPlans" en="Test Plans"/>
          <translation name="TestQuestionnaire" en="Test this Questionnaire"/>
          <translation name="TestScripts" en="Test Scripts"/>
@@ -441,166 +438,186 @@
          <translation name="XML" en="XML"/>
          <translation name="XMLTemplate" en="XML Template"/>
       </translations>
-      <artifactTranslations>
-         <translations>
-            <grouping id="-req-actordefinition" name="ActorDefinition">
-               <Desc en="The following artifacts define the types of individuals and/or systems that will interact as part of the use cases covered by this implementation guide."/>
-               <Name en="Requirements: Actor Definitions"/>
-            </grouping>
-            <grouping id="-req-requirements" name="Requirements">
-               <Desc en="The following artifacts describe the specific requirements to be met by systems compliant with the implementation guide."/>
-               <Name en="Requirements: Formal Requirements"/>
-            </grouping>
-            <grouping id="-dyn-capabilitystatement" name="CapabilityStatement">
-               <Desc en="The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements."/>
-               <Name en="Behavior: Capability Statements"/>
-            </grouping>
-            <grouping id="-dyn-operationdefinition" name="OperationDefinition">
-               <Desc en="These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide."/>
-               <Name en="Behavior: Operation Definitions"/>
-            </grouping>
-            <grouping id="-dyn-eventdefinition" name="EventDefinition">
-               <Desc en="Defines system and business occurrences that drive a need for data to flow from systems in this implementation guide."/>
-               <Name en="Behavior: Event Definitions"/>
-            </grouping>
-            <grouping id="-dyn-messagedefinition" name="MessageDefinition">
-               <Desc en="These define the types of messages that can be sent and/or received by systems conforming to this implementation guide."/>
-               <Name en="Behavior: Message Definitions"/>
-            </grouping>
-            <grouping id="-dyn-searchparameter" name="SearchParameter">
-               <Desc en="These define the properties by which a RESTful server can be searched.  They can also be used for sorting and including related resources."/>
-               <Name en="Behavior: Search Parameters"/>
-            </grouping>
-            <grouping id="-dyn-subscriptiontopic" name="SubscriptionTopic">
-               <Desc en="These define the types of information that can be subscribed to on systems conforming to this this implementation guide."/>
-               <Name en="Behavior: Subscription Topics"/>
-            </grouping>
-            <grouping id="-ka-activitydefinition" name="ActivityDefinition">
-               <Desc en="These define activities that can be performed as part of content in this implementation guide."/>
-               <Name en="Knowledge Artifacts: Activity Definitions"/>
-            </grouping>
-            <grouping id="-ka-plandefinition" name="PlanDefinition">
-               <Desc en="These define workflows, rules, strategies, or protocols as part of content in this implementation guide."/>
-               <Name en="Knowledge Artifacts: Plan Definitions"/>
-            </grouping>
-            <grouping id="-ka-measure" name="Measure">
-               <Desc en="These define measures as part of content in this implementation guide."/>
-               <Name en="Knowledge Artifacts: Measure"/>
-            </grouping>
-            <grouping id="-ka-library" name="Library">
-               <Desc en="These define logic, asset collections and other libraries as part of content in this implementation guide."/>
-               <Name en="Knowledge Artifacts: Libraries"/>
-            </grouping>
-            <grouping id="-ka-evidence" name="Evidence">
-               <Desc en="Indicates research or other information that justifies or support the information exchange defined in this implemetnation guide"/>
-               <Name en="Knowledge Artifacts: Evidence"/>
-            </grouping>
-            <grouping id="-ka-evidencevariable" name="EvidenceVariable">
-               <Desc en="Components of the research that justify or support the information exchange defined in this implementation guide"/>
-               <Name en="Knowledge Artifacts: Evidence Variables"/>
-            </grouping>
-            <grouping id="-ka-citation" name="Citation">
-               <Desc en="Supports referencing artifacts defined in this implementation guide."/>
-               <Name en="Knowledge Artifacts: Citations"/>
-            </grouping>
-            <grouping id="-str-resource" name="Resource">
-               <Desc en="'Additional' resources that are not yet published in the FHIR core specification."/>
-               <Name en="Structures: Additional Resources"/>
-            </grouping>
-            <grouping id="-str-graphdefinition" name="GraphDefinition">
-               <Desc en="These define collections of interrelated resources that are useful to pass around as a group."/>
-               <Name en="Structures: Graph Definitions"/>
-            </grouping>
-            <grouping id="-str-logicalmodel" name="LogicalModel">
-               <Desc en="These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources."/>
-               <Name en="Structures: Logical Models"/>
-            </grouping>
-            <grouping id="-str-questionnaire" name="Questionnaire">
-               <Desc en="These define forms used by systems conforming to this implementation guide to capture or expose data to end users."/>
-               <Name en="Structures: Questionnaires"/>
-            </grouping>
-            <grouping id="-str-abstractprofile" name="AbstractProfile">
-               <Desc en="These are profiles on resources or data types that describe patterns used by other profiles but cannot be instantiated directly.  I.e. instances can conform to profiles *based* on these abstract profiles, but do not declare conformance to the abstract profiles themselves."/>
-               <Name en="Structures: Abstract Profiles"/>
-            </grouping>
-            <grouping id="-str-profile" name="ResourceProfile">
-               <Desc en="These define constraints on FHIR resources for systems conforming to this implementation guide."/>
-               <Name en="Structures: Resource Profiles"/>
-            </grouping>
-            <grouping id="-str-datatype" name="DataType">
-               <Desc en="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
-               <Name en="Structures: Data Type Profiles"/>
-            </grouping>
-            <grouping id="-str-extension" name="Extension">
-               <Desc en="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
-               <Name en="Structures: Extension Definitions"/>
-            </grouping>
-            <grouping id="-term-valueset" name="ValueSet">
-               <Desc en="These define sets of codes used by systems conforming to this implementation guide."/>
-               <Name en="Terminology: Value Sets"/>
-            </grouping>
-            <grouping id="-term-codesystem" name="CodeSystem">
-               <Desc en="These define new code systems used by systems conforming to this implementation guide."/>
-               <Name en="Terminology: Code Systems"/>
-            </grouping>
-            <grouping id="-term-namingsystem" name="NamingSystem">
-               <Desc en="These define identifier and/or code system identities used by systems conforming to this implementation guide."/>
-               <Name en="Terminology: Naming Systems"/>
-            </grouping>
-            <grouping id="-term-terminologycapabilities" name="TerminologyCap">
-               <Desc en="Parameters that define the expansion of value sets used within the implementation guide."/>
-               <Name en="Terminology: Terminology Capabilities"/>
-            </grouping>
-            <grouping id="-map-structuremap" name="StructureMap">
-               <Desc en="These define transformations to convert between data structures used by systems conforming to this implementation guide."/>
-               <Name en="Terminology: Structure Maps"/>
-            </grouping>
-            <grouping id="-map-conceptmap" name="ConceptMap">
-               <Desc en="These define transformations to convert between codes by systems conforming with this implementation guide."/>
-               <Name en="Terminology: Concept Maps"/>
-            </grouping>
-            <grouping id="-test-testplan" name="TestPlan">
-               <Desc en="These test plans are available to verify test coverage for this implementation guide."/>
-               <Name en="Testing Artifacts: TestPlans"/>
-            </grouping>
-            <grouping id="-test-testscript" name="TestScript">
-               <Desc en="These test definitions are available to FHIR test engines to verify systems are conforming to this implementation guide."/>
-               <Name en="Testing Artifacts: TestScripts"/>
-            </grouping>
-            <grouping id="-clin-conditiondefinition" name="ConditionDefinition">
-               <Desc en="Formal descriptions of conditions and symptoms relevant to the use of this implementation guide."/>
-               <Name en="Clinical: Condition Definitions"/>
-            </grouping>
-            <grouping id="-clin-observationdefinition" name="ObservationDefinition">
-               <Desc en="Formal descriptions of types of observations relevant to the use of this implementation guide."/>
-               <Name en="Clinical: Observation Definitions"/>
-            </grouping>
-            <grouping id="-clin-specimendefinition" name="SpecimenDefinition">
-               <Desc en="Formal descriptions of the types of specimens relevant to the use of this implementation guide."/>
-               <Name en="Clinical: Specimen Definitions"/>
-            </grouping>
-            <grouping id="-clin-chargeitemdefinition" name="ChargeItemDefinition">
-               <Desc en="Definitions of chargeable costs relevant to the use of this implementation guide."/>
-               <Name en="Clinical: Charge Item Definitions"/>
-            </grouping>
-            <grouping id="-ex-examplescenario" name="ExampleScenario">
-               <Desc en="These define groups of interrelated examples that demonstrate one or more of the workflows supported by this implementation guide."/>
-               <Name en="Example: Example Scenarios"/>
-            </grouping>
-            <grouping id="-ex-example" name="Example">
-               <Desc en="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like."/>
-               <Name en="Example: Example Instances"/>
-            </grouping>
-            <grouping id="-ex-examplesup" name="ExampleSupporting">
-               <Desc en="These are example instances that are not governed by this implementation guide, but which are necessary to support other examples defined in the IG."/>
-               <Name en="Example: Example Supporting Instances"/>
-            </grouping>
-            <grouping id="-other" name="Other">
-               <Desc en="These are resources that are used within this implementation guide that do not fit into one of the other categories."/>
-               <Name en="Other"/>
-            </grouping>
-         </translations>
-      </artifactTranslations>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Patient"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Patient-example-patient.html"/>
+         </extension>
+         <reference>
+            <reference value="Patient/example-patient"/>
+         </reference>
+         <name value="Example Patient – Maria Müller"/>
+         <description value="A 78-year-old female patient undergoing fall risk assessment."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Practitioner"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Practitioner-example-practitioner.html"/>
+         </extension>
+         <reference>
+            <reference value="Practitioner/example-practitioner"/>
+         </reference>
+         <name value="Example Practitioner"/>
+         <description value="The physiotherapist conducting the fall risk assessment."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-chair-stand.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-chair-stand"/>
+         </reference>
+         <name value="Example – 30-Second Chair Stand Test"/>
+         <description value="Patient completed 8 repetitions in 30 seconds."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Condition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Condition-condition-fall-risk.html"/>
+         </extension>
+         <reference>
+            <reference value="Condition/condition-fall-risk"/>
+         </reference>
+         <name value="Example – Condition: At Risk of Falls"/>
+         <description value="Problem list entry created after moderate fall risk assessment."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-fall-risk-score.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-fall-risk-score"/>
+         </reference>
+         <name value="Example – Fall Risk Score (18/30)"/>
+         <description value="Aggregated fall risk score of 18 out of 30 — Moderate risk."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-fall-risk-result.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-fall-risk-result"/>
+         </reference>
+         <name value="Example – Fall Risk Screening Result"/>
+         <description value="Overall fall risk classification: Moderate."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="QuestionnaireResponse"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="QuestionnaireResponse-qr-falls-history.html"/>
+         </extension>
+         <reference>
+            <reference value="QuestionnaireResponse/qr-falls-history"/>
+         </reference>
+         <name value="Example – Falls History QuestionnaireResponse"/>
+         <description value="Patient reports 2 falls in the past 12 months."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-fear-of-falling.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-fear-of-falling"/>
+         </reference>
+         <name value="Example – Fear of Falling (Factor 2)"/>
+         <description value="Patient reports 55% confidence on the ABC Scale."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-tug-test.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-tug-test"/>
+         </reference>
+         <name value="Example – Timed Up and Go Test"/>
+         <description value="Patient completed TUG in 14.2 seconds (elevated risk threshold &gt;12 s)."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-fall-risk-category-vs.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/fall-risk-category-vs"/>
+         </reference>
+         <name value="Fall Risk Category ValueSet"/>
+         <description value="Risk classification outcomes for fall risk assessment using SNOMED qualifier values."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-valueset"/>
+      </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
             <valueInteger value="999999999"/>
@@ -615,7 +632,7 @@
             <reference value="StructureDefinition/fall-risk-factor-observation"/>
          </reference>
          <name value="Fall Risk Factor Observation"/>
-         <description value="Standardized representation of all fall risk contributing factors"/>
+         <description value="A standardized FHIR Observation representing a single contributing factor&#xA;to fall risk (e.g., fear of falling, walking ability, alcohol use).&#xA;&#xA;Both auto-populated EHR data and manually entered questionnaire answers&#xA;are ultimately stored in this format, ensuring a uniform interface for&#xA;the scoring algorithm."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -633,9 +650,27 @@
             <reference value="ValueSet/fall-risk-factors-vs"/>
          </reference>
          <name value="Fall Risk Factors ValueSet"/>
-         <description value="All standardized codes used in fall risk assessment"/>
+         <description value="Standardized LOINC and SNOMED codes for fall risk assessment inputs. Display names use the official terminology display text."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-fall-risk-codes.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/fall-risk-codes"/>
+         </reference>
+         <name value="Fall Risk Local Code System"/>
+         <description value="Local codes for physical performance tests not yet available in the licensed LOINC version."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -651,9 +686,45 @@
             <reference value="StructureDefinition/fall-risk-observation"/>
          </reference>
          <name value="Fall Risk Observation"/>
-         <description value="Assessment of patient fall risk using standardized scoring"/>
+         <description value="The outcome of a fall risk screening episode, capturing the overall&#xA;risk classification (Low / Moderate / High) and referencing the&#xA;aggregated score Observation."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-fall-risk-performance-observation.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/fall-risk-performance-observation"/>
+         </reference>
+         <name value="Fall Risk Performance Test Observation"/>
+         <description value="Objective physical performance measurements used in fall risk assessment:&#xA;30-Second Chair Stand Test, 4-Stage Balance Test, and Timed Up &amp; Go (TUG).&#xA;&#xA;TUG uses LOINC 30945-0 (validated). Chair Stand and Balance Test use local&#xA;codes because the commonly cited LOINC codes 82755-5 and 92631-9 are not&#xA;present in the currently licensed LOINC 2.82 release."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-fall-risk-performance-tests-vs.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/fall-risk-performance-tests-vs"/>
+         </reference>
+         <name value="Fall Risk Performance Tests ValueSet"/>
+         <description value="Codes for objective physical performance tests. TUG uses validated LOINC; Chair Stand and Balance Test use local codes."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-valueset"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -669,45 +740,9 @@
             <reference value="StructureDefinition/fall-risk-score-observation"/>
          </reference>
          <name value="Fall Risk Score Observation"/>
-         <description value="Aggregated fall risk score derived from multiple clinical factors"/>
+         <description value="The aggregated fall risk score (0–30) computed from all individual&#xA;Fall Risk Factor Observations. hasMember links back to every&#xA;contributing factor so the chain of evidence is traceable."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:resource"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-MyPatient.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/MyPatient"/>
-         </reference>
-         <name value="MyPatient"/>
-         <description value="An example profile of the Patient resource."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-str-profile"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Patient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Patient-PatientExample.html"/>
-         </extension>
-         <reference>
-            <reference value="Patient/PatientExample"/>
-         </reference>
-         <name value="PatientExample"/>
-         <description value="An example of a patient with a license to krill."/>
-         <exampleCanonical value="http://example.org/fhir/fall-risk/StructureDefinition/MyPatient"/>
-         <groupingId value="-ex-example"/>
       </resource>
       <page>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -724,14 +759,50 @@
             <title value="Home"/>
             <generation value="markdown"/>
          </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="usecase.html"/>
+            </extension>
+            <nameUrl value="usecase.html"/>
+            <title value="Use Case"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="architecture.html"/>
+            </extension>
+            <nameUrl value="architecture.html"/>
+            <title value="Architecture"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="dataflow.html"/>
+            </extension>
+            <nameUrl value="dataflow.html"/>
+            <title value="Data Flow &amp; Scoring"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="examples.html"/>
+            </extension>
+            <nameUrl value="examples.html"/>
+            <title value="Examples"/>
+            <generation value="markdown"/>
+         </page>
       </page>
       <parameter>
          <code value="path-resource"/>
-         <value value="input/capabilities"/>
+         <value value="input/examples"/>
+      </parameter>
+      <parameter>
+         <code value="path-pages"/>
+         <value value="input/pagecontent"/>
       </parameter>
       <parameter>
          <code value="path-resource"/>
-         <value value="input/examples"/>
+         <value value="input/capabilities"/>
       </parameter>
       <parameter>
          <code value="path-resource"/>
@@ -759,10 +830,6 @@
       </parameter>
       <parameter>
          <code value="path-resource"/>
-         <value value="input/maps"/>
-      </parameter>
-      <parameter>
-         <code value="path-resource"/>
          <value value="input/testing"/>
       </parameter>
       <parameter>
@@ -779,10 +846,6 @@
       </parameter>
       <parameter>
          <code value="path-pages"/>
-         <value value="input/assets"/>
-      </parameter>
-      <parameter>
-         <code value="path-pages"/>
          <value value="input/images"/>
       </parameter>
       <parameter>
@@ -791,11 +854,15 @@
       </parameter>
       <parameter>
          <code value="copyrightyear"/>
-         <value value="2026+"/>
+         <value value="2025+"/>
       </parameter>
       <parameter>
          <code value="releaselabel"/>
          <value value="ci-build"/>
+      </parameter>
+      <parameter>
+         <code value="show-inherited-invariants"/>
+         <value value="false"/>
       </parameter>
       <parameter>
          <code value="autoload-resources"/>
@@ -827,7 +894,7 @@
       </parameter>
       <parameter>
          <code value="path-history"/>
-         <value value="http://example.org/fhir/fall-risk/history.html"/>
+         <value value="https://example.org/fhir/fall-risk/history.html"/>
       </parameter>
       <parameter>
          <code value="template-html"/>

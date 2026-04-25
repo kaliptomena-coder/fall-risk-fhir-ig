@@ -1,36 +1,52 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-   <id value="fall-risk-ig"/>
+   <id value="hl7.fhir.uv.fall-risk"/>
    <language value="en"/>
    <text>
       <status value="generated"/>
       <div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
          <p class="res-header-id">
-            <b>Generated Narrative: ImplementationGuide fall-risk-ig</b>
+            <b>Generated Narrative: ImplementationGuide hl7.fhir.uv.fall-risk</b>
          </p>
-         <a name="fall-risk-ig"> </a>
-         <a name="hcfall-risk-ig"> </a>
+         <a name="hl7.fhir.uv.fall-risk"> </a>
+         <a name="hchl7.fhir.uv.fall-risk"> </a>
          <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
             <p style="margin-bottom: 0px">Language: en</p>
          </div>
-         <h2>FallRiskIG</h2>
+         <h2>FallRiskAssessmentIG</h2>
          <p>The official URL for this implementation guide is: </p>
-         <pre>http://example.org/fhir/fall-risk/ImplementationGuide/fall-risk-ig</pre>
+         <pre>https://example.org/fhir/fall-risk/ImplementationGuide/hl7.fhir.uv.fall-risk</pre>
+         <div>
+            <p>Interoperable FHIR-based fall risk assessment for older adults using standardized scoring, objective performance tests, and EHR-derived data.</p>
+         </div>
       </div>
    </text>
-   <url value="http://example.org/fhir/fall-risk/ImplementationGuide/fall-risk-ig"/>
+   <url value="https://example.org/fhir/fall-risk/ImplementationGuide/hl7.fhir.uv.fall-risk"/>
    <version value="0.1.0"/>
-   <name value="FallRiskIG"/>
+   <name value="FallRiskAssessmentIG"/>
+   <title value="Fall Risk Assessment Implementation Guide"/>
    <status value="draft"/>
-   <date value="2026-04-24T21:02:45+02:00"/>
-   <publisher value="R"/>
+   <date value="2026-04-25T14:27:28+02:00"/>
+   <publisher value="Fall Risk IG Authors"/>
    <contact>
-      <name value="R"/>
+      <name value="Fall Risk IG Authors"/>
       <telecom>
          <system value="url"/>
-         <value value="http://example.org/example-publisher"/>
+         <value value="https://example.org/fall-risk"/>
+      </telecom>
+      <telecom>
+         <system value="email"/>
+         <value value="info@example.org"/>
       </telecom>
    </contact>
-   <packageId value="fall-risk-ig"/>
+   <description value="Interoperable FHIR-based fall risk assessment for older adults using standardized scoring, objective performance tests, and EHR-derived data."/>
+   <jurisdiction>
+      <coding>
+         <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+         <code value="001"/>
+         <display value="World"/>
+      </coding>
+   </jurisdiction>
+   <packageId value="hl7.fhir.uv.fall-risk"/>
    <license value="CC0-1.0"/>
    <fhirVersion value="4.0.1"/>
    <dependsOn id="hl7tx">
@@ -55,7 +71,7 @@
             <valueString value="copyrightyear"/>
          </extension>
          <extension url="value">
-            <valueString value="2026+"/>
+            <valueString value="2025+"/>
          </extension>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -64,6 +80,14 @@
          </extension>
          <extension url="value">
             <valueString value="ci-build"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="show-inherited-invariants"/>
+         </extension>
+         <extension url="value">
+            <valueString value="false"/>
          </extension>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -127,7 +151,7 @@
             <valueString value="path-history"/>
          </extension>
          <extension url="value">
-            <valueString value="http://example.org/fhir/fall-risk/history.html"/>
+            <valueString value="https://example.org/fhir/fall-risk/history.html"/>
          </extension>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -263,6 +287,7 @@
       </extension>
       <grouping id="-str-profile" name="ResourceProfile"/>
       <grouping id="-term-valueset" name="ValueSet"/>
+      <grouping id="-term-codesystem" name="CodeSystem"/>
       <grouping id="-ex-example" name="Example"/>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -278,7 +303,7 @@
             <reference value="StructureDefinition/fall-risk-factor-observation"/>
          </reference>
          <name value="Fall Risk Factor Observation"/>
-         <description value="Standardized representation of all fall risk contributing factors"/>
+         <description value="A standardized FHIR Observation representing a single contributing factor&#xA;to fall risk (e.g., fear of falling, walking ability, alcohol use).&#xA;&#xA;Both auto-populated EHR data and manually entered questionnaire answers&#xA;are ultimately stored in this format, ensuring a uniform interface for&#xA;the scoring algorithm."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -296,7 +321,25 @@
             <reference value="StructureDefinition/fall-risk-observation"/>
          </reference>
          <name value="Fall Risk Observation"/>
-         <description value="Assessment of patient fall risk using standardized scoring"/>
+         <description value="The outcome of a fall risk screening episode, capturing the overall&#xA;risk classification (Low / Moderate / High) and referencing the&#xA;aggregated score Observation."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-fall-risk-performance-observation.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/fall-risk-performance-observation"/>
+         </reference>
+         <name value="Fall Risk Performance Test Observation"/>
+         <description value="Objective physical performance measurements used in fall risk assessment:&#xA;30-Second Chair Stand Test, 4-Stage Balance Test, and Timed Up &amp; Go (TUG).&#xA;&#xA;TUG uses LOINC 30945-0 (validated). Chair Stand and Balance Test use local&#xA;codes because the commonly cited LOINC codes 82755-5 and 92631-9 are not&#xA;present in the currently licensed LOINC 2.82 release."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -314,7 +357,7 @@
             <reference value="StructureDefinition/fall-risk-score-observation"/>
          </reference>
          <name value="Fall Risk Score Observation"/>
-         <description value="Aggregated fall risk score derived from multiple clinical factors"/>
+         <description value="The aggregated fall risk score (0–30) computed from all individual&#xA;Fall Risk Factor Observations. hasMember links back to every&#xA;contributing factor so the chain of evidence is traceable."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -323,18 +366,18 @@
             <valueInteger value="999999999"/>
          </extension>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:resource"/>
+            <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-MyPatient.html"/>
+            <valueUri value="ValueSet-fall-risk-category-vs.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/MyPatient"/>
+            <reference value="ValueSet/fall-risk-category-vs"/>
          </reference>
-         <name value="MyPatient"/>
-         <description value="An example profile of the Patient resource."/>
+         <name value="Fall Risk Category ValueSet"/>
+         <description value="Risk classification outcomes for fall risk assessment using SNOMED qualifier values."/>
          <exampleBoolean value="false"/>
-         <groupingId value="-str-profile"/>
+         <groupingId value="-term-valueset"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -350,9 +393,45 @@
             <reference value="ValueSet/fall-risk-factors-vs"/>
          </reference>
          <name value="Fall Risk Factors ValueSet"/>
-         <description value="All standardized codes used in fall risk assessment"/>
+         <description value="Standardized LOINC and SNOMED codes for fall risk assessment inputs. Display names use the official terminology display text."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-fall-risk-performance-tests-vs.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/fall-risk-performance-tests-vs"/>
+         </reference>
+         <name value="Fall Risk Performance Tests ValueSet"/>
+         <description value="Codes for objective physical performance tests. TUG uses validated LOINC; Chair Stand and Balance Test use local codes."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-fall-risk-codes.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/fall-risk-codes"/>
+         </reference>
+         <name value="Fall Risk Local Code System"/>
+         <description value="Local codes for physical performance tests not yet available in the licensed LOINC version."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -362,14 +441,158 @@
             <valueString value="Patient"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Patient-PatientExample.html"/>
+            <valueUri value="Patient-example-patient.html"/>
          </extension>
          <reference>
-            <reference value="Patient/PatientExample"/>
+            <reference value="Patient/example-patient"/>
          </reference>
-         <name value="PatientExample"/>
-         <description value="An example of a patient with a license to krill."/>
-         <exampleCanonical value="http://example.org/fhir/fall-risk/StructureDefinition/MyPatient"/>
+         <name value="Example Patient – Maria Müller"/>
+         <description value="A 78-year-old female patient undergoing fall risk assessment."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Practitioner"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Practitioner-example-practitioner.html"/>
+         </extension>
+         <reference>
+            <reference value="Practitioner/example-practitioner"/>
+         </reference>
+         <name value="Example Practitioner"/>
+         <description value="The physiotherapist conducting the fall risk assessment."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-chair-stand.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-chair-stand"/>
+         </reference>
+         <name value="Example – 30-Second Chair Stand Test"/>
+         <description value="Patient completed 8 repetitions in 30 seconds."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Condition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Condition-condition-fall-risk.html"/>
+         </extension>
+         <reference>
+            <reference value="Condition/condition-fall-risk"/>
+         </reference>
+         <name value="Example – Condition: At Risk of Falls"/>
+         <description value="Problem list entry created after moderate fall risk assessment."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-fall-risk-score.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-fall-risk-score"/>
+         </reference>
+         <name value="Example – Fall Risk Score (18/30)"/>
+         <description value="Aggregated fall risk score of 18 out of 30 — Moderate risk."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-fall-risk-result.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-fall-risk-result"/>
+         </reference>
+         <name value="Example – Fall Risk Screening Result"/>
+         <description value="Overall fall risk classification: Moderate."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="QuestionnaireResponse"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="QuestionnaireResponse-qr-falls-history.html"/>
+         </extension>
+         <reference>
+            <reference value="QuestionnaireResponse/qr-falls-history"/>
+         </reference>
+         <name value="Example – Falls History QuestionnaireResponse"/>
+         <description value="Patient reports 2 falls in the past 12 months."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-fear-of-falling.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-fear-of-falling"/>
+         </reference>
+         <name value="Example – Fear of Falling (Factor 2)"/>
+         <description value="Patient reports 55% confidence on the ABC Scale."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-obs-tug-test.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/obs-tug-test"/>
+         </reference>
+         <name value="Example – Timed Up and Go Test"/>
+         <description value="Patient completed TUG in 14.2 seconds (elevated risk threshold &gt;12 s)."/>
+         <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"/>
          <groupingId value="-ex-example"/>
       </resource>
       <page>
@@ -385,6 +608,38 @@
             </extension>
             <nameUrl value="index.html"/>
             <title value="Home"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="usecase.html"/>
+            </extension>
+            <nameUrl value="usecase.html"/>
+            <title value="Use Case"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="architecture.html"/>
+            </extension>
+            <nameUrl value="architecture.html"/>
+            <title value="Architecture"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="dataflow.html"/>
+            </extension>
+            <nameUrl value="dataflow.html"/>
+            <title value="Data Flow &amp; Scoring"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="examples.html"/>
+            </extension>
+            <nameUrl value="examples.html"/>
+            <title value="Examples"/>
             <generation value="markdown"/>
          </page>
          <page>
@@ -411,13 +666,18 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-fall-risk-performance-observation.html"/>
+               <title value="Fall Risk Performance Test Observation"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="StructureDefinition-fall-risk-score-observation.html"/>
                <title value="Fall Risk Score Observation"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-MyPatient.html"/>
-               <title value="MyPatient"/>
+               <nameUrl value="ValueSet-fall-risk-category-vs.html"/>
+               <title value="Fall Risk Category ValueSet"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -426,19 +686,73 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="Patient-PatientExample.html"/>
-               <title value="PatientExample"/>
+               <nameUrl value="ValueSet-fall-risk-performance-tests-vs.html"/>
+               <title value="Fall Risk Performance Tests ValueSet"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CodeSystem-fall-risk-codes.html"/>
+               <title value="Fall Risk Local Code System"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Patient-example-patient.html"/>
+               <title value="Example Patient – Maria Müller"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Practitioner-example-practitioner.html"/>
+               <title value="Example Practitioner"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Observation-obs-chair-stand.html"/>
+               <title value="Example – 30-Second Chair Stand Test"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Condition-condition-fall-risk.html"/>
+               <title value="Example – Condition: At Risk of Falls"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Observation-obs-fall-risk-score.html"/>
+               <title value="Example – Fall Risk Score (18/30)"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Observation-obs-fall-risk-result.html"/>
+               <title value="Example – Fall Risk Screening Result"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="QuestionnaireResponse-qr-falls-history.html"/>
+               <title value="Example – Falls History QuestionnaireResponse"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Observation-obs-fear-of-falling.html"/>
+               <title value="Example – Fear of Falling (Factor 2)"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Observation-obs-tug-test.html"/>
+               <title value="Example – Timed Up and Go Test"/>
                <generation value="generated"/>
             </page>
          </page>
       </page>
       <parameter>
          <code value="path-resource"/>
-         <value value="input/capabilities"/>
+         <value value="input/examples"/>
+      </parameter>
+      <parameter>
+         <code value="path-pages"/>
+         <value value="input/pagecontent"/>
       </parameter>
       <parameter>
          <code value="path-resource"/>
-         <value value="input/examples"/>
+         <value value="input/capabilities"/>
       </parameter>
       <parameter>
          <code value="path-resource"/>
@@ -466,10 +780,6 @@
       </parameter>
       <parameter>
          <code value="path-resource"/>
-         <value value="input/maps"/>
-      </parameter>
-      <parameter>
-         <code value="path-resource"/>
          <value value="input/testing"/>
       </parameter>
       <parameter>
@@ -486,10 +796,6 @@
       </parameter>
       <parameter>
          <code value="path-pages"/>
-         <value value="input/assets"/>
-      </parameter>
-      <parameter>
-         <code value="path-pages"/>
          <value value="input/images"/>
       </parameter>
       <parameter>
@@ -498,11 +804,15 @@
       </parameter>
       <parameter>
          <code value="copyrightyear"/>
-         <value value="2026+"/>
+         <value value="2025+"/>
       </parameter>
       <parameter>
          <code value="releaselabel"/>
          <value value="ci-build"/>
+      </parameter>
+      <parameter>
+         <code value="show-inherited-invariants"/>
+         <value value="false"/>
       </parameter>
       <parameter>
          <code value="autoload-resources"/>
@@ -534,7 +844,7 @@
       </parameter>
       <parameter>
          <code value="path-history"/>
-         <value value="http://example.org/fhir/fall-risk/history.html"/>
+         <value value="https://example.org/fhir/fall-risk/history.html"/>
       </parameter>
       <parameter>
          <code value="template-html"/>

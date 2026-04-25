@@ -1,4 +1,5 @@
-{% assign localPage = page.path | split: "/" | last %}{% include fragment-pagebegin.html lang=include.lang %}
+{% assign localPage = page.path | split: "/" | last %}
+{% include fragment-pagebegin.html lang=include.lang %}
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -12,9 +13,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   {% if site.data.languages.defLang != include.lang %}
   <p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
   {% if site.data.pages[localPage].translated[include.lang] %}
-  {{site.data.stringsBase[include.lang]['TRANS_HLP'] | markdownify}}
+  {{site.data.stringsBase[include.lang]['TRANS_HLP']}}
   {% else %}
-  {{site.data.stringsBase[include.lang]['NO_TRANS'] | markdownify}}
+  {{site.data.stringsBase[include.lang]['NO_TRANS']}}
   {% endif %}
   </p>
   {% endif %}

@@ -1,19 +1,10 @@
-  <table class="{{site.data.resources[resource_].status.class}}" data-fhir="generated">
+  <table class="{{site.data.resources[resource_].status.class}}">
 {% if site.data.resources[resource_].url != nil %}
     <tr>
       <td colspan="4"><i>{{site.data.stringsBase[include.lang]['OfficialURL']}}</i>: <span class="copy-text">{{site.data.resources[resource_].url}}<button title="{{site.data.stringsBase[include.lang]['CopyURL']}}" class="btn-copy" data-clipboard-text="{{site.data.resources[resource_].url}}"/></span>
       </td>
       <td><i>{{site.data.stringsBase[include.lang]['Version']}}</i>:
       <span class="copy-text">{{site.data.resources[resource_].version}}<button title="{{site.data.stringsBase[include.lang]['CopyVersioned']}}" class="btn-copy" data-clipboard-text="{{site.data.resources[resource_].url}}|{{site.data.resources[resource_].version}}"/></span>
-      </td>
-      <td style="text-align: right;border-left-style: hidden" title="{{site.data.stringsBase[include.lang]['HighlightChangesHelp']}}">
-        <span id="toggle-change-display"><label style="margin:0;font-weight:normal" for="showChanges">{{site.data.stringsBase[include.lang]['HighlightChanges']}}</label>
-  {% if site.data.info.togglechanges == 'y' %}
-        <input style="margin:0" type="checkbox" id="showChanges" checked="checked" onchange="toggleChanges()"/>
-  {% else %}
-        <input style="margin:0" type="checkbox" id="showChanges" onchange="toggleChanges()"/>
-  {% endif %}
-      </span>
       </td>
     </tr>
 {% endif %}
@@ -40,7 +31,7 @@
 {% endcapture %}
 {% assign trimmedJurisdictions = newJurisdictions | strip %}
 
-{% assign colspan = 2 %}
+{% assign colspan = 1 %}
 {% if site.data.resources[resource_].status.fmm == nil %}
   {% assign colspan = colspan | plus: 1 %}
 {% endif %}
@@ -61,9 +52,6 @@
           {% if site.data.resources[resource_].status.normativeVersion %}
             ({{site.data.stringsBase[include.lang]['FromNormative'] | replace: "%NORMVER%", site.data.pages[localPage].normativeVersion}})
           {% endif %}
-          {% if site.data.resources[resource_].status.standards-status-support %}
-            <span title="{{site.data.resources[resource_].status.standards-status-support | markdownify}}">*</span>
-          {% endif %}
         {% else %}
           {{site.data.resources[resource_].status.status}}
           {% if site.data.resources[resource_].date %}
@@ -77,8 +65,8 @@
 {% if site.data.resources[resource_].status.fmm %}
       <td>
         <a href="{{site.data.info.fmm-definition}}">{{site.data.stringsBase[include.lang]['MaturityLevel']}}</a>: {{site.data.resources[resource_].status.fmm}}
-        {% if site.data.resources[resource_].status.fmmSource or site.data.resources[resource_].status.fmm-support %}
-          <span title="{{site.data.resources[resource_].status.fmmSource}}{{site.data.resources[resource_].status.fmm-support | markdownify }}">*</span>
+        {% if site.data.resources[resource_].status.fmmSource %}
+          <span title="{{site.data.resources[resource_].status.fmmSource}}">*</span>
         {% endif %}
       </td>
 {% endif %}
@@ -101,14 +89,14 @@
     </tr>
 {% if site.data.resources[resource_].identifiers %}
     <tr>
-      <td colspan="6">
+      <td colspan="5">
         <i>{{site.data.stringsBase[include.lang]['OtherIdentifiers']}}:</i> {{site.data.resources[resource_].identifiers}}
       </td>
     </tr>
 {% endif %}
 {% if site.data.resources[resource_].keywords %}
     <tr>
-      <td colspan="6">
+      <td colspan="5">
         <i>{{site.data.stringsBase[include.lang]['Keywords']}}:</i> {{site.data.resources[resource_].keywords}}
       </td>
     </tr>
@@ -116,13 +104,13 @@
 {% if site.data.resources[resource_].contexts %}
     <tr>
 {% assign usageLabel = "*" | append: site.data.stringsBase[include.lang]['Usage'] | append: "*: " %}
-      <td colspan="6">{{site.data.resources[resource_].contexts | prepend: usageLabel | markdownify}}</td>
+      <td colspan="5">{{site.data.resources[resource_].contexts | prepend: usageLabel | markdownify}}</td>
     </tr>
 {% endif %}
 {%if site.data.resources[resource_].copyright %}
 {% assign copyrightLabel = "*" | append: site.data.stringsBase[include.lang]['CopyrightLegal'] | append: "*: " %}
     <tr>
-      <td colspan="6">{{site.data.resources[resource_].copyrightlang[include.lang] | prepend: copyrightLabel | markdownify}}</td>
+      <td colspan="5">{{site.data.resources[resource_].copyrightlang[include.lang] | prepend: copyrightLabel | markdownify}}</td>
     </tr>
 {% endif %}
   </table>

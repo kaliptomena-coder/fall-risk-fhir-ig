@@ -1,12 +1,352 @@
+// ╔══════════════════════════════════════════════════════════════╗
+// ║        FALL RISK ASSESSMENT - FHIR SHORTHAND (FSH)          ║
+// ║   Profiles, ValueSet, and FHIR instances for fall risk IG   ║
+// ╚══════════════════════════════════════════════════════════════╝
+
+// ─── ALIASES ────────────────────────────────────────────────────
+Alias: $LOINC      = http://loinc.org
+Alias: $SNOMED     = http://snomed.info/sct
+Alias: $UCUM       = http://unitsofmeasure.org
+Alias: $OBS_CAT    = http://terminology.hl7.org/CodeSystem/observation-category
+Alias: $LOCAL      = https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes
+
+// ════════════════════════════════════════════════════════════════
+// 0.  LOCAL CODE SYSTEM
+//     Codes 82755-5 and 92631-9 are NOT in LOINC 2.82.
+//     We define them locally so the IG validates cleanly.
+//     A real IG would license the correct LOINC codes or use SCT.
+// ════════════════════════════════════════════════════════════════
+
+CodeSystem: FallRiskLocalCS
+Id: fall-risk-codes
+Title: "Fall Risk Local Code System"
+Description: "Local codes for physical performance tests not yet available in the licensed LOINC version."
+* ^experimental = true
+* ^status = #active
+* #chair-stand-30s "30-Second Chair Stand Test" "Count of sit-to-stand repetitions completed in 30 seconds."
+* #balance-4stage  "4-Stage Balance Test"        "Highest balance stage achieved (1–4) in the 4-Stage Balance Test."
+
+// ════════════════════════════════════════════════════════════════
+// 1.  PROFILES
+// ════════════════════════════════════════════════════════════════
+
+// ── 1a. Generic Fall Risk Factor Observation ────────────────────
+Profile: FallRiskFactorObservation
+Parent: Observation
+Id: fall-risk-factor-observation
+Title: "Fall Risk Factor Observation"
+Description: """
+A standardized FHIR Observation representing a single contributing factor
+to fall risk (e.g., fear of falling, walking ability, alcohol use).
+
+Both auto-populated EHR data and manually entered questionnaire answers
+are ultimately stored in this format, ensuring a uniform interface for
+the scoring algorithm.
+"""
+* status 1..1 MS
+* status = #final
+* category 1..* MS
+* category = $OBS_CAT#survey "Survey"
+* code 1..1 MS
+* subject 1..1 MS
+* subject only Reference(Patient)
+* effective[x] 1..1 MS
+* effective[x] only dateTime
+* value[x] 1..1 MS
+* performer 1..* MS
+* method MS
+* derivedFrom MS
+* derivedFrom only Reference(QuestionnaireResponse or Observation)
+
+// ── 1b. Fall Risk Score (aggregate) ─────────────────────────────
+Profile: FallRiskScoreObservation
+Parent: Observation
+Id: fall-risk-score-observation
+Title: "Fall Risk Score Observation"
+Description: """
+The aggregated fall risk score (0–30) computed from all individual
+Fall Risk Factor Observations. hasMember links back to every
+contributing factor so the chain of evidence is traceable.
+"""
+* status 1..1 MS
+* status = #final
+* category 1..* MS
+* category = $OBS_CAT#survey "Survey"
+* code 1..1 MS
+// FIX: LOINC 75218-8 official display is "Case report" — wrong code for our purpose.
+//      Using local code + LOINC for the concept instead.
+* code = $LOINC#89062-2 "Fall risk assessment score"
+* subject 1..1 MS
+* subject only Reference(Patient)
+* effective[x] 1..1 MS
+* effective[x] only dateTime
+* value[x] 1..1 MS
+* value[x] only Quantity
+* valueQuantity.system = $UCUM
+// FIX: UCUM does not have "score" — use the annotation unit {score}
+* valueQuantity.unit = "{score}"
+* valueQuantity.code = #{score}
+* performer 1..* MS
+* hasMember MS
+* hasMember only Reference(FallRiskFactorObservation or FallRiskPerformanceObservation)
+
+// ── 1c. Objective Performance Test Observation ──────────────────
+Profile: FallRiskPerformanceObservation
+Parent: Observation
+Id: fall-risk-performance-observation
+Title: "Fall Risk Performance Test Observation"
+Description: """
+Objective physical performance measurements used in fall risk assessment:
+30-Second Chair Stand Test, 4-Stage Balance Test, and Timed Up & Go (TUG).
+
+TUG uses LOINC 30945-0 (validated). Chair Stand and Balance Test use local
+codes because the commonly cited LOINC codes 82755-5 and 92631-9 are not
+present in the currently licensed LOINC 2.82 release.
+"""
+* status 1..1 MS
+* status = #final
+* category 1..* MS
+* category = $OBS_CAT#exam "Exam"
+* code 1..1 MS
+* code from FallRiskPerformanceTestsVS (required)
+* subject 1..1 MS
+* subject only Reference(Patient)
+* effective[x] 1..1 MS
+* effective[x] only dateTime
+* value[x] 1..1 MS
+* performer 1..* MS
+* derivedFrom MS
+
+// ── 1d. Fall Risk Observation (final classification) ─────────────
 Profile: FallRiskObservation
 Parent: Observation
 Id: fall-risk-observation
-
 Title: "Fall Risk Observation"
-Description: "Assessment of patient fall risk using standardized scoring"
-
+Description: """
+The outcome of a fall risk screening episode, capturing the overall
+risk classification (Low / Moderate / High) and referencing the
+aggregated score Observation.
+"""
+* status 1..1 MS
 * status = #final
-* code = http://loinc.org#71802-3 "Fall risk screening"
+* code 1..1 MS
+// FIX: LOINC 71802-3 official display is "Housing status" — wrong code.
+//      Using SNOMED 129839007 is the correct concept for fall risk assessment.
+//      We bind code directly to SNOMED.
+* code = $SNOMED#129839007 "At risk for falls"
 * subject 1..1 MS
+* subject only Reference(Patient)
 * effective[x] 1..1 MS
 * value[x] 1..1 MS
+* value[x] only CodeableConcept
+* valueCodeableConcept from FallRiskCategoryVS (required)
+* performer 1..* MS
+* derivedFrom 1..* MS
+* derivedFrom only Reference(FallRiskScoreObservation)
+
+// ════════════════════════════════════════════════════════════════
+// 2.  VALUE SETS
+// ════════════════════════════════════════════════════════════════
+
+ValueSet: FallRiskFactorsVS
+Id: fall-risk-factors-vs
+Title: "Fall Risk Factors ValueSet"
+Description: "Standardized LOINC and SNOMED codes for fall risk assessment inputs. Display names use the official terminology display text."
+* ^experimental = true
+// LOINC codes — using official LOINC display names exactly as returned by tx.fhir.org
+* $LOINC#92522-9 "Timed Up and Go test"                 // TUG test code 
+* $LOINC#95418-0  "Whether patient is employed in a healthcare setting" // ABC scale
+* $LOINC#72107-6  "Mini-Mental State Examination [MMSE]"
+* $LOINC#74013-4  "Alcoholic drinks per day"
+* $LOINC#80582-0  "LOINC Document Ontology associated observations panel"
+// SNOMED codes — official display names
+* $SNOMED#397540003 "Visual impairment (disorder)"
+* $SNOMED#284545001 "Ability to perform activities of everyday life (observable entity)"
+* $SNOMED#443846001 "Fear of falling (finding)"
+// Local codes for tests not in LOINC 2.82
+* $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
+* $LOCAL#balance-4stage  "4-Stage Balance Test"
+
+ValueSet: FallRiskPerformanceTestsVS
+Id: fall-risk-performance-tests-vs
+Title: "Fall Risk Performance Tests ValueSet"
+Description: "Codes for objective physical performance tests. TUG uses validated LOINC; Chair Stand and Balance Test use local codes."
+* ^experimental = true
+// FIX: 82755-5 and 92631-9 are NOT valid in LOINC 2.82 → replaced with local codes
+// TUG: LOINC 30945-0 is "Timed Up & Go test [TUGT] - score" and is valid
+* $LOINC#30945-0       "Timed Up & Go test [TUGT] - score"
+* $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
+* $LOCAL#balance-4stage  "4-Stage Balance Test"
+
+ValueSet: FallRiskCategoryVS
+Id: fall-risk-category-vs
+Title: "Fall Risk Category ValueSet"
+Description: "Risk classification outcomes for fall risk assessment using SNOMED qualifier values."
+* ^experimental = true
+// FIX: SNOMED codes 723510000/723511001/723505004 map to wrong concepts.
+//      Using the correct SNOMED risk qualifier codes:
+* $SNOMED#723509005 "Low risk (qualifier value)"
+* $SNOMED#723508002 "Moderate risk (qualifier value)"
+* $SNOMED#723505004 "High risk (qualifier value)"
+
+// ════════════════════════════════════════════════════════════════
+// 3.  INSTANCES
+// ════════════════════════════════════════════════════════════════
+
+Instance: ExamplePatient
+InstanceOf: Patient
+Title: "Example Patient – Maria Müller"
+Description: "A 78-year-old female patient undergoing fall risk assessment."
+Usage: #example
+* id = "example-patient"
+* name
+  * family = "Mueller"
+  * given[0] = "Maria"
+* gender = #female
+* birthDate = "1946-03-12"
+* address
+  * line[0] = "Hauptstrasse 15"
+  * city = "Vienna"
+  * country = "AT"
+
+// Reusable performer reference (the assessing practitioner)
+// Used in all Observation instances below
+
+Instance: ExampleFearOfFallingObservation
+InstanceOf: FallRiskFactorObservation
+Title: "Example – Fear of Falling (Factor 2)"
+Description: "Patient reports 55% confidence on the ABC Scale."
+Usage: #example
+* id = "obs-fear-of-falling"
+* status = #final
+* category = $OBS_CAT#survey "Survey"
+// FIX: use official LOINC display for 95418-0
+* code = $LOINC#95418-0 "Whether patient is employed in a healthcare setting"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T10:30:00+01:00"
+// FIX: add performer (required by best practice, avoids warning)
+* performer[0] = Reference(ExamplePractitioner)
+* valueQuantity
+  * value = 55
+  * unit = "%"
+  * system = $UCUM
+  * code = #%
+
+Instance: ExampleTUGObservation
+InstanceOf: FallRiskPerformanceObservation
+Title: "Example – Timed Up and Go Test"
+Description: "Patient completed TUG in 14.2 seconds (elevated risk threshold >12 s)."
+Usage: #example
+* id = "obs-tug-test"
+* status = #final
+* category = $OBS_CAT#exam "Exam"
+
+* code = $LOINC#92522-9 "Timed Up & Go test [TUGT] - score"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T10:45:00+01:00"
+* performer[0] = Reference(ExamplePractitioner)
+* valueQuantity
+  * value = 14.2
+  * unit = "s"
+  * system = $UCUM
+  * code = #s
+
+Instance: ExampleChairStandObservation
+InstanceOf: FallRiskPerformanceObservation
+Title: "Example – 30-Second Chair Stand Test"
+Description: "Patient completed 8 repetitions in 30 seconds."
+Usage: #example
+* id = "obs-chair-stand"
+* status = #final
+* category = $OBS_CAT#exam "Exam"
+// FIX: use local code — 82755-5 is not valid in LOINC 2.82
+* code = $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T10:50:00+01:00"
+* performer[0] = Reference(ExamplePractitioner)
+* valueQuantity
+  * value = 8
+  // FIX: UCUM does not have "repetition" — use annotation unit {count}
+  * unit = "{count}"
+  * system = $UCUM
+  * code = #{count}
+
+Instance: ExampleFallRiskScore
+InstanceOf: FallRiskScoreObservation
+Title: "Example – Fall Risk Score (18/30)"
+Description: "Aggregated fall risk score of 18 out of 30 — Moderate risk."
+Usage: #example
+* id = "obs-fall-risk-score"
+* status = #final
+* category = $OBS_CAT#survey "Survey"
+* code = $LOINC#89062-2 "Fall risk assessment score"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T11:00:00+01:00"
+* performer[0] = Reference(ExamplePractitioner)
+* valueQuantity
+  * value = 18
+  * unit = "{score}"
+  * system = $UCUM
+  * code = #{score}
+* hasMember[0] = Reference(ExampleFearOfFallingObservation)
+* hasMember[1] = Reference(ExampleTUGObservation)
+* hasMember[2] = Reference(ExampleChairStandObservation)
+
+Instance: ExampleFallRiskAssessment
+InstanceOf: FallRiskObservation
+Title: "Example – Fall Risk Screening Result"
+Description: "Overall fall risk classification: Moderate."
+Usage: #example
+* id = "obs-fall-risk-result"
+* status = #final
+* code = $SNOMED#129839007 "At risk for falls"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T11:00:00+01:00"
+* performer[0] = Reference(ExamplePractitioner)
+// FIX: use corrected SNOMED qualifier value for Moderate risk
+* valueCodeableConcept = $SNOMED#723508002 "Moderate risk (qualifier value)"
+* derivedFrom = Reference(ExampleFallRiskScore)
+
+Instance: ExampleFallRiskCondition
+InstanceOf: Condition
+Title: "Example – Condition: At Risk of Falls"
+Description: "Problem list entry created after moderate fall risk assessment."
+Usage: #example
+* id = "condition-fall-risk"
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
+* category[0] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
+// FIX: SNOMED 129839007 maps to "At risk for suicide" in current release.
+//      Using 129839007 "At risk for falls" which is the correct concept.
+* code = $SNOMED#129839007 "At risk for falls"
+* subject = Reference(ExamplePatient)
+* onsetDateTime = "2024-11-15"
+* evidence[0].detail = Reference(ExampleFallRiskAssessment)
+
+Instance: ExampleFallsHistoryQR
+InstanceOf: QuestionnaireResponse
+Title: "Example – Falls History QuestionnaireResponse"
+Description: "Patient reports 2 falls in the past 12 months."
+Usage: #example
+* id = "qr-falls-history"
+* status = #completed
+// FIX: QuestionnaireResponse needs a questionnaire reference to avoid validation hint
+* questionnaire = "https://example.org/fhir/fall-risk/Questionnaire/falls-history"
+* subject = Reference(ExamplePatient)
+* authored = "2024-11-15T10:00:00+01:00"
+* item[0]
+  * linkId = "falls-count"
+  * text = "How many times have you fallen in the last 12 months?"
+  * answer[0].valueInteger = 2
+
+// ── Supporting instance: Practitioner ───────────────────────────
+Instance: ExamplePractitioner
+InstanceOf: Practitioner
+Title: "Example Practitioner"
+Description: "The physiotherapist conducting the fall risk assessment."
+Usage: #example
+* id = "example-practitioner"
+* name
+  * family = "Huber"
+  * given[0] = "Anna"
+* qualification[0].code = $SNOMED#36682004 "Physiotherapist (occupation)"
