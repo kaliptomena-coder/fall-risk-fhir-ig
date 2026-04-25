@@ -25,7 +25,7 @@
    <name value="FallRiskAssessmentIG"/>
    <title value="Fall Risk Assessment Implementation Guide"/>
    <status value="draft"/>
-   <date value="2026-04-25T14:27:28+02:00"/>
+   <date value="2026-04-25T18:19:01+02:00"/>
    <publisher value="Fall Risk IG Authors"/>
    <contact>
       <name value="Fall Risk IG Authors"/>
@@ -429,7 +429,7 @@
             <reference value="CodeSystem/fall-risk-codes"/>
          </reference>
          <name value="Fall Risk Local Code System"/>
-         <description value="Local codes for physical performance tests not yet available in the licensed LOINC version."/>
+         <description value="Local codes for physical performance tests and aggregate scores not yet available in the licensed LOINC version."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-codesystem"/>
       </resource>

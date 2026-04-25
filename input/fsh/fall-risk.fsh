@@ -20,9 +20,10 @@ Alias: $LOCAL      = https://example.org/fhir/fall-risk/CodeSystem/fall-risk-cod
 CodeSystem: FallRiskLocalCS
 Id: fall-risk-codes
 Title: "Fall Risk Local Code System"
-Description: "Local codes for physical performance tests not yet available in the licensed LOINC version."
+Description: "Local codes for physical performance tests and aggregate scores not yet available in the licensed LOINC version."
 * ^experimental = true
 * ^status = #active
+* #fall-risk-score "Fall Risk Score" "Aggregated fall risk score (0–30) computed from all individual Fall Risk Factor Observations."
 * #chair-stand-30s "30-Second Chair Stand Test" "Count of sit-to-stand repetitions completed in 30 seconds."
 * #balance-4stage  "4-Stage Balance Test"        "Highest balance stage achieved (1–4) in the 4-Stage Balance Test."
 
@@ -73,9 +74,9 @@ contributing factor so the chain of evidence is traceable.
 * category 1..* MS
 * category = $OBS_CAT#survey "Survey"
 * code 1..1 MS
-// FIX: LOINC 75218-8 official display is "Case report" — wrong code for our purpose.
-//      Using local code + LOINC for the concept instead.
-* code = $LOINC#89062-2 "Fall risk assessment score"
+// FIX: LOINC 89062-2 does not exist in LOINC 2.82.
+//      Using local code instead.
+* code = $LOCAL#fall-risk-score "Fall Risk Score"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effective[x] 1..1 MS
@@ -154,7 +155,6 @@ Title: "Fall Risk Factors ValueSet"
 Description: "Standardized LOINC and SNOMED codes for fall risk assessment inputs. Display names use the official terminology display text."
 * ^experimental = true
 // LOINC codes — using official LOINC display names exactly as returned by tx.fhir.org
-* $LOINC#92522-9 "Timed Up and Go test"                 // TUG test code 
 * $LOINC#95418-0  "Whether patient is employed in a healthcare setting" // ABC scale
 * $LOINC#72107-6  "Mini-Mental State Examination [MMSE]"
 * $LOINC#74013-4  "Alcoholic drinks per day"
@@ -172,9 +172,8 @@ Id: fall-risk-performance-tests-vs
 Title: "Fall Risk Performance Tests ValueSet"
 Description: "Codes for objective physical performance tests. TUG uses validated LOINC; Chair Stand and Balance Test use local codes."
 * ^experimental = true
-// FIX: 82755-5 and 92631-9 are NOT valid in LOINC 2.82 → replaced with local codes
-// TUG: LOINC 30945-0 is "Timed Up & Go test [TUGT] - score" and is valid
-* $LOINC#30945-0       "Timed Up & Go test [TUGT] - score"
+// FIX: Using correct LOINC code 89423-8 from CDC STEADI panel for TUG timing
+* $LOINC#89423-8       "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
 * $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
 * $LOCAL#balance-4stage  "4-Stage Balance Test"
 
@@ -241,7 +240,7 @@ Usage: #example
 * status = #final
 * category = $OBS_CAT#exam "Exam"
 
-* code = $LOINC#92522-9 "Timed Up & Go test [TUGT] - score"
+* code = $LOINC#89423-8 "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2024-11-15T10:45:00+01:00"
 * performer[0] = Reference(ExamplePractitioner)
@@ -279,7 +278,7 @@ Usage: #example
 * id = "obs-fall-risk-score"
 * status = #final
 * category = $OBS_CAT#survey "Survey"
-* code = $LOINC#89062-2 "Fall risk assessment score"
+* code = $LOCAL#fall-risk-score "Fall Risk Score"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2024-11-15T11:00:00+01:00"
 * performer[0] = Reference(ExamplePractitioner)
