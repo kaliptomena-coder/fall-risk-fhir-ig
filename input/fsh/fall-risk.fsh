@@ -20,14 +20,15 @@ Alias: $LOCAL      = https://example.org/fhir/fall-risk/CodeSystem/fall-risk-cod
 CodeSystem: FallRiskLocalCS
 Id: fall-risk-codes
 Title: "Fall Risk Local Code System"
-Description: "Local codes for physical performance tests and aggregate scores not yet available in the licensed LOINC version."
+Description: "Local codes for physical performance tests, aggregate scores, and fall risk factors not available in the licensed LOINC version."
 * ^experimental = true
 * ^status = #active
 * #fall-risk-score "Fall Risk Score" "Aggregated fall risk score (0–30) computed from all individual Fall Risk Factor Observations."
 * #chair-stand-30s "30-Second Chair Stand Test" "Count of sit-to-stand repetitions completed in 30 seconds."
 * #balance-4stage  "4-Stage Balance Test"        "Highest balance stage achieved (1–4) in the 4-Stage Balance Test."
+* #visual-impairment "Visual impairment" "Visual impairment as a fall risk factor, represented by a local code when no suitable standard observation code is licensed."
 
-// ════════════════════════════════════════════════════════════════
+// ════════════════════════════════════════════════════════
 // 1.  PROFILES
 // ════════════════════════════════════════════════════════════════
 
@@ -153,11 +154,9 @@ Description: "Standardized LOINC and SNOMED codes for fall risk assessment input
 * $LOINC#97878-3  "Worried about falling"
 * $LOINC#72107-6  "Mini-Mental State Examination [MMSE]"
 * $LOINC#74013-4  "Alcoholic drinks per day"
-* $LOINC#80582-0  "LOINC Document Ontology associated observations panel"
 // SNOMED codes — official display names
-* $SNOMED#397540003 "Visual impairment (disorder)"
+* $LOCAL#visual-impairment "Visual impairment"
 * $SNOMED#284545001 "Ability to perform activities of everyday life (observable entity)"
-* $SNOMED#443846001 "Fear of falling (finding)"
 // Local codes for tests not in LOINC 2.82
 * $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
 * $LOCAL#balance-4stage  "4-Stage Balance Test"
@@ -306,7 +305,7 @@ Usage: #example
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category[0] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-// FIX: SNOMED 129839007 maps to "At risk for suicide" in current release.
+
 //      Using 129839007 "At risk for falls" which is the correct concept.
 * code = $SNOMED#129839007 "At risk for falls"
 * subject = Reference(ExamplePatient)
