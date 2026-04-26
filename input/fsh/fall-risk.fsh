@@ -12,9 +12,8 @@ Alias: $LOCAL      = https://example.org/fhir/fall-risk/CodeSystem/fall-risk-cod
 
 // ════════════════════════════════════════════════════════════════
 // 0.  LOCAL CODE SYSTEM
-//     Codes 82755-5 and 92631-9 are NOT in LOINC 2.82.
-//     We define them locally so the IG validates cleanly.
-//     A real IG would license the correct LOINC codes or use SCT.
+//     Local codes for fall risk factors, performance tests, and aggregate scores
+//     not available in the licensed LOINC version.
 // ════════════════════════════════════════════════════════════════
 
 CodeSystem: FallRiskLocalCS
@@ -217,7 +216,7 @@ Usage: #example
 * code = $LOINC#97878-3 "Worried about falling"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2024-11-15T10:30:00+01:00"
-// FIX: add performer (required by best practice, avoids warning)
+// add performer 
 * performer[0] = Reference(ExamplePractitioner)
 * valueCodeableConcept = $SNOMED#373066001 "Yes (qualifier value)"
 
@@ -248,7 +247,7 @@ Usage: #example
 * id = "obs-chair-stand"
 * status = #final
 * category = $OBS_CAT#exam "Exam"
-// FIX: use local code — 82755-5 is not valid in LOINC 2.82
+// FIX: use local code #chair-stand-30s — no suitable LOINC code available
 * code = $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2024-11-15T10:50:00+01:00"
