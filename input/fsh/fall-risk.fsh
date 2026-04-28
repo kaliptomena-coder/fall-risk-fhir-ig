@@ -167,7 +167,7 @@ Description: "Codes for objective physical performance tests. TUG uses validated
 * ^experimental = true
 // FIX: Using correct LOINC code 89423-8 from CDC STEADI panel for TUG timing
 * $LOINC#89423-8       "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
-* $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
+* $LOINC#66247-8 "30-Second Chair Stand Test"
 * $LOCAL#balance-4stage  "4-Stage Balance Test"
 
 ValueSet: FallRiskCategoryVS
@@ -247,8 +247,7 @@ Usage: #example
 * id = "obs-chair-stand"
 * status = #final
 * category = $OBS_CAT#exam "Exam"
-// FIX: use local code #chair-stand-30s — no suitable LOINC code available
-* code = $LOCAL#chair-stand-30s "30-Second Chair Stand Test"
+* code = $LOINC#66247-8 "30-Second Chair Stand Test"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2024-11-15T10:50:00+01:00"
 * performer[0] = Reference(ExamplePractitioner)

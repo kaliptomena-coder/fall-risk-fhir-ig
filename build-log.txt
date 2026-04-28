@@ -1,0 +1,157 @@
+
+╔══════════════════════════════════════════╗
+║    Fall Risk IG — Build Script           ║
+╚══════════════════════════════════════════╝
+
+
+🔨 Step 1/3: Running SUSHI (FSH → FHIR)...
+info  Running SUSHI v3.19.0 (implements FHIR Shorthand specification v3.0.0)
+info  Arguments:
+info    /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG
+info  No output path specified. Output to .
+info  Using configuration file: /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/sushi-config.yaml
+info  Importing FSH text...
+info  Preprocessed 1 documents with 5 aliases.
+info  Imported 8 definitions and 9 instances.
+info  Loaded virtual package sushi-r5forR4#1.0.0 with 7 resources
+info  Resolved hl7.fhir.uv.tools.r4#latest to concrete version 1.1.2
+info  Loaded hl7.fhir.uv.tools.r4#1.1.2 with 119 resources
+info  Resolved hl7.terminology.r4#latest to concrete version 7.1.0
+info  Loaded hl7.terminology.r4#7.1.0 with 4103 resources
+info  Loaded hl7.fhir.r4.core#4.0.1 with 4578 resources
+info  Resolved hl7.fhir.uv.extensions.r4#latest to concrete version 5.2.0
+info  Loaded hl7.fhir.uv.extensions.r4#5.2.0 with 759 resources
+info  Loaded virtual package sushi-local#LOCAL with 0 resources
+info  Converting FSH to FHIR resources...
+info  Converted 4 FHIR StructureDefinitions.
+info  Converted 1 FHIR CodeSystems.
+info  Converted 3 FHIR ValueSets.
+info  Converted 9 FHIR instances.
+info  Exporting FHIR resources as JSON...
+info  Exported 17 FHIR resources as JSON.
+info  Assembling Implementation Guide sources...
+info  Generated ImplementationGuide-hl7.fhir.uv.fall-risk.json
+info  Assembled Implementation Guide sources; ready for IG Publisher.
+
+========================= SUSHI RESULTS ===========================
+|  -------------------------------------------------------------  |
+| |    Profiles   |  Extensions  |   Logicals   |   Resources   | |
+| |-------------------------------------------------------------| |
+| |       4       |      0       |      0       |       0       | |
+|  -------------------------------------------------------------  |
+|  -------------------------------------------------------------  |
+| |      ValueSets     |    CodeSystems    |     Instances      | |
+| |-------------------------------------------------------------| |
+| |         3          |         1         |         9          | |
+|  -------------------------------------------------------------  |
+|                                                                 |
+===================================================================
+| You're swimming in success!            0 Errors      0 Warnings |
+===================================================================
+
+✅ SUSHI complete.
+
+📚 Step 2/3: Running IG Publisher...
+FHIR IG Publisher Version 2.2.7 (Git# 46f94953d4dc). Built 2026-04-23T19:43:46.382Z (4 days old)    
+Detected Java version: 17.0.18 from /Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home on Mac OS X/aarch64 (64bit). 6144MB available
+dir = /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG, path = /Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin:/Users/svetlanazalepkina/.gem/ruby/4.0.0/bin:/Users/svetlanazalepkina/.npm-global/bin:/Users/svetlanazalepkina/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/svetlanazalepkina/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/homebrew/opt/ruby/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/svetlanazalepkina/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/svetlanazalepkina/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Users/svetlanazalepkina/.gem/ruby/4.0.0/bin:/Users/svetlanazalepkina/.npm-global/bin:/opt/anaconda3/bin:/opt/anaconda3/condabin:/opt/homebrew/opt/ruby/bin:/Users/svetlanazalepkina/Library/Application Support/JetBrains/Toolbox/scripts
+Parameters: -ig ig.ini                                                                              
+Character encoding = UTF-8 / UTF-8                                                                  
+Start Clock @ Dienstag, 28. April 2026 um 09:55:05 Mitteleuropäische Sommerzeit (2026-04-28T09:55:05+02:00)
+                                                                                                    
+Build FHIR IG from /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/ig.ini              (00:00.008 / 00:00.008, 26Mb)
+API keys loaded from /Users/svetlanazalepkina/.fhir/fhir-settings.json                               (00:00.000 / 00:00.009, 27Mb)
+Package Cache: /Users/svetlanazalepkina/.fhir/packages                                               (00:00.001 / 00:00.011, 27Mb)
+Run Sushi on /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG                           (00:00.003 / 00:00.014, 27Mb)
+Sushi: info  Running SUSHI v3.19.0 (implements FHIR Shorthand specification v3.0.0)                  (00:00.160 / 00:00.175, 28Mb)
+Sushi: info  Arguments:                                                                              (00:00.000 / 00:00.175, 28Mb)
+Sushi: info    --out /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG                   (00:00.000 / 00:00.175, 28Mb)
+Sushi: info    /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG                         (00:00.000 / 00:00.176, 28Mb)
+Sushi: info  Using configuration file: /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/sushi-config.yaml (00:00.198 / 00:00.374, 28Mb)
+Sushi: info  Importing FSH text...                                                                   (00:00.030 / 00:00.405, 28Mb)
+Sushi: info  Preprocessed 1 documents with 5 aliases.                                                (00:00.029 / 00:00.435, 28Mb)
+Sushi: info  Imported 8 definitions and 9 instances.                                                 (00:00.003 / 00:00.438, 28Mb)
+Sushi: info  Loaded virtual package sushi-r5forR4#1.0.0 with 7 resources                             (00:00.033 / 00:00.472, 28Mb)
+Sushi: info  Resolved hl7.fhir.uv.tools.r4#latest to concrete version 1.1.2                          (00:00.186 / 00:00.659, 28Mb)
+Sushi: info  Loaded hl7.fhir.uv.tools.r4#1.1.2 with 119 resources                                    (00:00.021 / 00:00.680, 28Mb)
+Sushi: info  Resolved hl7.terminology.r4#latest to concrete version 7.1.0                            (00:00.058 / 00:00.739, 28Mb)
+Sushi: info  Loaded hl7.terminology.r4#7.1.0 with 4103 resources                                     (00:00.372 / 00:01.111, 28Mb)
+Sushi: info  Loaded hl7.fhir.r4.core#4.0.1 with 4578 resources                                       (00:00.340 / 00:01.452, 28Mb)
+Sushi: info  Resolved hl7.fhir.uv.extensions.r4#latest to concrete version 5.2.0                     (00:00.064 / 00:01.516, 28Mb)
+Sushi: info  Loaded hl7.fhir.uv.extensions.r4#5.2.0 with 759 resources                               (00:00.080 / 00:01.596, 28Mb)
+Sushi: info  Loaded virtual package sushi-local#LOCAL with 0 resources                               (00:00.010 / 00:01.607, 28Mb)
+Sushi: info  Converting FSH to FHIR resources...                                                     (00:00.008 / 00:01.616, 28Mb)
+Sushi: info  Converted 4 FHIR StructureDefinitions.                                                  (00:00.050 / 00:01.666, 28Mb)
+Sushi: info  Converted 1 FHIR CodeSystems.                                                           (00:00.005 / 00:01.671, 28Mb)
+Sushi: info  Converted 3 FHIR ValueSets.                                                             (00:00.014 / 00:01.686, 28Mb)
+Sushi: info  Converted 9 FHIR instances.                                                             (00:00.136 / 00:01.823, 28Mb)
+Sushi: info  Exporting FHIR resources as JSON...                                                     (00:00.000 / 00:01.823, 28Mb)
+Sushi: info  Exported 17 FHIR resources as JSON.                                                     (00:00.007 / 00:01.831, 28Mb)
+Sushi: info  Assembling Implementation Guide sources...                                              (00:00.001 / 00:01.832, 28Mb)
+Sushi: info  Generated ImplementationGuide-hl7.fhir.uv.fall-risk.json                                (00:00.002 / 00:01.835, 28Mb)
+Sushi: info  Assembled Implementation Guide sources; ready for IG Publisher.                         (00:00.000 / 00:01.836, 28Mb)
+Sushi: ========================= SUSHI RESULTS ===========================                           (00:00.000 / 00:01.836, 28Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:01.837, 28Mb)
+Sushi: | |    Profiles   |  Extensions  |   Logicals   |   Resources   | |                           (00:00.000 / 00:01.837, 28Mb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:01.837, 28Mb)
+Sushi: | |       4       |      0       |      0       |       0       | |                           (00:00.000 / 00:01.838, 28Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:01.838, 28Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:01.839, 28Mb)
+Sushi: | |      ValueSets     |    CodeSystems    |     Instances      | |                           (00:00.000 / 00:01.839, 28Mb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:01.839, 28Mb)
+Sushi: | |         3          |         1         |         9          | |                           (00:00.000 / 00:01.839, 28Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:01.839, 28Mb)
+Sushi: |                                                                 |                           (00:00.000 / 00:01.840, 28Mb)
+Sushi: ===================================================================                           (00:00.000 / 00:01.840, 28Mb)
+Sushi: | Swish! Nothing but fishnet.            0 Errors      0 Warnings |                           (00:00.000 / 00:01.840, 28Mb)
+Sushi: ===================================================================                           (00:00.000 / 00:01.840, 28Mb)
+Root directory: /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG                        (00:00.022 / 00:01.862, 28Mb)
+Unable to load IG as an r5 IG - try R4 (property code is a class com.google.gson.JsonPrimitive looking for an object) (00:00.179 / 00:02.042, 56Mb)
+Load Template from hl7.fhir.template                                                                 (00:00.195 / 00:02.238, 72Mb)
+ Load Template from hl7.base.template#1.0.0                                                          (00:00.545 / 00:02.783, 27Mb)
+  Load Template from fhir.base.template#1.0.0                                                        (00:00.002 / 00:02.786, 27Mb)
+[33mThis content depends on fhir.base.template which is no longer considered secure to use
+[0;39m[33mSee Security notification at https://www.fhir.org/guides/security-notices/2026-03-npm-dependencies.html
+[0;39mScanning directory: /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/template
+======================================================================
+Terminology Cache is at /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/input-cache/txcache. 15 files in cache (00:01.240 / 00:04.027, 123Mb)
+Core Package hl7.fhir.r4.core#4.0.1                                                                  (00:00.000 / 00:04.027, 123Mb)
+Running Terminology Log: /var/folders/zm/rhw533gn1tn12lk4dvgw7wlh0000gn/T/ohfu-fhir-ig-3527315272313631340.html
+Connect to Terminology Server at http://tx.fhir.org                                                  (00:01.441 / 00:05.469, 277Mb)
+[39mLoad Package hl7.fhir.pubpack#0.2.5
+[0;39m[39mLoad Package hl7.fhir.xver-extensions#0.1.0
+[0;39m[39mLoad Package hl7.terminology.r4#7.1.0
+[0;39m[39mLoad Package hl7.fhir.uv.extensions.r4#5.2.0
+[0;39m[39mLoad Package hl7.fhir.uv.tools.r4#1.1.2
+[0;39mLoad R5 Specials
+Initialization complete                                                                              (00:02.347 / 00:07.816, 383Mb)
+Load IG                                                                                              (00:00.000 / 00:07.817, 383Mb)
+Load Content                                                                                         (00:00.004 / 00:07.821, 383Mb)
+Using en-US as the default narrative language. (no language information in Implementation Guide)     (00:00.013 / 00:07.834, 389Mb)
+Process Loaded Resources                                                                             (00:00.035 / 00:07.870, 405Mb)
+Generating Snapshots                                                                                 (00:00.020 / 00:07.891, 421Mb)
+
+Signing Certificate: RSA key for Subject: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us from: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us
+Fetch https://example.org/fhir/fall-risk/package-list.json for version check                         (00:00.260 / 00:08.152, 523Mb)
+Checking Language                                                                                    (00:00.077 / 00:08.229, 527Mb)
+Load Dependency Info                                                                                 (00:00.000 / 00:08.230, 527Mb)
+Load Info                                                                                            (00:00.000 / 00:08.231, 527Mb)
+Load Paths                                                                                           (00:00.000 / 00:08.231, 529Mb)
+Check R4 / R4B                                                                                       (00:00.000 / 00:08.231, 529Mb)
+Assign Comparison Ids                                                                                (00:00.005 / 00:08.236, 531Mb)
+Propagating status                                                                                   (00:00.000 / 00:08.236, 531Mb)
+Generating Narratives                                                                                (00:00.000 / 00:08.237, 531Mb)
+Validating Conformance Resources                                                                     (00:00.177 / 00:08.415, 445Mb)
+Check profiles & code systems                                                                        (00:03.454 / 00:11.869, 943Mb)
+Check realm rules                                                                                    (00:00.001 / 00:11.870, 943Mb)
+Previous Version Comparison                                                                          (00:00.000 / 00:11.870, 943Mb)
+Checking for Bundles to sign                                                                         (00:00.008 / 00:11.878, 945Mb)
+Validating Resources                                                                                 (00:00.000 / 00:11.879, 945Mb)
+Processing Provenance Records                                                                        (00:00.025 / 00:11.904, 955Mb)
+Generating Outputs in /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/output           (00:00.000 / 00:11.904, 955Mb)
+Generate Native Outputs                                                                              (00:00.128 / 00:12.033, 973Mb)
+Run Template                                                                                         (00:00.885 / 00:12.918, 507Mb)
+First "url" contact telecom must start with "http://www.hl7.org/Special/committees/"
+Publishing Content Failed: Fatal error during transformation using /Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/template/scripts/onGenerate.jira.xslt: Processing terminated by xsl:message at line 28 in onGenerate.jira.xslt; SystemID: file:/Users/svetlanazalepkina/Desktop/fall-risk-fhir-ig/FallRiskIG/template/scripts/onGenerate.jira.xslt; Line#: 28; Column#: 7 (00:02.450 / 00:15.369, 583Mb)
+                                                                                                     (00:00.000 / 00:15.370, 583Mb)
+This error was created by the template                                                               (00:00.000 / 00:15.370, 583Mb)
