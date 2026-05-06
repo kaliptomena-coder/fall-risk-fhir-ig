@@ -337,3 +337,80 @@ Usage: #example
   * family = "Huber"
   * given[0] = "Anna"
 * qualification[0].code = $SNOMED#36682004 "Physiotherapist (occupation)"
+
+Instance: FallsHistoryQuestionnaire
+InstanceOf: Questionnaire
+Usage: #example
+Title: "Falls Risk Assessment Questionnaire"
+Description: "Complete questionnaire model for active assessment including patient-reported factors and objective measures."
+* status = #active
+* url = "https://example.org/fhir/fall-risk/Questionnaire/falls-history"
+
+// --- MANUAL FACTORS (Patient-Reported) ---
+
+* item[0]
+  * linkId = "falls-count"
+  * text = "How many times have you fallen in the last 12 months?"
+  * type = #integer
+
+* item[1]
+  * linkId = "fear-of-falling"
+  * code = $LOINC#97878-3 "Worried about falling"
+  * text = "Are you worried about falling?"
+  * type = #choice
+  * answerOption[0].valueCoding = $SNOMED#373066001 "Yes (qualifier value)"
+  * answerOption[1].valueCoding = $SNOMED#373067005 "No (qualifier value)"
+
+* item[2]
+  * linkId = "alcohol-use"
+  * code = $LOINC#74013-4 "Alcoholic drinks per day"
+  * text = "Alcohol use (drinks per day)"
+  * type = #integer
+
+* item[3]
+  * linkId = "physical-activity"
+  * text = "Physical activity level"
+  * type = #choice
+  * answerOption[0].valueString = "Active (meets WHO guidelines)"
+  * answerOption[1].valueString = "Inactive (sedentary)"
+
+* item[4]
+  * linkId = "adl-independence"
+  * code = $SNOMED#284545001 "Ability to perform activities of everyday life (observable entity)"
+  * text = "Activities of Daily Living (ADL): functional independence"
+  * type = #choice
+  * answerOption[0].valueString = "Fully Independent"
+  * answerOption[1].valueString = "Needs some assistance"
+
+* item[5]
+  * linkId = "walking-ability"
+  * text = "Walking ability and use of walking aids"
+  * type = #choice
+  * answerOption[0].valueString = "Independent without aids"
+  * answerOption[1].valueString = "Uses cane or walker"
+  * answerOption[2].valueString = "Requires human assistance"
+
+
+// --- OBJECTIVE MEASURES ---
+
+* item[6]
+  * linkId = "chair-stand-score"
+  * code = $LOINC#66247-8 "30-Second Chair Stand Test"
+  * text = "30-Second Chair Stand Test (number of stands)"
+  * type = #integer
+
+* item[7]
+  * linkId = "balance-4stage"
+  * code = $LOCAL#balance-4stage "4-Stage Balance Test"
+  * text = "4-Stage Balance Test Result (Highest stage reached)"
+  * type = #choice
+  * answerOption[0].valueInteger = 1
+  * answerOption[1].valueInteger = 2
+  * answerOption[2].valueInteger = 3
+  * answerOption[3].valueInteger = 4
+
+* item[8]
+  * linkId = "tug-score"
+  * code = $LOINC#89423-8 "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
+  * text = "Timed Up and Go (TUG) Test (in seconds)"
+  * type = #decimal

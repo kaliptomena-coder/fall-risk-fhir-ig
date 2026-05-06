@@ -5,15 +5,15 @@
       <status value="generated"/>
       <div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
          <p class="res-header-id">
-            <b>Generated Narrative: ImplementationGuide hl7.fhir.uv.fall-risk</b>
+            <b>Narrativa gerada: ImplementationGuide hl7.fhir.uv.fall-risk</b>
          </p>
          <a name="hl7.fhir.uv.fall-risk"> </a>
          <a name="hchl7.fhir.uv.fall-risk"> </a>
          <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
-            <p style="margin-bottom: 0px">Language: en</p>
+            <p style="margin-bottom: 0px">Língua: en</p>
          </div>
          <h2>FallRiskAssessmentIG</h2>
-         <p>The official URL for this implementation guide is: </p>
+         <p>O URL oficial para este guia de implementação é: </p>
          <pre>https://example.org/fhir/fall-risk/ImplementationGuide/hl7.fhir.uv.fall-risk</pre>
          <div>
             <p>Interoperable FHIR-based fall risk assessment for older adults using standardized scoring, objective performance tests, and EHR-derived data.</p>
@@ -25,7 +25,7 @@
    <name value="FallRiskAssessmentIG"/>
    <title value="Fall Risk Assessment Implementation Guide"/>
    <status value="draft"/>
-   <date value="2026-04-28T14:52:08+02:00"/>
+   <date value="2026-05-06T12:03:26+01:00"/>
    <publisher value="Fall Risk IG Authors"/>
    <contact>
       <name value="Fall Risk IG Authors"/>
@@ -595,6 +595,24 @@
          <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"/>
          <groupingId value="-ex-example"/>
       </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Questionnaire"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Questionnaire-FallsHistoryQuestionnaire.html"/>
+         </extension>
+         <reference>
+            <reference value="Questionnaire/FallsHistoryQuestionnaire"/>
+         </reference>
+         <name value="Falls Risk Assessment Questionnaire"/>
+         <description value="Complete questionnaire model for active assessment including patient-reported factors and objective measures."/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
       <page>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
             <valueUrl value="toc.html"/>
@@ -738,6 +756,11 @@
             <page>
                <nameUrl value="Observation-obs-tug-test.html"/>
                <title value="Example – Timed Up and Go Test"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Questionnaire-FallsHistoryQuestionnaire.html"/>
+               <title value="Falls Risk Assessment Questionnaire"/>
                <generation value="generated"/>
             </page>
          </page>
