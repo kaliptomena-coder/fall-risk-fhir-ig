@@ -338,11 +338,13 @@ Usage: #example
   * given[0] = "Anna"
 * qualification[0].code = $SNOMED#36682004 "Physiotherapist (occupation)"
 
+// --- FALL RISK QUESTIONNAIRE MODEL (LAYER 2) ---
+
 Instance: FallsHistoryQuestionnaire
 InstanceOf: Questionnaire
 Usage: #example
 Title: "Falls Risk Assessment Questionnaire"
-Description: "Complete questionnaire model for active assessment including patient-reported factors and objective measures."
+Description: "Complete questionnaire model for active assessment including terminology mapping to LOINC and SNOMED CT."
 * status = #active
 * url = "https://example.org/fhir/fall-risk/Questionnaire/falls-history"
 
@@ -350,6 +352,7 @@ Description: "Complete questionnaire model for active assessment including patie
 
 * item[0]
   * linkId = "falls-count"
+  * code = $SNOMED#428942009 "History of falls" 
   * text = "How many times have you fallen in the last 12 months?"
   * type = #integer
 
@@ -358,17 +361,18 @@ Description: "Complete questionnaire model for active assessment including patie
   * code = $LOINC#97878-3 "Worried about falling"
   * text = "Are you worried about falling?"
   * type = #choice
-  * answerOption[0].valueCoding = $SNOMED#373066001 "Yes (qualifier value)"
-  * answerOption[1].valueCoding = $SNOMED#373067005 "No (qualifier value)"
+  * answerOption[0].valueCoding = $SNOMED#373066001 "Yes"
+  * answerOption[1].valueCoding = $SNOMED#373067005 "No"
 
 * item[2]
   * linkId = "alcohol-use"
   * code = $LOINC#74013-4 "Alcoholic drinks per day"
   * text = "Alcohol use (drinks per day)"
-  * type = #integer
+  * type = #quantity // Mapeado como valueQuantity na tua tabela
 
 * item[3]
   * linkId = "physical-activity"
+  * code = $LOINC#99285-9 "Physical activity level"
   * text = "Physical activity level"
   * type = #choice
   * answerOption[0].valueString = "Active (meets WHO guidelines)"
@@ -376,7 +380,7 @@ Description: "Complete questionnaire model for active assessment including patie
 
 * item[4]
   * linkId = "adl-independence"
-  * code = $SNOMED#284545001 "Ability to perform activities of everyday life (observable entity)"
+  * code = $SNOMED#284545001 "Ability to perform activities of everyday life"
   * text = "Activities of Daily Living (ADL): functional independence"
   * type = #choice
   * answerOption[0].valueString = "Fully Independent"
@@ -384,14 +388,13 @@ Description: "Complete questionnaire model for active assessment including patie
 
 * item[5]
   * linkId = "walking-ability"
+  * code = $SNOMED#301587001 "Walking ability" // SNOMED oficial para Walking Ability
   * text = "Walking ability and use of walking aids"
   * type = #choice
-  * answerOption[0].valueString = "Independent without aids"
-  * answerOption[1].valueString = "Uses cane or walker"
-  * answerOption[2].valueString = "Requires human assistance"
+  * answerOption[0].valueString = "Independent"
+  * answerOption[1].valueString = "With aids"
 
-
-// --- OBJECTIVE MEASURES ---
+// --- OBJECTIVE PERFORMANCE MEASURES ---
 
 * item[6]
   * linkId = "chair-stand-score"
@@ -411,6 +414,27 @@ Description: "Complete questionnaire model for active assessment including patie
 
 * item[8]
   * linkId = "tug-score"
-  * code = $LOINC#89423-8 "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
+  * code = $LOINC#89423-8 "Timed Up and Go (TUG)"
   * text = "Timed Up and Go (TUG) Test (in seconds)"
   * type = #decimal
+
+// --- EHR FALLBACK SECTION (Clinical History) ---
+
+* item[+].linkId = "ehr-fallback-group"
+* item[=].text = "Clinical History Data (Fallback)"
+* item[=].type = #group
+
+* item[=].item[+].linkId = "medications"
+* item[=].item[=].code = $SNOMED#446363004 "Medication use" 
+* item[=].item[=].text = "Medications/FRIDs usage count"
+* item[=].item[=].type = #integer
+
+* item[=].item[+].linkId = "vision-impairment"
+* item[=].item[=].code = $SNOMED#397540003 "Visual impairment"
+* item[=].item[=].text = "Visual or hearing impairment detected?"
+* item[=].item[=].type = #boolean
+
+* item[=].item[+].linkId = "cognitive-status"
+* item[=].item[=].code = $LOINC#72107-6 "MMSE Score"
+* item[=].item[=].text = "MMSE score (Cognitive Impairment)"
+* item[=].item[=].type = #integer
