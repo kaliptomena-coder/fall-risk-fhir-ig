@@ -16,22 +16,22 @@ Alias: $LOCAL    = https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes
 CodeSystem: FallRiskLocalCS
 Id: fall-risk-codes
 Title: "Fall Risk Local Code System"
-Description: "Local codes for physical performance tests, aggregate scores, and fall risk factors not available in the licensed LOINC version."
+Description: "Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT."
 
 * ^experimental = true
 * ^status = #active
 
-* #fall-risk-score   "Fall Risk Score"                    "Aggregated fall risk score (0–30) computed from all individual Fall Risk Factor Observations."
-* #chair-stand-30s   "Sit to stand frequency in 30 seconds" "Count of sit-to-stand repetitions completed in 30 seconds."
-* #balance-4stage    "4-Stage Balance Test"               "Highest balance stage achieved (1–4) in the 4-Stage Balance Test."
+// CORRECTED: description updated from "0–30" to "0–34" to match the actual scoring model
+// (13 factors, max 34 points: 6 core factors × 3 pts + 2 extended × 1 pt + 2 extended × 3 pts +
+//  TUG 3 pts + chair stand 2 pts + balance 2 pts = 34).
+* #fall-risk-score   "Fall Risk Score"                      "Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations."
+* #balance-4stage    "4-Stage Balance Test"                 "Highest balance stage achieved (1–4) in the 4-Stage Balance Test."
 
-// CHANGE 1: REMOVED local code #visual-impairment.
-// It was defined here as a fallback but was NEVER referenced anywhere in the IG —
-// every ValueSet entry and Questionnaire item used $SNOMED#397540003 "Visual impairment" instead.
-// Keeping an unused local code creates confusion about which code should be used.
-// If SNOMED is accessible (and it clearly is throughout this IG), use it exclusively.
-// Deleted line was:
-//   * #visual-impairment "Visual impairment" "Visual impairment as a fall risk factor..."
+// Scoring threshold codes — used by FallRiskScoreInterpretation to record which
+// classification band a given score falls into.
+* #score-low        "Low fall risk threshold met"           "Total score falls within the Low risk band (0–11)."
+* #score-moderate   "Moderate fall risk threshold met"      "Total score falls within the Moderate risk band (12–22)."
+* #score-high       "High fall risk threshold met"          "Total score falls within the High risk band (23–34)."
 
 
 // ════════════════════════════════════════════════════════════════
@@ -54,13 +54,6 @@ providing a consistent structure for clinical risk scoring algorithms.
 * status = #final
 * category 1..* MS
 * category = $OBS_CAT#survey "Survey"
-
-// NOTE (no change): category is fixed to #survey here. This is intentional for
-// patient-reported and questionnaire-derived factors. EHR-derived factors
-// (medications, comorbidities) that are sourced differently may warrant a
-// separate profile or a relaxed binding — but no change is made here since
-// the original design decision is consistent across all factor instances.
-
 * code 1..1 MS
 * subject 1..1 MS
 * subject only Reference(Patient)
@@ -79,7 +72,8 @@ Parent: Observation
 Id: fall-risk-score-observation
 Title: "Fall Risk Score Observation"
 Description: """
-An aggregated fall risk score derived from individual Fall Risk Factor Observations.
+An aggregated fall risk score (0–34) derived from individual Fall Risk Factor Observations
+and Fall Risk Performance Observations.
 The 'hasMember' element links to the contributing factors, ensuring full traceability
 of the clinical evidence.
 """
@@ -162,7 +156,7 @@ The outcome of a fall risk screening episode, capturing the overall risk classif
 ValueSet: FallRiskFactorsVS
 Id: fall-risk-factors-vs
 Title: "Fall Risk Factors ValueSet"
-Description: "Standardized LOINC and SNOMED codes for fall risk assessment inputs."
+Description: "Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10)."
 
 * ^experimental = true
 
@@ -171,47 +165,28 @@ Description: "Standardized LOINC and SNOMED codes for fall risk assessment input
 * $LOINC#72107-6  "Mini-Mental State Examination [MMSE]"
 * $LOINC#74013-4  "Alcoholic drinks per day"
 * $LOINC#10160-0  "History of Medication use Narrative"
-
-// CHANGE 2: REMOVED $LOCAL#chair-stand-30s from this ValueSet.
-// The 30-second chair stand test is an OBJECTIVE PERFORMANCE TEST, not a survey factor.
-// It belongs exclusively in FallRiskPerformanceTestsVS using LOINC#66247-8.
-// Having $LOCAL#chair-stand-30s here alongside $LOINC#66247-8 in the performance VS
-// created two different codes for the same clinical concept, and the local code was
-// never used in any instance or questionnaire item.
-// Deleted line was:
-//   * $LOCAL#chair-stand-30s "Sit to stand frequency in 30 seconds"
+* $LOINC#99285-9  "Current activity level"
 
 // SNOMED codes
+* $SNOMED#428942009  "History of fall (situation)"
 * $SNOMED#397540003  "Visual impairment"
 * $SNOMED#284545001  "Ability to perform activities of everyday life (observable entity)"
 * $SNOMED#446363004  "Adult comorbidity evaluation-27 score"
 * $SNOMED#282097004  "Ability to walk (observable entity)"
 
-// CHANGE 3: REMOVED $LOCAL#balance-4stage from this ValueSet.
-// The 4-Stage Balance Test is also an objective performance test, not a survey factor.
-// It belongs exclusively in FallRiskPerformanceTestsVS.
-// It was duplicated across both ValueSets in the original — removed here for clarity.
-// Deleted line was:
-//   * $LOCAL#balance-4stage "4-Stage Balance Test"
-
 
 ValueSet: FallRiskPerformanceTestsVS
 Id: fall-risk-performance-tests-vs
 Title: "Fall Risk Performance Tests ValueSet"
-Description: "Codes for objective physical performance tests used in fall risk assessment."
+Description: "Codes for objective physical performance tests used in fall risk assessment (tests a–c)."
 
 * ^experimental = true
 
-// TUG test — validated LOINC code
-* $LOINC#89423-8  "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
-
-// Chair Stand — LOINC code (consistent with all instances and Questionnaire items)
-// CHANGE 4: This ValueSet previously included LOINC#66247-8 (correct),
-// while FallRiskFactorsVS included $LOCAL#chair-stand-30s for the same test (incorrect).
-// The local code has been removed from FallRiskFactorsVS; LOINC#66247-8 is the sole code.
-* $LOINC#66247-8  "Sit to stand frequency in 30 seconds"
-
-// 4-Stage Balance Test — local code (no suitable LOINC available)
+// TUG test
+* $LOINC#89423-8   "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
+// 30-second chair stand
+* $LOINC#66247-8   "Sit to stand frequency in 30 seconds"
+// 4-Stage Balance Test — no suitable LOINC available
 * $LOCAL#balance-4stage  "4-Stage Balance Test"
 
 
@@ -226,22 +201,88 @@ Description: "Risk classification outcomes for fall risk assessment using SNOMED
 * $SNOMED#332721351000132106    "Moderate risk (qualifier value)"
 * $SNOMED#455201601000132100    "High risk (qualifier value)"
 
-// NOTE on CHANGE 5 (see instance below): The display text declared in this ValueSet
-// for 332721351000132106 is "Moderate risk (qualifier value)".
-// The ExampleFallRiskAssessment instance used "At moderate risk for fall (finding)"
-// for the same code — a mismatch. The instance display has been corrected to match
-// the ValueSet declaration.
+
+// ADDED: ValueSet for score threshold interpretation codes.
+// Used by the scoring algorithm to record which band a computed score falls into.
+ValueSet: FallRiskThresholdVS
+Id: fall-risk-threshold-vs
+Title: "Fall Risk Score Threshold ValueSet"
+Description: """
+Local codes that identify which score band (Low / Moderate / High) a computed
+FallRiskScore falls into. Used in FallRiskObservation.note or as an
+interpretation code alongside valueQuantity in FallRiskScoreObservation.
+"""
+
+* ^experimental = true
+
+* $LOCAL#score-low       "Low fall risk threshold met"
+* $LOCAL#score-moderate  "Moderate fall risk threshold met"
+* $LOCAL#score-high      "High fall risk threshold met"
 
 
 // ════════════════════════════════════════════════════════════════
-// 3. INSTANCES
+// 3. SCORE THRESHOLD RULES
+// ════════════════════════════════════════════════════════════════
+// These rules define the numeric score bands that map a FallRiskScoreObservation
+// valueQuantity to a FallRiskCategoryVS code.  They are expressed as a FHIR
+// ConceptMap so that any conformant system can apply them deterministically.
+//
+// Score range: 0–34 (sum of all 13 factors; see scoring table in dataflow.md).
+//
+//   0–11  → SNOMED 439430008  "Low risk (qualifier value)"
+//  12–22  → SNOMED 332721351000132106  "Moderate risk (qualifier value)"
+//  23–34  → SNOMED 455201601000132100  "High risk (qualifier value)"
+//
+// The ConceptMap source is FallRiskThresholdVS (local threshold codes);
+// the target is FallRiskCategoryVS (SNOMED qualifier values).
+
+Instance: FallRiskScoreThresholdMap
+InstanceOf: ConceptMap
+Title: "Fall Risk Score Threshold ConceptMap"
+Description: """
+Maps local score-band codes (score-low / score-moderate / score-high) to the
+corresponding SNOMED risk category codes in FallRiskCategoryVS.
+The numeric cutoffs encoded in the comments and group.element.display fields
+are the authoritative thresholds for this IG:
+  score-low      = total score 0–11
+  score-moderate = total score 12–22
+  score-high     = total score 23–34
+"""
+Usage: #definition
+
+* id = "fall-risk-score-threshold-map"
+* url = "https://example.org/fhir/fall-risk/ConceptMap/fall-risk-score-threshold-map"
+* status = #active
+* experimental = true
+* sourceCanonical = "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs"
+* targetCanonical = "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs"
+
+* group[0].source = "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"
+* group[0].target = "http://snomed.info/sct"
+
+* group[0].element[0].code = #score-low
+* group[0].element[0].display = "Total score 0–11"
+* group[0].element[0].target[0].code = #439430008
+* group[0].element[0].target[0].display = "Low risk (qualifier value)"
+* group[0].element[0].target[0].equivalence = #equivalent
+
+* group[0].element[1].code = #score-moderate
+* group[0].element[1].display = "Total score 12–22"
+* group[0].element[1].target[0].code = #332721351000132106
+* group[0].element[1].target[0].display = "Moderate risk (qualifier value)"
+* group[0].element[1].target[0].equivalence = #equivalent
+
+* group[0].element[2].code = #score-high
+* group[0].element[2].display = "Total score 23–34"
+* group[0].element[2].target[0].code = #455201601000132100
+* group[0].element[2].target[0].display = "High risk (qualifier value)"
+* group[0].element[2].target[0].equivalence = #equivalent
+
+
+// ════════════════════════════════════════════════════════════════
+// 4. INSTANCES
 // ════════════════════════════════════════════════════════════════
 
-// CHANGE 6: MOVED ExamplePractitioner to the TOP of the instances section.
-// In the original it was defined at the bottom, AFTER all the Observation instances
-// that reference it via performer[0] = Reference(ExamplePractitioner).
-// While FSH resolvers can handle forward references, placing the referenced resource
-// before its dependents is standard practice and avoids validation warnings.
 Instance: ExamplePractitioner
 InstanceOf: Practitioner
 Title: "Example Practitioner"
@@ -291,8 +332,8 @@ Usage: #example
 
 Instance: ExampleTUGObservation
 InstanceOf: FallRiskPerformanceObservation
-Title: "Example – Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
-Description: "Patient completed TUG in 14.2 seconds (elevated risk threshold >12 s)."
+Title: "Example – TUG Test"
+Description: "Patient completed TUG in 14.2 seconds — scores 2 pts (12–20 s band)."
 Usage: #example
 
 * id = "obs-tug-test"
@@ -311,8 +352,8 @@ Usage: #example
 
 Instance: ExampleChairStandObservation
 InstanceOf: FallRiskPerformanceObservation
-Title: "Example – Sit to stand frequency in 30 seconds"
-Description: "Patient completed 8 repetitions in 30 seconds."
+Title: "Example – Sit to Stand (30 s)"
+Description: "Patient completed 8 repetitions in 30 seconds — scores 1 pt (8–11 band)."
 Usage: #example
 
 * id = "obs-chair-stand"
@@ -329,10 +370,12 @@ Usage: #example
   * code = #{count}
 
 
+// CORRECTED: Title and Description updated from "18/30" to "18/34"
+// to match the corrected maximum score of 34.
 Instance: ExampleFallRiskScore
 InstanceOf: FallRiskScoreObservation
-Title: "Example – Fall Risk Score (18/30)"
-Description: "Aggregated fall risk score of 18 out of 30 — Moderate risk."
+Title: "Example – Fall Risk Score (18/34)"
+Description: "Aggregated fall risk score of 18 out of 34 — Moderate risk (score band 12–22)."
 Usage: #example
 
 * id = "obs-fall-risk-score"
@@ -347,6 +390,8 @@ Usage: #example
   * unit = "{score}"
   * system = $UCUM
   * code = #{score}
+// ADDED: interpretation records which threshold band this score falls into.
+* interpretation = $LOCAL#score-moderate "Moderate fall risk threshold met"
 * hasMember[0] = Reference(ExampleFearOfFallingObservation)
 * hasMember[1] = Reference(ExampleTUGObservation)
 * hasMember[2] = Reference(ExampleChairStandObservation)
@@ -364,10 +409,7 @@ Usage: #example
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2024-11-15T11:00:00+01:00"
 * performer[0] = Reference(ExamplePractitioner)
-
-// Display text confirmed correct by user: "At moderate risk for fall (finding)"
 * valueCodeableConcept = $SNOMED#332721351000132106 "At moderate risk for fall (finding)"
-
 * derivedFrom = Reference(ExampleFallRiskScore)
 
 
@@ -404,117 +446,128 @@ Usage: #example
   * answer[0].valueInteger = 2
 
 
-// ─── FALL RISK QUESTIONNAIRE MODEL (LAYER 2) ──────────────────────
+// ─── FALL RISK QUESTIONNAIRE ───────────────────────────────────────
 Instance: FallsHistoryQuestionnaire
 InstanceOf: Questionnaire
 Usage: #example
 Title: "Falls Risk Assessment Questionnaire"
 Description: "Complete questionnaire model for active assessment including terminology mapping to LOINC and SNOMED CT."
 
-// FIX url/id mismatch error: FSH uses the Instance name as the logical id by default,
-// giving id = "FallsHistoryQuestionnaire", but the url ends with "falls-history".
-// The validator requires id to match the final path segment of url.
-// Setting id explicitly resolves: "Resource id/url mismatch: FallsHistoryQuestionnaire/..."
 * id = "falls-history"
 * status = #active
 * url = "https://example.org/fhir/fall-risk/Questionnaire/falls-history"
 
-// --- MANUAL FACTORS (Patient-Reported) ---
+// ── Core factors (1–6) — required ─────────────────────────────────
 
 * item[0]
   * linkId = "falls-count"
   * code = $SNOMED#428942009 "History of fall (situation)"
   * text = "How many times have you fallen in the last 12 months?"
   * type = #integer
+  // Scoring: 0=0 · 1=1 · 2=2 · ≥3=3
 
 * item[1]
   * linkId = "fear-of-falling"
   * code = $LOINC#97878-3 "Worried about falling"
-  * text = "Are you worried about falling?"
+  * text = "Are you worried about falling? (ABC scale)"
   * type = #choice
   * answerOption[0].valueCoding = $SNOMED#373066001 "Yes"
   * answerOption[1].valueCoding = $SNOMED#373067005 "No"
+  // Scoring: None (ABC 80–100%)=0 · Slight (51–79%)=1 · Often (30–50%)=2 · Severe (<30%)=3
 
 * item[2]
-  * linkId = "alcohol-use"
-  * code = $LOINC#74013-4 "Alcoholic drinks per day"
-  * text = "Alcohol use (drinks per day)"
-  * type = #quantity
-
-* item[3]
-  * linkId = "physical-activity"
-  * code = $LOINC#99285-9 "Current activity level"
-
-  // CHANGE 7: CORRECTED duplicate text "Current activity level activity level".
-  // Original: "Current activity level activity level"
-  // Corrected: "Current activity level"
-  // This was a copy-paste error — "activity level" was written twice.
-  * text = "Current activity level"
-
-  * type = #choice
-  * answerOption[0].valueString = "Active (meets WHO guidelines)"
-  * answerOption[1].valueString = "Inactive (sedentary)"
-
-* item[4]
   * linkId = "adl-independence"
   * code = $SNOMED#284545001 "Ability to perform activities of everyday life"
   * text = "Activities of Daily Living (ADL): functional independence"
   * type = #choice
-  * answerOption[0].valueString = "Fully Independent"
-  * answerOption[1].valueString = "Needs some assistance"
+  * answerOption[0].valueString = "Fully independent"
+  * answerOption[1].valueString = "Slight assistance needed"
+  * answerOption[2].valueString = "Moderate assistance needed"
+  * answerOption[3].valueString = "Fully dependent"
+  // Scoring: Independent=0 · Slight=1 · Moderate=2 · Fully dependent=3
 
-* item[5]
+* item[3]
   * linkId = "walking-ability"
   * code = $SNOMED#282097004 "Ability to walk (observable entity)"
   * text = "Walking ability and use of walking aids"
   * type = #choice
   * answerOption[0].valueString = "Independent"
   * answerOption[1].valueString = "With aids"
+  // Scoring: Independent=0 · With aid=1
 
-// --- OBJECTIVE PERFORMANCE MEASURES ---
+// ── Extended factors (7–10) — if time allows ──────────────────────
 
-// item[6]: Chair stand uses LOINC#66247-8 exclusively (local code removed from FallRiskFactorsVS).
+* item[4]
+  * linkId = "alcohol-use"
+  * code = $LOINC#74013-4 "Alcoholic drinks per day"
+  * text = "Alcohol use (units per week)"
+  * type = #quantity
+  // Scoring: 0=0 · 1–3=1 · 4–10=2 · ≥11=3
+
+* item[5]
+  * linkId = "physical-activity"
+  * code = $LOINC#99285-9 "Current activity level"
+  * text = "Current physical activity level"
+  * type = #choice
+  * answerOption[0].valueString = "Very active"
+  * answerOption[1].valueString = "Moderately active"
+  * answerOption[2].valueString = "Low activity"
+  * answerOption[3].valueString = "Very low / sedentary"
+  // Scoring: Very active=0 · Moderate=1 · Low=2 · Very low=3
+
+// ── Objective performance tests (a–c) ─────────────────────────────
+
 * item[6]
-  * linkId = "chair-stand-score"
-  * code = $LOINC#66247-8 "Sit to stand frequency in 30 seconds"
-  * text = "Sit to stand frequency in 30 seconds"
-  * type = #integer
+  * linkId = "tug-score"
+  * code = $LOINC#89423-8 "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
+  * text = "Timed Up & Go test result (seconds)"
+  * type = #decimal
+  // Scoring: <12 s=0 · 12–20 s=2 · >20 s=3
 
 * item[7]
+  * linkId = "chair-stand-score"
+  * code = $LOINC#66247-8 "Sit to stand frequency in 30 seconds"
+  * text = "Sit to stand frequency in 30 seconds (repetitions)"
+  * type = #integer
+  // Scoring: ≥12=0 · 8–11=1 · <8=2
+
+* item[8]
   * linkId = "balance-4stage"
   * code = $LOCAL#balance-4stage "4-Stage Balance Test"
-  * text = "4-Stage Balance Test Result (Highest stage reached)"
+  * text = "4-Stage Balance Test result (highest stage reached)"
   * type = #choice
   * answerOption[0].valueInteger = 1
   * answerOption[1].valueInteger = 2
   * answerOption[2].valueInteger = 3
   * answerOption[3].valueInteger = 4
+  // Scoring: Stage 4=0 · Stage 3=1 · ≤Stage 2=2
 
-* item[8]
-  * linkId = "tug-score"
-  * code = $LOINC#89423-8 "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
-  * text = "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
-  * type = #decimal
-
-// --- EHR FALLBACK SECTION (Clinical History) ---
+// ── EHR fallback section (clinical history — auto-populated) ───────
 
 * item[+].linkId = "ehr-fallback-group"
-* item[=].text = "Clinical History Data (Fallback)"
+* item[=].text = "Clinical History Data (EHR-derived)"
 * item[=].type = #group
 
 * item[=].item[+].linkId = "medications"
 * item[=].item[=].code = $LOINC#10160-0 "History of Medication use Narrative"
-* item[=].item[=].text = "Medications/FRIDs usage count"
+* item[=].item[=].text = "Total medication count (including FRIDs flag)"
 * item[=].item[=].type = #integer
+// Scoring: 0=0 · 1–2=1 · 3=2 · ≥4=3  (+bonus if FRIDs present)
+
+* item[=].item[+].linkId = "comorbidities"
+* item[=].item[=].code = $SNOMED#446363004 "Adult comorbidity evaluation-27 score"
+* item[=].item[=].text = "Number of active diagnoses (comorbidities)"
+* item[=].item[=].type = #integer
+// Scoring: 0=0 · 1–2=1 · 3–4=2 · ≥5=3
+
+* item[=].item[+].linkId = "cognitive-status"
+* item[=].item[=].code = $LOINC#72107-6 "Mini-Mental State Examination [MMSE]"
+* item[=].item[=].text = "MMSE score"
+* item[=].item[=].type = #integer
+// Scoring derived from MMSE integer: None (≥27)=0 · Mild (21–26)=1 · Moderate (11–20)=2 · Severe (≤10)=3
 
 * item[=].item[+].linkId = "vision-impairment"
 * item[=].item[=].code = $SNOMED#397540003 "Visual impairment"
-* item[=].item[=].text = "Visual or hearing impairment detected?"
+* item[=].item[=].text = "Vision or hearing impairment present?"
 * item[=].item[=].type = #boolean
-
-// FIX item[9].item[2]: display "MMSE Score" is not a valid LOINC display.
-// Canonical display from tx.fhir.org is "Mini-Mental State Examination [MMSE]".
-* item[=].item[+].linkId = "cognitive-status"
-* item[=].item[=].code = $LOINC#72107-6 "Mini-Mental State Examination [MMSE]"
-* item[=].item[=].text = "MMSE score (Cognitive Impairment)"
-* item[=].item[=].type = #integer
+// Scoring: No=0 · Yes=1

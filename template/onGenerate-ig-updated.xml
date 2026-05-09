@@ -25,7 +25,7 @@
    <name value="FallRiskAssessmentIG"/>
    <title value="Fall Risk Assessment Implementation Guide"/>
    <status value="draft"/>
-   <date value="2026-05-08T20:22:03+02:00"/>
+   <date value="2026-05-09T14:40:07+02:00"/>
    <publisher value="Fall Risk IG Authors"/>
    <contact>
       <name value="Fall Risk IG Authors"/>
@@ -288,6 +288,7 @@
       <grouping id="-str-profile" name="ResourceProfile"/>
       <grouping id="-term-valueset" name="ValueSet"/>
       <grouping id="-term-codesystem" name="CodeSystem"/>
+      <grouping id="-map-conceptmap" name="ConceptMap"/>
       <grouping id="-ex-example" name="Example"/>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -357,7 +358,7 @@
             <reference value="StructureDefinition/fall-risk-score-observation"/>
          </reference>
          <name value="Fall Risk Score Observation"/>
-         <description value="An aggregated fall risk score derived from individual Fall Risk Factor Observations.&#xA;The 'hasMember' element links to the contributing factors, ensuring full traceability&#xA;of the clinical evidence."/>
+         <description value="An aggregated fall risk score (0–34) derived from individual Fall Risk Factor Observations&#xA;and Fall Risk Performance Observations.&#xA;The 'hasMember' element links to the contributing factors, ensuring full traceability&#xA;of the clinical evidence."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -393,7 +394,7 @@
             <reference value="ValueSet/fall-risk-factors-vs"/>
          </reference>
          <name value="Fall Risk Factors ValueSet"/>
-         <description value="Standardized LOINC and SNOMED codes for fall risk assessment inputs."/>
+         <description value="Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10)."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
       </resource>
@@ -411,7 +412,25 @@
             <reference value="ValueSet/fall-risk-performance-tests-vs"/>
          </reference>
          <name value="Fall Risk Performance Tests ValueSet"/>
-         <description value="Codes for objective physical performance tests used in fall risk assessment."/>
+         <description value="Codes for objective physical performance tests used in fall risk assessment (tests a–c)."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-fall-risk-threshold-vs.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/fall-risk-threshold-vs"/>
+         </reference>
+         <name value="Fall Risk Score Threshold ValueSet"/>
+         <description value="Local codes that identify which score band (Low / Moderate / High) a computed&#xA;FallRiskScore falls into. Used in FallRiskObservation.note or as an&#xA;interpretation code alongside valueQuantity in FallRiskScoreObservation."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
       </resource>
@@ -429,9 +448,27 @@
             <reference value="CodeSystem/fall-risk-codes"/>
          </reference>
          <name value="Fall Risk Local Code System"/>
-         <description value="Local codes for physical performance tests, aggregate scores, and fall risk factors not available in the licensed LOINC version."/>
+         <description value="Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ConceptMap"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ConceptMap-fall-risk-score-threshold-map.html"/>
+         </extension>
+         <reference>
+            <reference value="ConceptMap/fall-risk-score-threshold-map"/>
+         </reference>
+         <name value="Fall Risk Score Threshold ConceptMap"/>
+         <description value="Maps local score-band codes (score-low / score-moderate / score-high) to the&#xA;corresponding SNOMED risk category codes in FallRiskCategoryVS.&#xA;The numeric cutoffs encoded in the comments and group.element.display fields&#xA;are the authoritative thresholds for this IG:&#xA;  score-low      = total score 0–11&#xA;  score-moderate = total score 12–22&#xA;  score-high     = total score 23–34"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-map-conceptmap"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -500,8 +537,8 @@
          <reference>
             <reference value="Observation/obs-fall-risk-score"/>
          </reference>
-         <name value="Example – Fall Risk Score (18/30)"/>
-         <description value="Aggregated fall risk score of 18 out of 30 — Moderate risk."/>
+         <name value="Example – Fall Risk Score (18/34)"/>
+         <description value="Aggregated fall risk score of 18 out of 34 — Moderate risk (score band 12–22)."/>
          <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -572,8 +609,8 @@
          <reference>
             <reference value="Observation/obs-chair-stand"/>
          </reference>
-         <name value="Example – Sit to stand frequency in 30 seconds"/>
-         <description value="Patient completed 8 repetitions in 30 seconds."/>
+         <name value="Example – Sit to Stand (30 s)"/>
+         <description value="Patient completed 8 repetitions in 30 seconds — scores 1 pt (8–11 band)."/>
          <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -590,8 +627,8 @@
          <reference>
             <reference value="Observation/obs-tug-test"/>
          </reference>
-         <name value="Example – Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"/>
-         <description value="Patient completed TUG in 14.2 seconds (elevated risk threshold &gt;12 s)."/>
+         <name value="Example – TUG Test"/>
+         <description value="Patient completed TUG in 14.2 seconds — scores 2 pts (12–20 s band)."/>
          <exampleCanonical value="https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -709,8 +746,18 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="ValueSet-fall-risk-threshold-vs.html"/>
+               <title value="Fall Risk Score Threshold ValueSet"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="CodeSystem-fall-risk-codes.html"/>
                <title value="Fall Risk Local Code System"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ConceptMap-fall-risk-score-threshold-map.html"/>
+               <title value="Fall Risk Score Threshold ConceptMap"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -730,7 +777,7 @@
             </page>
             <page>
                <nameUrl value="Observation-obs-fall-risk-score.html"/>
-               <title value="Example – Fall Risk Score (18/30)"/>
+               <title value="Example – Fall Risk Score (18/34)"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -750,12 +797,12 @@
             </page>
             <page>
                <nameUrl value="Observation-obs-chair-stand.html"/>
-               <title value="Example – Sit to stand frequency in 30 seconds"/>
+               <title value="Example – Sit to Stand (30 s)"/>
                <generation value="generated"/>
             </page>
             <page>
                <nameUrl value="Observation-obs-tug-test.html"/>
-               <title value="Example – Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"/>
+               <title value="Example – TUG Test"/>
                <generation value="generated"/>
             </page>
             <page>
