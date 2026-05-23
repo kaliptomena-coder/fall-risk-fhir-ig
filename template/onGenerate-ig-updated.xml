@@ -25,7 +25,7 @@
    <name value="FallRiskAssessmentIG"/>
    <title value="Fall Risk Assessment Implementation Guide"/>
    <status value="draft"/>
-   <date value="2026-05-09T14:40:07+02:00"/>
+   <date value="2026-05-23T22:31:49+02:00"/>
    <publisher value="Fall Risk IG Authors"/>
    <contact>
       <name value="Fall Risk IG Authors"/>
@@ -63,7 +63,7 @@
       </extension>
       <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
       <packageId value="hl7.fhir.uv.extensions.r4"/>
-      <version value="5.2.0"/>
+      <version value="5.3.0"/>
    </dependsOn>
    <definition>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">

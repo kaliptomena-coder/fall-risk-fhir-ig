@@ -49,14 +49,26 @@ A standardized FHIR Observation representing a single contributing factor to fal
 This profile supports both automated EHR data extraction and manual questionnaire responses,
 providing a consistent structure for clinical risk scoring algorithms.
 """
+* ^url = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"
 
 * status 1..1 MS
 * status = #final
 * category 1..* MS
 * category = $OBS_CAT#survey "Survey"
 * code 1..1 MS
+* code from FallRiskFactorsVS (required) 
 * subject 1..1 MS
 * subject only Reference(Patient)
+
+* identifier 0..* MS
+* identifier.system 1..1
+* identifier.value 1..1
+* issued 0..1 MS
+* encounter 0..1 MS
+* encounter only Reference(Encounter)
+* device 0..1 MS
+* device only Reference(Device)
+
 * effective[x] 1..1 MS
 * effective[x] only dateTime
 * value[x] 1..1 MS
@@ -78,14 +90,28 @@ The 'hasMember' element links to the contributing factors, ensuring full traceab
 of the clinical evidence.
 """
 
+* ^url = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"
+
 * status 1..1 MS
 * status = #final
 * category 1..* MS
 * category = $OBS_CAT#survey "Survey"
 * code 1..1 MS
+
 * code = $LOCAL#fall-risk-score "Fall Risk Score"
 * subject 1..1 MS
 * subject only Reference(Patient)
+
+* identifier 0..* MS
+* identifier.system 1..1
+* identifier.value 1..1
+
+* issued 0..1 MS
+* encounter 0..1 MS
+* encounter only Reference(Encounter)
+* device 0..1 MS
+* device only Reference(Device)
+
 * effective[x] 1..1 MS
 * effective[x] only dateTime
 * value[x] 1..1 MS
@@ -93,6 +119,10 @@ of the clinical evidence.
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "{score}"
 * valueQuantity.code = #{score}
+
+* interpretation 0..1 MS
+* interpretation from FallRiskThresholdVS (required)
+
 * performer 1..* MS
 * hasMember MS
 * hasMember only Reference(FallRiskFactorObservation or FallRiskPerformanceObservation)
@@ -109,6 +139,8 @@ including the Sit to stand frequency in 30 seconds, 4-Stage Balance Test,
 and the Timed Up & Go (TUG) test.
 """
 
+* ^url = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"
+
 * status 1..1 MS
 * status = #final
 * category 1..* MS
@@ -117,12 +149,23 @@ and the Timed Up & Go (TUG) test.
 * code from FallRiskPerformanceTestsVS (required)
 * subject 1..1 MS
 * subject only Reference(Patient)
+
+* identifier 0..* MS
+* identifier.system 1..1
+* identifier.value 1..1
+
+* issued 0..1 MS
+* encounter 0..1 MS
+* encounter only Reference(Encounter)
+* device 0..1 MS
+* device only Reference(Device)
+
 * effective[x] 1..1 MS
 * effective[x] only dateTime
 * value[x] 1..1 MS
 * performer 1..* MS
 * derivedFrom MS
-
+* derivedFrom only Reference(QuestionnaireResponse or Observation)
 
 // ── 1d. Fall Risk Observation (final classification) ───────────────
 Profile: FallRiskObservation
@@ -133,6 +176,7 @@ Description: """
 The outcome of a fall risk screening episode, capturing the overall risk classification
 (Low / Moderate / High) and referencing the aggregated score Observation.
 """
+* ^url = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation"
 
 * status 1..1 MS
 * status = #final
@@ -140,7 +184,17 @@ The outcome of a fall risk screening episode, capturing the overall risk classif
 * code = $SNOMED#129839007 "At risk for falls"
 * subject 1..1 MS
 * subject only Reference(Patient)
+
+* identifier 0..* MS
+* identifier.system 1..1
+* identifier.value 1..1
+
+* issued 0..1 MS
+* encounter 0..1 MS
+* encounter only Reference(Encounter)
+
 * effective[x] 1..1 MS
+* effective[x] only dateTime
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
 * valueCodeableConcept from FallRiskCategoryVS (required)
@@ -321,6 +375,8 @@ Description: "Patient reports whether they are worried about falling."
 Usage: #example
 
 * id = "obs-fear-of-falling"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation" 
+
 * status = #final
 * category = $OBS_CAT#survey "Survey"
 * code = $LOINC#97878-3 "Worried about falling"
@@ -337,6 +393,8 @@ Description: "Patient completed TUG in 14.2 seconds — scores 2 pts (12–20 s 
 Usage: #example
 
 * id = "obs-tug-test"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"
+
 * status = #final
 * category = $OBS_CAT#exam "Exam"
 * code = $LOINC#89423-8 "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
@@ -357,6 +415,9 @@ Description: "Patient completed 8 repetitions in 30 seconds — scores 1 pt (8�
 Usage: #example
 
 * id = "obs-chair-stand"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"
+
+
 * status = #final
 * category = $OBS_CAT#exam "Exam"
 * code = $LOINC#66247-8 "Sit to stand frequency in 30 seconds"
@@ -379,6 +440,8 @@ Description: "Aggregated fall risk score of 18 out of 34 — Moderate risk (scor
 Usage: #example
 
 * id = "obs-fall-risk-score"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"
+
 * status = #final
 * category = $OBS_CAT#survey "Survey"
 * code = $LOCAL#fall-risk-score "Fall Risk Score"
@@ -404,6 +467,8 @@ Description: "Overall fall risk classification: Moderate."
 Usage: #example
 
 * id = "obs-fall-risk-result"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation"
+
 * status = #final
 * code = $SNOMED#129839007 "At risk for falls"
 * subject = Reference(ExamplePatient)
