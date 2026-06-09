@@ -21,7 +21,6 @@ Description: "Local codes for physical performance tests, aggregate scores, and 
 * ^experimental = true
 * ^status = #active
 
-// CORRECTED: description updated from "0–30" to "0–34" to match the actual scoring model
 // (13 factors, max 34 points: 6 core factors × 3 pts + 2 extended × 1 pt + 2 extended × 3 pts +
 //  TUG 3 pts + chair stand 2 pts + balance 2 pts = 34).
 * #fall-risk-score   "Fall Risk Score"                      "Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations."
@@ -370,8 +369,8 @@ Usage: #example
 
 Instance: ExampleFearOfFallingObservation
 InstanceOf: FallRiskFactorObservation
-Title: "Example – Fear of Falling (Factor 2)"
-Description: "Patient reports whether they are worried about falling."
+Title: "Example – Fear of Falling"
+Description: "Observation capturing the patient's worry about falling (ABC scale) — scores 2 pts."
 Usage: #example
 
 * id = "obs-fear-of-falling"
@@ -430,13 +429,10 @@ Usage: #example
   * system = $UCUM
   * code = #{count}
 
-
-// CORRECTED: Title and Description updated from "18/30" to "18/34"
-// to match the corrected maximum score of 34.
 Instance: ExampleFallRiskScore
 InstanceOf: FallRiskScoreObservation
-Title: "Example – Fall Risk Score (18/34)"
-Description: "Aggregated fall risk score of 18 out of 34 — Moderate risk (score band 12–22)."
+Title: "Example – Fall Risk Score 20/34)"
+Description: "Aggregated fall risk score of 20 out of 34 — Moderate risk (score band 12–22)."
 Usage: #example
 
 * id = "obs-fall-risk-score"
@@ -449,15 +445,18 @@ Usage: #example
 * effectiveDateTime = "2024-11-15T11:00:00+01:00"
 * performer[0] = Reference(ExamplePractitioner)
 * valueQuantity
-  * value = 18
+  * value = 20
   * unit = "{score}"
   * system = $UCUM
   * code = #{score}
-// ADDED: interpretation records which threshold band this score falls into.
+
 * interpretation = $LOCAL#score-moderate "Moderate fall risk threshold met"
 * hasMember[0] = Reference(ExampleFearOfFallingObservation)
 * hasMember[1] = Reference(ExampleTUGObservation)
 * hasMember[2] = Reference(ExampleChairStandObservation)
+* hasMember[3] = Reference(ExampleFallsHistoryObservation)    
+* hasMember[4] = Reference(ExampleADLObservation)           
+* hasMember[5] = Reference(ExampleWalkingAbilityObservation)
 
 
 Instance: ExampleFallRiskAssessment
@@ -493,11 +492,63 @@ Usage: #example
 * onsetDateTime = "2024-11-15"
 * evidence[0].detail = Reference(ExampleFallRiskAssessment)
 
+Instance: ExampleFallsHistoryObservation
+InstanceOf: FallRiskFactorObservation
+Title: "Example – Falls History"
+Description: "Observation capturing the patient's history of 2 falls within the last 12 months — scores 2 pts."
+Usage: #example
+
+* id = "obs-falls-history"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"
+* status = #final
+* category = $OBS_CAT#survey "Survey"
+* code = $SNOMED#428942009 "History of fall (situation)"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T10:30:00+01:00"
+* performer[0] = Reference(ExamplePractitioner)
+* valueInteger = 2
+* derivedFrom = Reference(ExampleFallsHistoryQR)
+
+
+Instance: ExampleADLObservation
+InstanceOf: FallRiskFactorObservation
+Title: "Example – ADL Independence"
+Description: "Observation capturing the patient's functional independence level (slight assistance needed) — scores 1 pt."
+Usage: #example
+
+* id = "obs-adl"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"
+* status = #final
+* category = $OBS_CAT#survey "Survey"
+* code = $SNOMED#284545001 "Ability to perform activities of everyday life"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T10:30:00+01:00"
+* performer[0] = Reference(ExamplePractitioner)
+* valueCodeableConcept.text = "SLIGHT"
+* derivedFrom = Reference(ExampleFallsHistoryQR)
+
+
+Instance: ExampleWalkingAbilityObservation
+InstanceOf: FallRiskFactorObservation
+Title: "Example – Walking Ability"
+Description: "Observation capturing the patient's walking ability and use of walking aids — scores 1 pt."
+Usage: #example
+
+* id = "obs-walking"
+* meta.profile[0] = "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"
+* status = #final
+* category = $OBS_CAT#survey "Survey"
+* code = $SNOMED#282097004 "Ability to walk (observable entity)"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2024-11-15T10:30:00+01:00"
+* performer[0] = Reference(ExamplePractitioner)
+* valueCodeableConcept.text = "WITH_AID"
+* derivedFrom = Reference(ExampleFallsHistoryQR)
 
 Instance: ExampleFallsHistoryQR
 InstanceOf: QuestionnaireResponse
 Title: "Example – Falls History QuestionnaireResponse"
-Description: "Patient reports 2 falls in the past 12 months."
+Description: "A completed QuestionnaireResponse containing all 13 manual answers and clinical history entries recorded during the assessment."
 Usage: #example
 
 * id = "qr-falls-history"
@@ -505,11 +556,65 @@ Usage: #example
 * questionnaire = "https://example.org/fhir/fall-risk/Questionnaire/falls-history"
 * subject = Reference(ExamplePatient)
 * authored = "2024-11-15T10:00:00+01:00"
-* item[0]
-  * linkId = "falls-count"
-  * text = "How many times have you fallen in the last 12 months?"
-  * answer[0].valueInteger = 2
 
+* item[0].linkId = "falls-count"
+* item[0].text = "How many times have you fallen in the last 12 months?"
+* item[0].answer[0].valueInteger = 2
+
+* item[1].linkId = "fear-of-falling"
+* item[1].text = "Are you worried about falling? (ABC scale)"
+* item[1].answer[0].valueCoding = $SNOMED#373066001 "Yes"
+
+* item[2].linkId = "adl-independence"
+* item[2].text = "Activities of Daily Living (ADL): functional independence"
+* item[2].answer[0].valueString = "Slight assistance needed"
+
+* item[3].linkId = "walking-ability"
+* item[3].text = "Walking ability and use of walking aids"
+* item[3].answer[0].valueString = "With aids"
+
+* item[4].linkId = "alcohol-use"
+* item[4].text = "Alcohol use (units per week)"
+* item[4].answer[0].valueQuantity.value = 2
+* item[4].answer[0].valueQuantity.unit = "units/week"
+* item[4].answer[0].valueQuantity.system = $UCUM
+* item[4].answer[0].valueQuantity.code = #/wk
+
+* item[5].linkId = "physical-activity"
+* item[5].text = "Current physical activity level"
+* item[5].answer[0].valueString = "Low activity"
+
+* item[6].linkId = "tug-score"
+* item[6].text = "Timed Up & Go test result (seconds)"
+* item[6].answer[0].valueDecimal = 14.2
+
+* item[7].linkId = "chair-stand-score"
+* item[7].text = "Sit to stand frequency in 30 seconds (repetitions)"
+* item[7].answer[0].valueInteger = 8
+
+* item[8].linkId = "balance-4stage"
+* item[8].text = "4-Stage Balance Test result (highest stage reached)"
+* item[8].answer[0].valueInteger = 3
+
+//EHR group
+* item[9].linkId = "ehr-fallback-group"
+* item[9].text = "Clinical History Data (EHR-derived)"
+
+* item[9].item[0].linkId = "medications"
+* item[9].item[0].text = "Total medication count (including FRIDs flag)"
+* item[9].item[0].answer[0].valueString = "3:FRID"
+
+* item[9].item[1].linkId = "comorbidities"
+* item[9].item[1].text = "Number of active diagnoses (comorbidities)"
+* item[9].item[1].answer[0].valueInteger = 3
+
+* item[9].item[2].linkId = "cognitive-status"
+* item[9].item[2].text = "MMSE score"
+* item[9].item[2].answer[0].valueInteger = 24
+
+* item[9].item[3].linkId = "vision-impairment"
+* item[9].item[3].text = "Vision or hearing impairment present?"
+* item[9].item[3].answer[0].valueBoolean = true
 
 // ─── FALL RISK QUESTIONNAIRE ───────────────────────────────────────
 Instance: FallsHistoryQuestionnaire
@@ -580,7 +685,7 @@ Description: "Complete questionnaire model for active assessment including termi
   * answerOption[3].valueString = "Very low / sedentary"
   // Scoring: Very active=0 · Moderate=1 · Low=2 · Very low=3
 
-// ── Objective performance tests (a–c) ─────────────────────────────
+//Objective performance tests (a–c)
 
 * item[6]
   * linkId = "tug-score"
@@ -607,7 +712,7 @@ Description: "Complete questionnaire model for active assessment including termi
   * answerOption[3].valueInteger = 4
   // Scoring: Stage 4=0 · Stage 3=1 · ≤Stage 2=2
 
-// ── EHR fallback section (clinical history — auto-populated) ───────
+//EHR fallback section (clinical history — auto-populated)
 
 * item[+].linkId = "ehr-fallback-group"
 * item[=].text = "Clinical History Data (EHR-derived)"
@@ -616,7 +721,7 @@ Description: "Complete questionnaire model for active assessment including termi
 * item[=].item[+].linkId = "medications"
 * item[=].item[=].code = $LOINC#10160-0 "History of Medication use Narrative"
 * item[=].item[=].text = "Total medication count (including FRIDs flag)"
-* item[=].item[=].type = #integer
+* item[=].item[=].type = #string
 // Scoring: 0=0 · 1–2=1 · 3=2 · ≥4=3  (+bonus if FRIDs present)
 
 * item[=].item[+].linkId = "comorbidities"

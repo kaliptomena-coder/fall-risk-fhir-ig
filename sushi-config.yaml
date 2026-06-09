@@ -21,20 +21,11 @@ publisher:
 pages:
   index.md:
     title: Home
-  usecase.md:
-    title: Use Case
-  architecture.md:
-    title: Architecture
-  dataflow.md:
-    title: Data Flow & Scoring
   examples.md:
     title: Examples
 
 menu:
   Home: index.html
-  Use Case: usecase.html
-  Architecture: architecture.html
-  Data Flow & Scoring: dataflow.html
   Examples: examples.html
   Artifacts: artifacts.html
 
@@ -44,6 +35,25 @@ parameters:
     - input/examples
   path-pages:
     - input/pagecontent
+
+artifacts:
+  groups:
+    - name: "Example Scenario Resources"
+      description: "Resources representing the complete assessment for Maria Müller."
+      resources:
+        - Patient/example-patient
+        - Practitioner/example-practitioner
+        - QuestionnaireResponse/qr-falls-history
+        - Observation/obs-falls-history
+        - Observation/obs-fear-of-falling
+        - Observation/obs-adl
+        - Observation/obs-walking
+        - Observation/obs-tug-test
+        - Observation/obs-chair-stand
+        - Observation/obs-balance
+        - Observation/obs-fall-risk-score
+        - Observation/obs-fall-risk-result
+        - Condition/condition-fall-risk
 
 FSHOnly: false
 applyExtensionMetadataToRoot: false
