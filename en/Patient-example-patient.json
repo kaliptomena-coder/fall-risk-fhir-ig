@@ -1,0 +1,20 @@
+{
+  "resourceType" : "Patient",
+  "id" : "example-patient",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient example-patient</b></p><a name=\"example-patient\"> </a><a name=\"hcexample-patient\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Maria Mueller  Female, DoB: 1946-03-12</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Hauptstrasse 15 Vienna AT </td></tr></table></div>"
+  },
+  "name" : [{
+    "family" : "Mueller",
+    "given" : ["Maria"]
+  }],
+  "gender" : "female",
+  "birthDate" : "1946-03-12",
+  "address" : [{
+    "line" : ["Hauptstrasse 15"],
+    "city" : "Vienna",
+    "country" : "AT"
+  }]
+}

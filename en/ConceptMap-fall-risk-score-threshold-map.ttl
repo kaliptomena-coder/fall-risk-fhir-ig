@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://example.org/fhir/fall-risk/ConceptMap/fall-risk-score-threshold-map> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fall-risk-score-threshold-map"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap fall-risk-score-threshold-map</b></p><a name=\"fall-risk-score-threshold-map\"> </a><a name=\"hcfall-risk-score-threshold-map\"> </a><p>Mapping from <a href=\"ValueSet-fall-risk-threshold-vs.html\">Fall Risk Score Threshold ValueSet</a> to <a href=\"ValueSet-fall-risk-category-vs.html\">Fall Risk Category ValueSet</a></p><br/><p><b>Group 1 </b>Mapping from <a href=\"CodeSystem-fall-risk-codes.html\">Fall Risk Local Code System</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>score-low (Total score 0–11)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>439430008 (Low risk (qualifier value))</td></tr><tr><td>score-moderate (Total score 12–22)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>332721351000132106 (Moderate risk (qualifier value))</td></tr><tr><td>score-high (Total score 23–34)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>455201601000132100 (High risk (qualifier value))</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://example.org/fhir/fall-risk/ConceptMap/fall-risk-score-threshold-map"^^xsd:anyURI ;
+     fhir:l <https://example.org/fhir/fall-risk/ConceptMap/fall-risk-score-threshold-map>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:title [ fhir:v "Fall Risk Score Threshold ConceptMap"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2026-06-11T13:45:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Fall Risk IG Authors"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Fall Risk IG Authors" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://example.org/fall-risk" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "info@example.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Maps local score-band codes (score-low / score-moderate / score-high) to the\ncorresponding SNOMED risk category codes in FallRiskCategoryVS.\nThe numeric cutoffs encoded in the comments and group.element.display fields\nare the authoritative thresholds for this IG:\n  score-low      = total score 0–11\n  score-moderate = total score 12–22\n  score-high     = total score 23–34"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ;
+         fhir:l <http://unstats.un.org/unsd/methods/m49/m49.htm>
+       ] ;
+       fhir:code [ fhir:v "001" ] ;
+       fhir:display [ fhir:v "World" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:Canonical ;
+     fhir:v "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs"^^xsd:anyURI ;
+     fhir:l <https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs>
+  ] ; # 
+  fhir:target [
+     a fhir:Canonical ;
+     fhir:v "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs"^^xsd:anyURI ;
+     fhir:l <https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes>
+     ] ;
+     fhir:target [
+       fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+       fhir:l <http://snomed.info/sct>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "score-low" ] ;
+       fhir:display [ fhir:v "Total score 0–11" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "439430008" ] ;
+         fhir:display [ fhir:v "Low risk (qualifier value)" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "score-moderate" ] ;
+       fhir:display [ fhir:v "Total score 12–22" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "332721351000132106" ] ;
+         fhir:display [ fhir:v "Moderate risk (qualifier value)" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "score-high" ] ;
+       fhir:display [ fhir:v "Total score 23–34" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "455201601000132100" ] ;
+         fhir:display [ fhir:v "High risk (qualifier value)" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

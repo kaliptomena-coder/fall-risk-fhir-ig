@@ -1,0 +1,68 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fall-risk-threshold-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet fall-risk-threshold-vs</b></p><a name=\"fall-risk-threshold-vs\"> </a><a name=\"hcfall-risk-threshold-vs\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-fall-risk-codes.html\"><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href=\"ValueSet-fall-risk-category-vs.html\">Fall Risk Score Threshold ConceptMap</a></b></td></tr><tr><td><a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-low\">score-low</a></td><td>Low fall risk threshold met</td><td>Total score falls within the Low risk band (0–11).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/439430008\">439430008</a></td></tr><tr><td><a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-moderate\">score-moderate</a></td><td>Moderate fall risk threshold met</td><td>Total score falls within the Moderate risk band (12–22).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/332721351000132106\">332721351000132106</a></td></tr><tr><td><a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-high\">score-high</a></td><td>High fall risk threshold met</td><td>Total score falls within the High risk band (23–34).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/455201601000132100\">455201601000132100</a></td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs"^^xsd:anyURI ;
+     fhir:l <https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "FallRiskThresholdVS"] ; # 
+  fhir:title [ fhir:v "Fall Risk Score Threshold ValueSet"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2026-06-11T13:45:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Fall Risk IG Authors"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Fall Risk IG Authors" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://example.org/fall-risk" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "info@example.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Local codes that identify which score band (Low / Moderate / High) a computed\nFallRiskScore falls into. Used in FallRiskObservation.note or as an\ninterpretation code alongside valueQuantity in FallRiskScoreObservation."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ;
+         fhir:l <http://unstats.un.org/unsd/methods/m49/m49.htm>
+       ] ;
+       fhir:code [ fhir:v "001" ] ;
+       fhir:display [ fhir:v "World" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"^^xsd:anyURI ;
+         fhir:l <https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "score-low" ] ;
+         fhir:display [ fhir:v "Low fall risk threshold met" ]
+       ] [
+         fhir:code [ fhir:v "score-moderate" ] ;
+         fhir:display [ fhir:v "Moderate fall risk threshold met" ]
+       ] [
+         fhir:code [ fhir:v "score-high" ] ;
+         fhir:display [ fhir:v "High fall risk threshold met" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

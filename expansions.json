@@ -1,0 +1,670 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "108ab584-7bb3-43b2-acb4-ac80a717d4de",
+  "meta" : {
+    "lastUpdated" : "2026-06-11T13:45:29.573+00:00"
+  },
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion from tx.fhir.org based on SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-439430008\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/439430008\">439430008</a></td><td>At low risk for fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;439430008&quot;, &quot;display&quot;: &quot;At low risk for fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;439430008&quot;&gt;&lt;display value=&quot;At low risk for fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-332721351000132106\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/332721351000132106\">332721351000132106</a></td><td>At moderate risk for fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;332721351000132106&quot;, &quot;display&quot;: &quot;At moderate risk for fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;332721351000132106&quot;&gt;&lt;display value=&quot;At moderate risk for fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-455201601000132100\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/455201601000132100\">455201601000132100</a></td><td>At high risk for fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;455201601000132100&quot;, &quot;display&quot;: &quot;At high risk for fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;455201601000132100&quot;&gt;&lt;display value=&quot;At high risk for fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskCategoryVS",
+      "title" : "Fall Risk Category ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:2bda37be-8fc5-4506-baaa-486785645f28",
+        "timestamp" : "2026-06-11T13:46:37+00:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
+        }],
+        "contains" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "439430008",
+          "display" : "At low risk for fall"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "332721351000132106",
+          "display" : "At moderate risk for fall"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "455201601000132100",
+          "display" : "At high risk for fall"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion from tx.fhir.org based on SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-439430008\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/439430008\">439430008</a></td><td>At low risk for fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;439430008&quot;, &quot;display&quot;: &quot;At low risk for fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;439430008&quot;&gt;&lt;display value=&quot;At low risk for fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-332721351000132106\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/332721351000132106\">332721351000132106</a></td><td>At moderate risk for fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;332721351000132106&quot;, &quot;display&quot;: &quot;At moderate risk for fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;332721351000132106&quot;&gt;&lt;display value=&quot;At moderate risk for fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-455201601000132100\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/455201601000132100\">455201601000132100</a></td><td>At high risk for fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;455201601000132100&quot;, &quot;display&quot;: &quot;At high risk for fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;455201601000132100&quot;&gt;&lt;display value=&quot;At high risk for fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskCategoryVS",
+      "title" : "Fall Risk Category ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:2bda37be-8fc5-4506-baaa-486785645f28",
+        "timestamp" : "2026-06-11T13:46:37+00:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
+        }],
+        "contains" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "439430008",
+          "display" : "At low risk for fall"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "332721351000132106",
+          "display" : "At moderate risk for fall"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "455201601000132100",
+          "display" : "At high risk for fall"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li></ul></div><p>This value set contains 10 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-97878-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/97878-3/\">97878-3</a></td><td>Worried about falling</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;97878-3&quot;, &quot;display&quot;: &quot;Worried about falling&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;97878-3&quot;&gt;&lt;display value=&quot;Worried about falling&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-72107-6\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/72107-6/\">72107-6</a></td><td>Mini-Mental State Examination [MMSE]</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;72107-6&quot;, &quot;display&quot;: &quot;Mini-Mental State Examination [MMSE]&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;72107-6&quot;&gt;&lt;display value=&quot;Mini-Mental State Examination [MMSE]&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-74013-4\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/74013-4/\">74013-4</a></td><td>Alcoholic drinks per day</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;74013-4&quot;, &quot;display&quot;: &quot;Alcoholic drinks per day&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;74013-4&quot;&gt;&lt;display value=&quot;Alcoholic drinks per day&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-10160-0\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/10160-0/\">10160-0</a></td><td>History of Medication use Narrative</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;10160-0&quot;, &quot;display&quot;: &quot;History of Medication use Narrative&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;10160-0&quot;&gt;&lt;display value=&quot;History of Medication use Narrative&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-99285-9\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/99285-9/\">99285-9</a></td><td>Current activity level</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;99285-9&quot;, &quot;display&quot;: &quot;Current activity level&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;99285-9&quot;&gt;&lt;display value=&quot;Current activity level&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-428942009\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/428942009\">428942009</a></td><td>History of fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;428942009&quot;, &quot;display&quot;: &quot;History of fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;428942009&quot;&gt;&lt;display value=&quot;History of fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-397540003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/397540003\">397540003</a></td><td>Visual impairment</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;397540003&quot;, &quot;display&quot;: &quot;Visual impairment&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;397540003&quot;&gt;&lt;display value=&quot;Visual impairment&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-284545001\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/284545001\">284545001</a></td><td>Ability to perform activities of everyday life</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;284545001&quot;, &quot;display&quot;: &quot;Ability to perform activities of everyday life&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;284545001&quot;&gt;&lt;display value=&quot;Ability to perform activities of everyday life&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-446363004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/446363004\">446363004</a></td><td>Adult comorbidity evaluation-27 score</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;446363004&quot;, &quot;display&quot;: &quot;Adult comorbidity evaluation-27 score&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;446363004&quot;&gt;&lt;display value=&quot;Adult comorbidity evaluation-27 score&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-282097004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/282097004\">282097004</a></td><td>Ability to walk</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;282097004&quot;, &quot;display&quot;: &quot;Ability to walk&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;282097004&quot;&gt;&lt;display value=&quot;Ability to walk&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskFactorsVS",
+      "title" : "Fall Risk Factors ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:531f9436-0aa6-4529-8dae-497c8b82a11a",
+        "timestamp" : "2026-06-11T13:46:35+00:00",
+        "total" : 10,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://loinc.org|2.82"
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : true
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "97878-3",
+          "display" : "Worried about falling"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "72107-6",
+          "display" : "Mini-Mental State Examination [MMSE]"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "74013-4",
+          "display" : "Alcoholic drinks per day"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "10160-0",
+          "display" : "History of Medication use Narrative"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "99285-9",
+          "display" : "Current activity level"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "428942009",
+          "display" : "History of fall"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "397540003",
+          "display" : "Visual impairment"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "284545001",
+          "display" : "Ability to perform activities of everyday life"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "446363004",
+          "display" : "Adult comorbidity evaluation-27 score"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "282097004",
+          "display" : "Ability to walk"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li></ul></div><p>This value set contains 10 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-97878-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/97878-3/\">97878-3</a></td><td>Worried about falling</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;97878-3&quot;, &quot;display&quot;: &quot;Worried about falling&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;97878-3&quot;&gt;&lt;display value=&quot;Worried about falling&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-72107-6\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/72107-6/\">72107-6</a></td><td>Mini-Mental State Examination [MMSE]</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;72107-6&quot;, &quot;display&quot;: &quot;Mini-Mental State Examination [MMSE]&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;72107-6&quot;&gt;&lt;display value=&quot;Mini-Mental State Examination [MMSE]&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-74013-4\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/74013-4/\">74013-4</a></td><td>Alcoholic drinks per day</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;74013-4&quot;, &quot;display&quot;: &quot;Alcoholic drinks per day&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;74013-4&quot;&gt;&lt;display value=&quot;Alcoholic drinks per day&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-10160-0\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/10160-0/\">10160-0</a></td><td>History of Medication use Narrative</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;10160-0&quot;, &quot;display&quot;: &quot;History of Medication use Narrative&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;10160-0&quot;&gt;&lt;display value=&quot;History of Medication use Narrative&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-99285-9\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/99285-9/\">99285-9</a></td><td>Current activity level</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;99285-9&quot;, &quot;display&quot;: &quot;Current activity level&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;99285-9&quot;&gt;&lt;display value=&quot;Current activity level&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-428942009\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/428942009\">428942009</a></td><td>History of fall</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;428942009&quot;, &quot;display&quot;: &quot;History of fall&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;428942009&quot;&gt;&lt;display value=&quot;History of fall&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-397540003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/397540003\">397540003</a></td><td>Visual impairment</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;397540003&quot;, &quot;display&quot;: &quot;Visual impairment&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;397540003&quot;&gt;&lt;display value=&quot;Visual impairment&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-284545001\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/284545001\">284545001</a></td><td>Ability to perform activities of everyday life</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;284545001&quot;, &quot;display&quot;: &quot;Ability to perform activities of everyday life&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;284545001&quot;&gt;&lt;display value=&quot;Ability to perform activities of everyday life&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-446363004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/446363004\">446363004</a></td><td>Adult comorbidity evaluation-27 score</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;446363004&quot;, &quot;display&quot;: &quot;Adult comorbidity evaluation-27 score&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;446363004&quot;&gt;&lt;display value=&quot;Adult comorbidity evaluation-27 score&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-282097004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/282097004\">282097004</a></td><td>Ability to walk</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;282097004&quot;, &quot;display&quot;: &quot;Ability to walk&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;282097004&quot;&gt;&lt;display value=&quot;Ability to walk&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskFactorsVS",
+      "title" : "Fall Risk Factors ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:531f9436-0aa6-4529-8dae-497c8b82a11a",
+        "timestamp" : "2026-06-11T13:46:35+00:00",
+        "total" : 10,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://loinc.org|2.82"
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : true
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "97878-3",
+          "display" : "Worried about falling"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "72107-6",
+          "display" : "Mini-Mental State Examination [MMSE]"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "74013-4",
+          "display" : "Alcoholic drinks per day"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "10160-0",
+          "display" : "History of Medication use Narrative"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "99285-9",
+          "display" : "Current activity level"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "428942009",
+          "display" : "History of fall"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "397540003",
+          "display" : "Visual impairment"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "284545001",
+          "display" : "Ability to perform activities of everyday life"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "446363004",
+          "display" : "Adult comorbidity evaluation-27 score"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "282097004",
+          "display" : "Ability to walk"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li><li><a href=\"CodeSystem-fall-risk-codes.html\">codesystem Fall Risk Local Code System v0.1.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li></ul></div><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-89423-8\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/89423-8/\">89423-8</a></td><td>Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;89423-8&quot;, &quot;display&quot;: &quot;Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;89423-8&quot;&gt;&lt;display value=&quot;Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-66247-8\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/66247-8/\">66247-8</a></td><td>Sit to stand frequency in 30 seconds</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;66247-8&quot;, &quot;display&quot;: &quot;Sit to stand frequency in 30 seconds&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;66247-8&quot;&gt;&lt;display value=&quot;Sit to stand frequency in 30 seconds&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-balance-4stage\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-balance-4stage\">balance-4stage</a></td><td>4-Stage Balance Test</td><td>Highest balance stage achieved (1–4) in the 4-Stage Balance Test.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;balance-4stage&quot;, &quot;display&quot;: &quot;4-Stage Balance Test&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;balance-4stage&quot;&gt;&lt;display value=&quot;4-Stage Balance Test&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskPerformanceTestsVS",
+      "title" : "Fall Risk Performance Tests ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:43c209bc-b64c-4cec-8a64-0a184b1cc033",
+        "timestamp" : "2026-06-11T13:46:37+00:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://loinc.org|2.82"
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0"
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "89423-8",
+          "display" : "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "66247-8",
+          "display" : "Sit to stand frequency in 30 seconds"
+        },
+        {
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "balance-4stage",
+          "display" : "4-Stage Balance Test"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li><li><a href=\"CodeSystem-fall-risk-codes.html\">codesystem Fall Risk Local Code System v0.1.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li></ul></div><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-89423-8\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/89423-8/\">89423-8</a></td><td>Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;89423-8&quot;, &quot;display&quot;: &quot;Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;89423-8&quot;&gt;&lt;display value=&quot;Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-66247-8\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/66247-8/\">66247-8</a></td><td>Sit to stand frequency in 30 seconds</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;66247-8&quot;, &quot;display&quot;: &quot;Sit to stand frequency in 30 seconds&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;66247-8&quot;&gt;&lt;display value=&quot;Sit to stand frequency in 30 seconds&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-balance-4stage\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-balance-4stage\">balance-4stage</a></td><td>4-Stage Balance Test</td><td>Highest balance stage achieved (1–4) in the 4-Stage Balance Test.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;balance-4stage&quot;, &quot;display&quot;: &quot;4-Stage Balance Test&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;balance-4stage&quot;&gt;&lt;display value=&quot;4-Stage Balance Test&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskPerformanceTestsVS",
+      "title" : "Fall Risk Performance Tests ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:43c209bc-b64c-4cec-8a64-0a184b1cc033",
+        "timestamp" : "2026-06-11T13:46:37+00:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://loinc.org|2.82"
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0"
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "89423-8",
+          "display" : "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "66247-8",
+          "display" : "Sit to stand frequency in 30 seconds"
+        },
+        {
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "balance-4stage",
+          "display" : "4-Stage Balance Test"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion performed internally based on <a href=\"CodeSystem-fall-risk-codes.html\">codesystem Fall Risk Local Code System v0.1.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b><a href=\"ValueSet-fall-risk-category-vs.html\">Fall Risk Score Threshold ConceptMap</a></b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-score-low\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-low\">score-low</a></td><td>Low fall risk threshold met</td><td>Total score falls within the Low risk band (0–11).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/439430008\">439430008</a></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;score-low&quot;, &quot;display&quot;: &quot;Low fall risk threshold met&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;score-low&quot;&gt;&lt;display value=&quot;Low fall risk threshold met&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-score-moderate\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-moderate\">score-moderate</a></td><td>Moderate fall risk threshold met</td><td>Total score falls within the Moderate risk band (12–22).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/332721351000132106\">332721351000132106</a></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;score-moderate&quot;, &quot;display&quot;: &quot;Moderate fall risk threshold met&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;score-moderate&quot;&gt;&lt;display value=&quot;Moderate fall risk threshold met&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-score-high\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-high\">score-high</a></td><td>High fall risk threshold met</td><td>Total score falls within the High risk band (23–34).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/455201601000132100\">455201601000132100</a></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;score-high&quot;, &quot;display&quot;: &quot;High fall risk threshold met&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;score-high&quot;&gt;&lt;display value=&quot;High fall risk threshold met&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskThresholdVS",
+      "title" : "Fall Risk Score Threshold ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:0f70f5a7-f560-4205-bcff-522d29c8f928",
+        "timestamp" : "2026-06-11T13:46:38+00:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0"
+        }],
+        "contains" : [{
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "score-low",
+          "display" : "Low fall risk threshold met"
+        },
+        {
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "score-moderate",
+          "display" : "Moderate fall risk threshold met"
+        },
+        {
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "score-high",
+          "display" : "High fall risk threshold met"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion performed internally based on <a href=\"CodeSystem-fall-risk-codes.html\">codesystem Fall Risk Local Code System v0.1.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b><a href=\"ValueSet-fall-risk-category-vs.html\">Fall Risk Score Threshold ConceptMap</a></b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-score-low\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-low\">score-low</a></td><td>Low fall risk threshold met</td><td>Total score falls within the Low risk band (0–11).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/439430008\">439430008</a></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;score-low&quot;, &quot;display&quot;: &quot;Low fall risk threshold met&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;score-low&quot;&gt;&lt;display value=&quot;Low fall risk threshold met&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-score-moderate\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-moderate\">score-moderate</a></td><td>Moderate fall risk threshold met</td><td>Total score falls within the Moderate risk band (12–22).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/332721351000132106\">332721351000132106</a></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;score-moderate&quot;, &quot;display&quot;: &quot;Moderate fall risk threshold met&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;score-moderate&quot;&gt;&lt;display value=&quot;Moderate fall risk threshold met&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes-score-high\"> </a><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-high\">score-high</a></td><td>High fall risk threshold met</td><td>Total score falls within the High risk band (23–34).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/455201601000132100\">455201601000132100</a></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;score-high&quot;, &quot;display&quot;: &quot;High fall risk threshold met&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;score-high&quot;&gt;&lt;display value=&quot;High fall risk threshold met&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+      "version" : "0.1.0",
+      "name" : "FallRiskThresholdVS",
+      "title" : "Fall Risk Score Threshold ValueSet",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2026-06-11T13:45:29+00:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:0f70f5a7-f560-4205-bcff-522d29c8f928",
+        "timestamp" : "2026-06-11T13:46:38+00:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0"
+        }],
+        "contains" : [{
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "score-low",
+          "display" : "Low fall risk threshold met"
+        },
+        {
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "score-moderate",
+          "display" : "Moderate fall risk threshold met"
+        },
+        {
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "score-high",
+          "display" : "High fall risk threshold met"
+        }]
+      }
+    }
+  }]
+}

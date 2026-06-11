@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="condition-fall-risk"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Condition condition-fall-risk</b></p><a name="condition-fall-risk"> </a><a name="hccondition-fall-risk"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 129839007}">At risk for falls</span></p><p><b>subject</b>: <a href="Patient-example-patient.html">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>onset</b>: 2024-11-15</p><h3>Evidences</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Detail</b></td></tr><tr><td style="display: none">*</td><td><a href="Observation-obs-fall-risk-result.html">Observation At risk for falls</a></td></tr></table></div>
+  </text>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+    </coding>
+  </verificationStatus>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+      <code value="problem-list-item"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="129839007"/>
+      <display value="At risk for falls"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example-patient"/>
+  </subject>
+  <onsetDateTime value="2024-11-15"/>
+  <evidence>
+    <detail>
+      <reference value="Observation/obs-fall-risk-result"/>
+    </detail>
+  </evidence>
+</Condition>

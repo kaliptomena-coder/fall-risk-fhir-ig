@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="fall-risk-factors-vs"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet fall-risk-factors-vs</b></p><a name="fall-risk-factors-vs"> </a><a name="hcfall-risk-factors-vs"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href="http://loinc.org"><code>http://loinc.org</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://loinc.org/97878-3/">97878-3</a></td><td>Worried about falling</td></tr><tr><td><a href="https://loinc.org/72107-6/">72107-6</a></td><td>Mini-Mental State Examination [MMSE]</td></tr><tr><td><a href="https://loinc.org/74013-4/">74013-4</a></td><td>Alcoholic drinks per day</td></tr><tr><td><a href="https://loinc.org/10160-0/">10160-0</a></td><td>History of Medication use Narrative</td></tr><tr><td><a href="https://loinc.org/99285-9/">99285-9</a></td><td>Current activity level</td></tr></table></li><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://snomed.info/id/428942009">428942009</a></td><td>History of fall (situation)</td></tr><tr><td><a href="http://snomed.info/id/397540003">397540003</a></td><td>Visual impairment</td></tr><tr><td><a href="http://snomed.info/id/284545001">284545001</a></td><td>Ability to perform activities of everyday life (observable entity)</td></tr><tr><td><a href="http://snomed.info/id/446363004">446363004</a></td><td>Adult comorbidity evaluation-27 score</td></tr><tr><td><a href="http://snomed.info/id/282097004">282097004</a></td><td>Ability to walk (observable entity)</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs"/>
+  <version value="0.1.0"/>
+  <name value="FallRiskFactorsVS"/>
+  <title value="Fall Risk Factors ValueSet"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-06-11T13:45:29+00:00"/>
+  <publisher value="Fall Risk IG Authors"/>
+  <contact>
+    <name value="Fall Risk IG Authors"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://example.org/fall-risk"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="info@example.org"/>
+    </telecom>
+  </contact>
+  <description value="Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10)."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <concept>
+        <code value="97878-3"/>
+        <display value="Worried about falling"/>
+      </concept>
+      <concept>
+        <code value="72107-6"/>
+        <display value="Mini-Mental State Examination [MMSE]"/>
+      </concept>
+      <concept>
+        <code value="74013-4"/>
+        <display value="Alcoholic drinks per day"/>
+      </concept>
+      <concept>
+        <code value="10160-0"/>
+        <display value="History of Medication use Narrative"/>
+      </concept>
+      <concept>
+        <code value="99285-9"/>
+        <display value="Current activity level"/>
+      </concept>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="428942009"/>
+        <display value="History of fall (situation)"/>
+      </concept>
+      <concept>
+        <code value="397540003"/>
+        <display value="Visual impairment"/>
+      </concept>
+      <concept>
+        <code value="284545001"/>
+        <display value="Ability to perform activities of everyday life (observable entity)"/>
+      </concept>
+      <concept>
+        <code value="446363004"/>
+        <display value="Adult comorbidity evaluation-27 score"/>
+      </concept>
+      <concept>
+        <code value="282097004"/>
+        <display value="Ability to walk (observable entity)"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

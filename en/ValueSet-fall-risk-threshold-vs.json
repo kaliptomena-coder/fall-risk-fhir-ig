@@ -1,0 +1,53 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "fall-risk-threshold-vs",
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet fall-risk-threshold-vs</b></p><a name=\"fall-risk-threshold-vs\"> </a><a name=\"hcfall-risk-threshold-vs\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-fall-risk-codes.html\"><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.1.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href=\"ValueSet-fall-risk-category-vs.html\">Fall Risk Score Threshold ConceptMap</a></b></td></tr><tr><td><a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-low\">score-low</a></td><td>Low fall risk threshold met</td><td>Total score falls within the Low risk band (0–11).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/439430008\">439430008</a></td></tr><tr><td><a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-moderate\">score-moderate</a></td><td>Moderate fall risk threshold met</td><td>Total score falls within the Moderate risk band (12–22).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/332721351000132106\">332721351000132106</a></td></tr><tr><td><a href=\"CodeSystem-fall-risk-codes.html#fall-risk-codes-score-high\">score-high</a></td><td>High fall risk threshold met</td><td>Total score falls within the High risk band (23–34).</td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://snomed.info/id/455201601000132100\">455201601000132100</a></td></tr></table></li></ul></div>"
+  },
+  "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+  "version" : "0.1.0",
+  "name" : "FallRiskThresholdVS",
+  "title" : "Fall Risk Score Threshold ValueSet",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2026-06-11T13:45:29+00:00",
+  "publisher" : "Fall Risk IG Authors",
+  "contact" : [{
+    "name" : "Fall Risk IG Authors",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://example.org/fall-risk"
+    },
+    {
+      "system" : "email",
+      "value" : "info@example.org"
+    }]
+  }],
+  "description" : "Local codes that identify which score band (Low / Moderate / High) a computed\nFallRiskScore falls into. Used in FallRiskObservation.note or as an\ninterpretation code alongside valueQuantity in FallRiskScoreObservation.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001",
+      "display" : "World"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+      "concept" : [{
+        "code" : "score-low",
+        "display" : "Low fall risk threshold met"
+      },
+      {
+        "code" : "score-moderate",
+        "display" : "Moderate fall risk threshold met"
+      },
+      {
+        "code" : "score-high",
+        "display" : "High fall risk threshold met"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,5 @@
+URL,Version,Status,OIDs,Name,Title,Description,Uses,Used,Sources
+https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs,0.1.0,draft,,FallRiskCategoryVS,Fall Risk Category ValueSet,"Risk classification outcomes for fall risk assessment using SNOMED qualifier values.",,"SCT"
+https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs,0.1.0,draft,,FallRiskFactorsVS,Fall Risk Factors ValueSet,"Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10).",,"SCT,LOINC"
+https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs,0.1.0,draft,,FallRiskPerformanceTestsVS,Fall Risk Performance Tests ValueSet,"Codes for objective physical performance tests used in fall risk assessment (tests a–c).",,"Internal,LOINC"
+https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs,0.1.0,draft,,FallRiskThresholdVS,Fall Risk Score Threshold ValueSet,"Local codes that identify which score band (Low / Moderate / High) a computed FallRiskScore falls into. Used in FallRiskObservation.note or as an interpretation code alongside valueQuantity in FallRiskScoreObservation.",,"Internal"

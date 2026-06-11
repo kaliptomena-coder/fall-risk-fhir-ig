@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="fall-risk-performance-tests-vs"/>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet fall-risk-performance-tests-vs</b></p><a name="fall-risk-performance-tests-vs"> </a><a name="hcfall-risk-performance-tests-vs"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href="http://loinc.org"><code>http://loinc.org</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://loinc.org/89423-8/">89423-8</a></td><td>Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</td></tr><tr><td><a href="https://loinc.org/66247-8/">66247-8</a></td><td>Sit to stand frequency in 30 seconds</td></tr></table></li><li>Include these codes as defined in <a href="CodeSystem-fall-risk-codes.html"><code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.1.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="CodeSystem-fall-risk-codes.html#fall-risk-codes-balance-4stage">balance-4stage</a></td><td>4-Stage Balance Test</td><td>Highest balance stage achieved (1–4) in the 4-Stage Balance Test.</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs"/>
+  <version value="0.1.0"/>
+  <name value="FallRiskPerformanceTestsVS"/>
+  <title value="Fall Risk Performance Tests ValueSet"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-06-11T13:45:29+00:00"/>
+  <publisher value="Fall Risk IG Authors"/>
+  <contact>
+    <name value="Fall Risk IG Authors"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://example.org/fall-risk"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="info@example.org"/>
+    </telecom>
+  </contact>
+  <description value="Codes for objective physical performance tests used in fall risk assessment (tests a–c)."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <concept>
+        <code value="89423-8"/>
+        <display value="Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"/>
+      </concept>
+      <concept>
+        <code value="66247-8"/>
+        <display value="Sit to stand frequency in 30 seconds"/>
+      </concept>
+    </include>
+    <include>
+      <system value="https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"/>
+      <concept>
+        <code value="balance-4stage"/>
+        <display value="4-Stage Balance Test"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

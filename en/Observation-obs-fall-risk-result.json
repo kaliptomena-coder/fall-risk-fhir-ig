@@ -1,0 +1,37 @@
+{
+  "resourceType" : "Observation",
+  "id" : "obs-fall-risk-result",
+  "meta" : {
+    "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fall-risk-result</b></p><a name=\"obs-fall-risk-result\"> </a><a name=\"hcobs-fall-risk-result\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-observation.html\">Fall Risk Observation</a></p></div><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 129839007}\">At risk for falls</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 11:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 332721351000132106}\">At moderate risk for fall (finding)</span></p><p><b>derivedFrom</b>: <a href=\"Observation-obs-fall-risk-score.html\">Observation Fall Risk Score</a></p></div>"
+  },
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "129839007",
+      "display" : "At risk for falls"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example-patient"
+  },
+  "effectiveDateTime" : "2024-11-15T11:00:00+01:00",
+  "performer" : [{
+    "reference" : "Practitioner/example-practitioner"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "332721351000132106",
+      "display" : "At moderate risk for fall (finding)"
+    }]
+  },
+  "derivedFrom" : [{
+    "reference" : "Observation/obs-fall-risk-score"
+  }]
+}

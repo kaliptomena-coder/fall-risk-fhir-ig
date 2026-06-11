@@ -1,0 +1,63 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "fall-risk-codes",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem fall-risk-codes</b></p><a name=\"fall-risk-codes\"> </a><a name=\"hcfall-risk-codes\"> </a><p>This  code system <code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">fall-risk-score<a name=\"fall-risk-codes-fall-risk-score\"> </a></td><td>Fall Risk Score</td><td>Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations.</td></tr><tr><td style=\"white-space:nowrap\">balance-4stage<a name=\"fall-risk-codes-balance-4stage\"> </a></td><td>4-Stage Balance Test</td><td>Highest balance stage achieved (1–4) in the 4-Stage Balance Test.</td></tr><tr><td style=\"white-space:nowrap\">score-low<a name=\"fall-risk-codes-score-low\"> </a></td><td>Low fall risk threshold met</td><td>Total score falls within the Low risk band (0–11).</td></tr><tr><td style=\"white-space:nowrap\">score-moderate<a name=\"fall-risk-codes-score-moderate\"> </a></td><td>Moderate fall risk threshold met</td><td>Total score falls within the Moderate risk band (12–22).</td></tr><tr><td style=\"white-space:nowrap\">score-high<a name=\"fall-risk-codes-score-high\"> </a></td><td>High fall risk threshold met</td><td>Total score falls within the High risk band (23–34).</td></tr></table></div>"
+  },
+  "url" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+  "version" : "0.1.0",
+  "name" : "FallRiskLocalCS",
+  "title" : "Fall Risk Local Code System",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2026-06-11T13:45:29+00:00",
+  "publisher" : "Fall Risk IG Authors",
+  "contact" : [{
+    "name" : "Fall Risk IG Authors",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://example.org/fall-risk"
+    },
+    {
+      "system" : "email",
+      "value" : "info@example.org"
+    }]
+  }],
+  "description" : "Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001",
+      "display" : "World"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 5,
+  "concept" : [{
+    "code" : "fall-risk-score",
+    "display" : "Fall Risk Score",
+    "definition" : "Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations."
+  },
+  {
+    "code" : "balance-4stage",
+    "display" : "4-Stage Balance Test",
+    "definition" : "Highest balance stage achieved (1–4) in the 4-Stage Balance Test."
+  },
+  {
+    "code" : "score-low",
+    "display" : "Low fall risk threshold met",
+    "definition" : "Total score falls within the Low risk band (0–11)."
+  },
+  {
+    "code" : "score-moderate",
+    "display" : "Moderate fall risk threshold met",
+    "definition" : "Total score falls within the Moderate risk band (12–22)."
+  },
+  {
+    "code" : "score-high",
+    "display" : "High fall risk threshold met",
+    "definition" : "Total score falls within the High risk band (23–34)."
+  }]
+}

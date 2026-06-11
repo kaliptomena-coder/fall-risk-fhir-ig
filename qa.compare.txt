@@ -1,0 +1,99 @@
+FallRiskAssessmentIG : Validation Results
+=========================================
+
+err = 0, warn = 17, info = 23
+$--
+Generated $--. FHIR version $-- for hl7.fhir.uv.fall-risk#$-- (canonical = https://example.org/fhir/fall-risk)
+ Build Errors : 0 / 0 / 0
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Bundle-fall-risk-bundle-example : 0 / 2 / 23
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/CodeSystem-fall-risk-codes : 0 / 1 / 2
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/ConceptMap-fall-risk-score-threshold-map : 0 / 4 / 2
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Condition-condition-fall-risk : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/ImplementationGuide-hl7.fhir.uv.fall-risk : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-adl : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-chair-stand : 0 / 1 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-fall-risk-result : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-fall-risk-score : 0 / 1 / 2
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-falls-history : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-fear-of-falling : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-tug-test : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Observation-obs-walking : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Patient-example-patient : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Practitioner-example-practitioner : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/Questionnaire-falls-history : 0 / 0 / 3
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/QuestionnaireResponse-qr-falls-history : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/StructureDefinition-fall-risk-factor-observation : 0 / 2 / 5
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/StructureDefinition-fall-risk-observation : 0 / 2 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/StructureDefinition-fall-risk-performance-observation : 0 / 2 / 4
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/StructureDefinition-fall-risk-score-observation : 0 / 2 / 6
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/ValueSet-fall-risk-category-vs : 0 / 0 / 4
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/ValueSet-fall-risk-factors-vs : 0 / 0 / 2
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/ValueSet-fall-risk-performance-tests-vs : 0 / 0 / 1
+ /home/runner/work/fall-risk-fhir-ig/fall-risk-fhir-ig/fsh-generated/resources/ValueSet-fall-risk-threshold-vs : 0 / 0 / 1
+</table>
+== n/a ==
+== fsh-generated/resources/Bundle-fall-risk-bundle-example.json ==
+WARNING: Bundle/fall-risk-bundle-example: Bundle.entry[8].resource/*Observation/obs-chair-stand*/.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {count} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+INFORMATION: Bundle/fall-risk-bundle-example: Bundle.entry[9].resource/*Observation/obs-fall-risk-score*/.code: Reference to experimental CodeSystem https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0
+WARNING: Bundle/fall-risk-bundle-example: Bundle.entry[9].resource/*Observation/obs-fall-risk-score*/.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+INFORMATION: Bundle/fall-risk-bundle-example: Bundle.entry[9].resource/*Observation/obs-fall-risk-score*/.interpretation[0]: Reference to experimental CodeSystem https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0
+== fsh-generated/resources/CodeSystem-fall-risk-codes.json ==
+INFORMATION: CodeSystem/fall-risk-codes: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+WARNING: CodeSystem/fall-risk-codes: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+== fsh-generated/resources/ConceptMap-fall-risk-score-threshold-map.json ==
+INFORMATION: ConceptMap/fall-risk-score-threshold-map: ConceptMap.group[0].target: Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons
+WARNING: ConceptMap/fall-risk-score-threshold-map: ConceptMap.group[0].element[0].code: The source display 'Total score 0–11' for the code 'https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0#score-low' is not valid. Possible displays: 'Low fall risk threshold met'
+WARNING: ConceptMap/fall-risk-score-threshold-map: ConceptMap.group[0].element[1].code: The source display 'Total score 12–22' for the code 'https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0#score-moderate' is not valid. Possible displays: 'Moderate fall risk threshold met'
+WARNING: ConceptMap/fall-risk-score-threshold-map: ConceptMap.group[0].element[2].code: The source display 'Total score 23–34' for the code 'https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0#score-high' is not valid. Possible displays: 'High fall risk threshold met'
+WARNING: ConceptMap/fall-risk-score-threshold-map: ConceptMap: Published concept maps SHOULD conform to the ShareableConceptMap profile, which says that the element ConceptMap.name should be present, but it is not
+== fsh-generated/resources/Condition-condition-fall-risk.json ==
+== fsh-generated/resources/ImplementationGuide-hl7.fhir.uv.fall-risk.json ==
+== fsh-generated/resources/Observation-obs-adl.json ==
+== fsh-generated/resources/Observation-obs-chair-stand.json ==
+WARNING: Observation/obs-chair-stand: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {count} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+== fsh-generated/resources/Observation-obs-fall-risk-result.json ==
+== fsh-generated/resources/Observation-obs-fall-risk-score.json ==
+INFORMATION: Observation/obs-fall-risk-score: Observation.code: Reference to experimental CodeSystem https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0
+WARNING: Observation/obs-fall-risk-score: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+== fsh-generated/resources/Observation-obs-falls-history.json ==
+== fsh-generated/resources/Observation-obs-fear-of-falling.json ==
+== fsh-generated/resources/Observation-obs-tug-test.json ==
+== fsh-generated/resources/Observation-obs-walking.json ==
+== fsh-generated/resources/Patient-example-patient.json ==
+== fsh-generated/resources/Practitioner-example-practitioner.json ==
+== fsh-generated/resources/Questionnaire-falls-history.json ==
+INFORMATION: Questionnaire/falls-history: Questionnaire.item[8].code[0]: Reference to experimental CodeSystem https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0
+INFORMATION: Resource: The resource Questionnaire/falls-history could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== fsh-generated/resources/QuestionnaireResponse-qr-falls-history.json ==
+== fsh-generated/resources/StructureDefinition-fall-risk-factor-observation.json ==
+INFORMATION: StructureDefinition/fall-risk-factor-observation: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+INFORMATION: StructureDefinition/fall-risk-factor-observation: StructureDefinition.snapshot.element[21].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|4.0.1
+INFORMATION: StructureDefinition/fall-risk-factor-observation: StructureDefinition.differential.element[5].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|4.0.1
+WARNING: StructureDefinition/fall-risk-factor-observation: StructureDefinition.differential.element[6].binding: The definition for the element 'Observation.code' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs' which is experimental, but this structure is not labeled as experimental
+INFORMATION: StructureDefinition/fall-risk-factor-observation: StructureDefinition.snapshot.element[21].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+WARNING: StructureDefinition/fall-risk-factor-observation: StructureDefinition.snapshot.element[22].binding: The definition for the element 'Observation.code' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs' which is experimental, but this structure is not labeled as experimental
+== fsh-generated/resources/StructureDefinition-fall-risk-observation.json ==
+WARNING: StructureDefinition/fall-risk-observation: StructureDefinition.differential.element[11].binding: The definition for the element 'Observation.value[x]' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/fall-risk-observation: StructureDefinition.snapshot.element[29].binding: The definition for the element 'Observation.value[x]' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs' which is experimental, but this structure is not labeled as experimental
+== fsh-generated/resources/StructureDefinition-fall-risk-performance-observation.json ==
+INFORMATION: StructureDefinition/fall-risk-performance-observation: StructureDefinition.snapshot.element[21].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|4.0.1
+INFORMATION: StructureDefinition/fall-risk-performance-observation: StructureDefinition.differential.element[5].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|4.0.1
+WARNING: StructureDefinition/fall-risk-performance-observation: StructureDefinition.differential.element[6].binding: The definition for the element 'Observation.code' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs' which is experimental, but this structure is not labeled as experimental
+INFORMATION: StructureDefinition/fall-risk-performance-observation: StructureDefinition.snapshot.element[21].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+WARNING: StructureDefinition/fall-risk-performance-observation: StructureDefinition.snapshot.element[22].binding: The definition for the element 'Observation.code' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs' which is experimental, but this structure is not labeled as experimental
+== fsh-generated/resources/StructureDefinition-fall-risk-score-observation.json ==
+INFORMATION: StructureDefinition/fall-risk-score-observation: StructureDefinition.snapshot.element[21].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|4.0.1
+INFORMATION: StructureDefinition/fall-risk-score-observation: StructureDefinition.snapshot.element[22].pattern.ofType(CodeableConcept): Reference to experimental CodeSystem https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0
+INFORMATION: StructureDefinition/fall-risk-score-observation: StructureDefinition.differential.element[5].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|4.0.1
+INFORMATION: StructureDefinition/fall-risk-score-observation: StructureDefinition.differential.element[6].pattern.ofType(CodeableConcept): Reference to experimental CodeSystem https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes|0.1.0
+WARNING: StructureDefinition/fall-risk-score-observation: StructureDefinition.differential.element[16].binding: The definition for the element 'Observation.interpretation' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs' which is experimental, but this structure is not labeled as experimental
+INFORMATION: StructureDefinition/fall-risk-score-observation: StructureDefinition.snapshot.element[21].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+WARNING: StructureDefinition/fall-risk-score-observation: StructureDefinition.snapshot.element[38].binding: The definition for the element 'Observation.interpretation' binds to the value set 'https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs' which is experimental, but this structure is not labeled as experimental
+== fsh-generated/resources/ValueSet-fall-risk-category-vs.json ==
+INFORMATION: ValueSet/fall-risk-category-vs: ValueSet.compose.include[0].concept[0]: Wrong Display Name 'Low risk (qualifier value)' for http://snomed.info/sct#439430008. Valid display is one of 2 choices: 'At low risk for fall (finding)' (en) or 'At low risk for fall' (en) (for the language(s) 'en, en-US'). Note that the display in the ValueSet does not have to match; this check exists to help check that it's not accidentally the wrong code
+INFORMATION: ValueSet/fall-risk-category-vs: ValueSet.compose.include[0].concept[1]: Wrong Display Name 'Moderate risk (qualifier value)' for http://snomed.info/sct#332721351000132106. Valid display is one of 2 choices: 'At moderate risk for fall (finding)' (en) or 'At moderate risk for fall' (en) (for the language(s) 'en, en-US'). Note that the display in the ValueSet does not have to match; this check exists to help check that it's not accidentally the wrong code
+INFORMATION: ValueSet/fall-risk-category-vs: ValueSet.compose.include[0].concept[2]: Wrong Display Name 'High risk (qualifier value)' for http://snomed.info/sct#455201601000132100. Valid display is one of 2 choices: 'At high risk for fall (finding)' (en) or 'At high risk for fall' (en) (for the language(s) 'en, en-US'). Note that the display in the ValueSet does not have to match; this check exists to help check that it's not accidentally the wrong code
+== fsh-generated/resources/ValueSet-fall-risk-factors-vs.json ==
+INFORMATION: ValueSet/fall-risk-factors-vs: ValueSet.compose.include[1]: This SNOMED-CT based include has some concepts with semantic tags (FSN terms) and some without (preferred terms) - check that this is what is intended (examples for FSN: [History of fall (situation), Ability to perform activities of everyday life (observable entity), Ability to walk (observable entity)] and examples for no FSN: [Visual impairment, Adult comorbidity evaluation-27 score])
+== fsh-generated/resources/ValueSet-fall-risk-performance-tests-vs.json ==
+== fsh-generated/resources/ValueSet-fall-risk-threshold-vs.json ==

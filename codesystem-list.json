@@ -1,0 +1,10 @@
+{
+  "codeSystems" : [{
+    "url" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "FallRiskLocalCS",
+    "title" : "Fall Risk Local Code System",
+    "description" : "Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT."
+  }]
+}

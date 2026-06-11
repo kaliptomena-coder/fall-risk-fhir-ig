@@ -1,0 +1,566 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Artifacts Summary - Fall Risk Assessment Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Fall Risk Assessment Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - 
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Fall Risk Assessment Implementation Guide - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://example.org/fhir/fall-risk/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Artifacts Summary</h2>
+  
+  
+  
+  
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#2">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#3">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#4">Terminology: Concept Maps</a>
+      </li>
+      <li>
+         <a href="#5">Example: Example Instances</a>
+      </li>
+   </ul>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Structures: Resource Profiles </h3>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-fall-risk-factor-observation.html"
+                  title="StructureDefinition/fall-risk-factor-observation">
+                  <span title="StructureDefinition/fall-risk-factor-observation">Fall Risk Factor Observation
+</span>
+               </a>
+            </td>
+            <td>
+<p>A standardized FHIR Observation representing a single contributing factor to fall risk
+(e.g., fear of falling, walking ability, medication use).
+This profile supports both automated EHR data extraction and manual questionnaire responses,
+providing a consistent structure for clinical risk scoring algorithms.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-fall-risk-observation.html"
+                  title="StructureDefinition/fall-risk-observation">
+                  <span title="StructureDefinition/fall-risk-observation">Fall Risk Observation
+</span>
+               </a>
+            </td>
+            <td>
+<p>The outcome of a fall risk screening episode, capturing the overall risk classification
+(Low / Moderate / High) and referencing the aggregated score Observation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-fall-risk-performance-observation.html"
+                  title="StructureDefinition/fall-risk-performance-observation">
+                  <span title="StructureDefinition/fall-risk-performance-observation">Fall Risk Performance Test Observation
+</span>
+               </a>
+            </td>
+            <td>
+<p>Objective physical performance measurements used in fall risk assessment,
+including the Sit to stand frequency in 30 seconds, 4-Stage Balance Test,
+and the Timed Up &amp; Go (TUG) test.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-fall-risk-score-observation.html"
+                  title="StructureDefinition/fall-risk-score-observation">
+                  <span title="StructureDefinition/fall-risk-score-observation">Fall Risk Score Observation
+</span>
+               </a>
+            </td>
+            <td>
+<p>An aggregated fall risk score (0–34) derived from individual Fall Risk Factor Observations
+and Fall Risk Performance Observations.
+The 'hasMember' element links to the contributing factors, ensuring full traceability
+of the clinical evidence.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-fall-risk-category-vs.html"
+                  title="ValueSet/fall-risk-category-vs">
+                  <span title="ValueSet/fall-risk-category-vs">Fall Risk Category ValueSet
+</span>
+               </a>
+            </td>
+            <td>
+<p>Risk classification outcomes for fall risk assessment using SNOMED qualifier values.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-fall-risk-factors-vs.html"
+                  title="ValueSet/fall-risk-factors-vs">
+                  <span title="ValueSet/fall-risk-factors-vs">Fall Risk Factors ValueSet
+</span>
+               </a>
+            </td>
+            <td>
+<p>Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-fall-risk-performance-tests-vs.html"
+                  title="ValueSet/fall-risk-performance-tests-vs">
+                  <span title="ValueSet/fall-risk-performance-tests-vs">Fall Risk Performance Tests ValueSet
+</span>
+               </a>
+            </td>
+            <td>
+<p>Codes for objective physical performance tests used in fall risk assessment (tests a–c).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-fall-risk-threshold-vs.html"
+                  title="ValueSet/fall-risk-threshold-vs">
+                  <span title="ValueSet/fall-risk-threshold-vs">Fall Risk Score Threshold ValueSet
+</span>
+               </a>
+            </td>
+            <td>
+<p>Local codes that identify which score band (Low / Moderate / High) a computed
+FallRiskScore falls into. Used in FallRiskObservation.note or as an
+interpretation code alongside valueQuantity in FallRiskScoreObservation.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-fall-risk-codes.html"
+                  title="CodeSystem/fall-risk-codes">
+                  <span title="CodeSystem/fall-risk-codes">Fall Risk Local Code System
+</span>
+               </a>
+            </td>
+            <td>
+<p>Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Terminology: Concept Maps </h3>
+    <p>These define transformations to convert between codes by systems conforming with this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-fall-risk-score-threshold-map.html"
+                  title="ConceptMap/fall-risk-score-threshold-map">
+                  <span title="ConceptMap/fall-risk-score-threshold-map">Fall Risk Score Threshold ConceptMap
+</span>
+               </a>
+            </td>
+            <td>
+<p>Maps local score-band codes (score-low / score-moderate / score-high) to the
+corresponding SNOMED risk category codes in FallRiskCategoryVS.
+The numeric cutoffs encoded in the comments and group.element.display fields
+are the authoritative thresholds for this IG:
+  score-low      = total score 0–11
+  score-moderate = total score 12–22
+  score-high     = total score 23–34</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-example-patient.html" title="Patient/example-patient">
+                  <span title="Patient/example-patient">Example Patient – Maria Müller
+</span>
+               </a>
+            </td>
+            <td>
+<p>A 78-year-old female patient undergoing fall risk assessment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-example-practitioner.html"
+                  title="Practitioner/example-practitioner">
+                  <span title="Practitioner/example-practitioner">Example Practitioner
+</span>
+               </a>
+            </td>
+            <td>
+<p>The physiotherapist conducting the fall risk assessment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-adl.html" title="Observation/obs-adl">
+                  <span title="Observation/obs-adl">Example – ADL Independence
+</span>
+               </a>
+            </td>
+            <td>
+<p>Observation capturing the patient's functional independence level (slight assistance needed) — scores 1 pt.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-fall-risk-bundle-example.html"
+                  title="Bundle/fall-risk-bundle-example">
+                  <span title="Bundle/fall-risk-bundle-example">Example – Complete Fall Risk Assessment Bundle
+</span>
+               </a>
+            </td>
+            <td>
+<p>A Bundle containing all FHIR resources for a single fall risk assessment session.
+This Bundle can be sent to any FHIR R4 server in one request.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-condition-fall-risk.html"
+                  title="Condition/condition-fall-risk">
+                  <span title="Condition/condition-fall-risk">Example – Condition: At Risk of Falls
+</span>
+               </a>
+            </td>
+            <td>
+<p>Problem list entry created after moderate fall risk assessment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-fall-risk-score.html"
+                  title="Observation/obs-fall-risk-score">
+                  <span title="Observation/obs-fall-risk-score">Example – Fall Risk Score 20/34)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Aggregated fall risk score of 20 out of 34 — Moderate risk (score band 12–22).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-fall-risk-result.html"
+                  title="Observation/obs-fall-risk-result">
+                  <span title="Observation/obs-fall-risk-result">Example – Fall Risk Screening Result
+</span>
+               </a>
+            </td>
+            <td>
+<p>Overall fall risk classification: Moderate.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-falls-history.html"
+                  title="Observation/obs-falls-history">
+                  <span title="Observation/obs-falls-history">Example – Falls History
+</span>
+               </a>
+            </td>
+            <td>
+<p>Observation capturing the patient's history of 2 falls within the last 12 months — scores 2 pts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-qr-falls-history.html"
+                  title="QuestionnaireResponse/qr-falls-history">
+                  <span title="QuestionnaireResponse/qr-falls-history">Example – Falls History QuestionnaireResponse
+</span>
+               </a>
+            </td>
+            <td>
+<p>A completed QuestionnaireResponse containing all 13 manual answers and clinical history entries recorded during the assessment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-fear-of-falling.html"
+                  title="Observation/obs-fear-of-falling">
+                  <span title="Observation/obs-fear-of-falling">Example – Fear of Falling
+</span>
+               </a>
+            </td>
+            <td>
+<p>Observation capturing the patient's worry about falling (ABC scale) — scores 2 pts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-chair-stand.html"
+                  title="Observation/obs-chair-stand">
+                  <span title="Observation/obs-chair-stand">Example – Sit to Stand (30 s)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Patient completed 8 repetitions in 30 seconds — scores 1 pt (8–11 band).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-tug-test.html" title="Observation/obs-tug-test">
+                  <span title="Observation/obs-tug-test">Example – TUG Test
+</span>
+               </a>
+            </td>
+            <td>
+<p>Patient completed TUG in 14.2 seconds — scores 2 pts (12–20 s band).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-obs-walking.html" title="Observation/obs-walking">
+                  <span title="Observation/obs-walking">Example – Walking Ability
+</span>
+               </a>
+            </td>
+            <td>
+<p>Observation capturing the patient's walking ability and use of walking aids — scores 1 pt.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-falls-history.html"
+                  title="Questionnaire/falls-history">
+                  <span title="Questionnaire/falls-history">Falls Risk Assessment Questionnaire
+</span>
+               </a>
+            </td>
+            <td>
+<p>Complete questionnaire model for active assessment including terminology mapping to LOINC and SNOMED CT.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://example.org/fall-risk">Fall Risk IG Authors</a>.  
+          Package hl7.fhir.uv.fall-risk#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Thu, Jun 11, 2026 13:45+0000">2026-06-11</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

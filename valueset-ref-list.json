@@ -1,0 +1,53 @@
+{
+  "codeSystems" : [{
+    "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "FallRiskCategoryVS",
+    "title" : "Fall Risk Category ValueSet",
+    "description" : "Risk classification outcomes for fall risk assessment using SNOMED qualifier values.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-fall-risk-observation.html" : "Fall Risk Observation",
+    "ConceptMap-fall-risk-score-threshold-map.html" : "Fall Risk Score Threshold ConceptMap"
+  },
+  {
+    "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "FallRiskFactorsVS",
+    "title" : "Fall Risk Factors ValueSet",
+    "description" : "Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10).",
+    "systems" : ["http://loinc.org", "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-fall-risk-factor-observation.html" : "Fall Risk Factor Observation"
+  },
+  {
+    "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "FallRiskPerformanceTestsVS",
+    "title" : "Fall Risk Performance Tests ValueSet",
+    "description" : "Codes for objective physical performance tests used in fall risk assessment (tests a–c).",
+    "systems" : ["http://loinc.org",
+    "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"],
+    "uses" : {
+    },
+    "StructureDefinition-fall-risk-performance-observation.html" : "Fall Risk Performance Test Observation"
+  },
+  {
+    "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "FallRiskThresholdVS",
+    "title" : "Fall Risk Score Threshold ValueSet",
+    "description" : "Local codes that identify which score band (Low / Moderate / High) a computed\nFallRiskScore falls into. Used in FallRiskObservation.note or as an\ninterpretation code alongside valueQuantity in FallRiskScoreObservation.",
+    "systems" : ["https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"],
+    "uses" : {
+    },
+    "StructureDefinition-fall-risk-score-observation.html" : "Fall Risk Score Observation",
+    "ConceptMap-fall-risk-score-threshold-map.html" : "Fall Risk Score Threshold ConceptMap"
+  }]
+}

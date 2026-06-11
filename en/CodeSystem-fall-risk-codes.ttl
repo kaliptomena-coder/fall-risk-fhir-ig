@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fall-risk-codes"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem fall-risk-codes</b></p><a name=\"fall-risk-codes\"> </a><a name=\"hcfall-risk-codes\"> </a><p>This  code system <code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">fall-risk-score<a name=\"fall-risk-codes-fall-risk-score\"> </a></td><td>Fall Risk Score</td><td>Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations.</td></tr><tr><td style=\"white-space:nowrap\">balance-4stage<a name=\"fall-risk-codes-balance-4stage\"> </a></td><td>4-Stage Balance Test</td><td>Highest balance stage achieved (1–4) in the 4-Stage Balance Test.</td></tr><tr><td style=\"white-space:nowrap\">score-low<a name=\"fall-risk-codes-score-low\"> </a></td><td>Low fall risk threshold met</td><td>Total score falls within the Low risk band (0–11).</td></tr><tr><td style=\"white-space:nowrap\">score-moderate<a name=\"fall-risk-codes-score-moderate\"> </a></td><td>Moderate fall risk threshold met</td><td>Total score falls within the Moderate risk band (12–22).</td></tr><tr><td style=\"white-space:nowrap\">score-high<a name=\"fall-risk-codes-score-high\"> </a></td><td>High fall risk threshold met</td><td>Total score falls within the High risk band (23–34).</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"^^xsd:anyURI ;
+     fhir:l <https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "FallRiskLocalCS"] ; # 
+  fhir:title [ fhir:v "Fall Risk Local Code System"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2026-06-11T13:45:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Fall Risk IG Authors"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Fall Risk IG Authors" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://example.org/fall-risk" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "info@example.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ;
+         fhir:l <http://unstats.un.org/unsd/methods/m49/m49.htm>
+       ] ;
+       fhir:code [ fhir:v "001" ] ;
+       fhir:display [ fhir:v "World" ]
+     ] )
+  ] ) ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "fall-risk-score" ] ;
+     fhir:display [ fhir:v "Fall Risk Score" ] ;
+     fhir:definition [ fhir:v "Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations." ]
+  ] [
+     fhir:code [ fhir:v "balance-4stage" ] ;
+     fhir:display [ fhir:v "4-Stage Balance Test" ] ;
+     fhir:definition [ fhir:v "Highest balance stage achieved (1–4) in the 4-Stage Balance Test." ]
+  ] [
+     fhir:code [ fhir:v "score-low" ] ;
+     fhir:display [ fhir:v "Low fall risk threshold met" ] ;
+     fhir:definition [ fhir:v "Total score falls within the Low risk band (0–11)." ]
+  ] [
+     fhir:code [ fhir:v "score-moderate" ] ;
+     fhir:display [ fhir:v "Moderate fall risk threshold met" ] ;
+     fhir:definition [ fhir:v "Total score falls within the Moderate risk band (12–22)." ]
+  ] [
+     fhir:code [ fhir:v "score-high" ] ;
+     fhir:display [ fhir:v "High fall risk threshold met" ] ;
+     fhir:definition [ fhir:v "Total score falls within the High risk band (23–34)." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,83 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "fall-risk-factors-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet fall-risk-factors-vs</b></p><a name=\"fall-risk-factors-vs\"> </a><a name=\"hcfall-risk-factors-vs\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/97878-3/\">97878-3</a></td><td>Worried about falling</td></tr><tr><td><a href=\"https://loinc.org/72107-6/\">72107-6</a></td><td>Mini-Mental State Examination [MMSE]</td></tr><tr><td><a href=\"https://loinc.org/74013-4/\">74013-4</a></td><td>Alcoholic drinks per day</td></tr><tr><td><a href=\"https://loinc.org/10160-0/\">10160-0</a></td><td>History of Medication use Narrative</td></tr><tr><td><a href=\"https://loinc.org/99285-9/\">99285-9</a></td><td>Current activity level</td></tr></table></li><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/428942009\">428942009</a></td><td>History of fall (situation)</td></tr><tr><td><a href=\"http://snomed.info/id/397540003\">397540003</a></td><td>Visual impairment</td></tr><tr><td><a href=\"http://snomed.info/id/284545001\">284545001</a></td><td>Ability to perform activities of everyday life (observable entity)</td></tr><tr><td><a href=\"http://snomed.info/id/446363004\">446363004</a></td><td>Adult comorbidity evaluation-27 score</td></tr><tr><td><a href=\"http://snomed.info/id/282097004\">282097004</a></td><td>Ability to walk (observable entity)</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs",
+  "version" : "0.1.0",
+  "name" : "FallRiskFactorsVS",
+  "title" : "Fall Risk Factors ValueSet",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2026-06-11T13:45:29+00:00",
+  "publisher" : "Fall Risk IG Authors",
+  "contact" : [{
+    "name" : "Fall Risk IG Authors",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://example.org/fall-risk"
+    },
+    {
+      "system" : "email",
+      "value" : "info@example.org"
+    }]
+  }],
+  "description" : "Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10).",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001",
+      "display" : "World"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "concept" : [{
+        "code" : "97878-3",
+        "display" : "Worried about falling"
+      },
+      {
+        "code" : "72107-6",
+        "display" : "Mini-Mental State Examination [MMSE]"
+      },
+      {
+        "code" : "74013-4",
+        "display" : "Alcoholic drinks per day"
+      },
+      {
+        "code" : "10160-0",
+        "display" : "History of Medication use Narrative"
+      },
+      {
+        "code" : "99285-9",
+        "display" : "Current activity level"
+      }]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "428942009",
+        "display" : "History of fall (situation)"
+      },
+      {
+        "code" : "397540003",
+        "display" : "Visual impairment"
+      },
+      {
+        "code" : "284545001",
+        "display" : "Ability to perform activities of everyday life (observable entity)"
+      },
+      {
+        "code" : "446363004",
+        "display" : "Adult comorbidity evaluation-27 score"
+      },
+      {
+        "code" : "282097004",
+        "display" : "Ability to walk (observable entity)"
+      }]
+    }]
+  }
+}

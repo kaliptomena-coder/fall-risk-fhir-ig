@@ -1,0 +1,590 @@
+# Example – Complete Fall Risk Assessment Bundle - Fall Risk Assessment Implementation Guide v0.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Example – Complete Fall Risk Assessment Bundle**
+
+## Example Bundle: Example – Complete Fall Risk Assessment Bundle
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "fall-risk-bundle-example",
+  "type" : "collection",
+  "timestamp" : "2024-11-15T11:00:00+01:00",
+  "entry" : [{
+    "fullUrl" : "https://example.org/fhir/Patient/example-patient",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "example-patient",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_example-patient\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient example-patient</b></p><a name=\"example-patient\"> </a><a name=\"hcexample-patient\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Maria Mueller  Female, DoB: 1946-03-12</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Hauptstrasse 15 Vienna AT </td></tr></table></div>"
+      },
+      "name" : [{
+        "family" : "Mueller",
+        "given" : ["Maria"]
+      }],
+      "gender" : "female",
+      "birthDate" : "1946-03-12",
+      "address" : [{
+        "line" : ["Hauptstrasse 15"],
+        "city" : "Vienna",
+        "country" : "AT"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Practitioner/example-practitioner",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "id" : "example-practitioner",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_example-practitioner\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner example-practitioner</b></p><a name=\"example-practitioner\"> </a><a name=\"hcexample-practitioner\"> </a><p><b>name</b>: Anna Huber </p><h3>Qualifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 36682004}\">Physiotherapist (occupation)</span></td></tr></table></div>"
+      },
+      "name" : [{
+        "family" : "Huber",
+        "given" : ["Anna"]
+      }],
+      "qualification" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "36682004",
+            "display" : "Physiotherapist (occupation)"
+          }]
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/QuestionnaireResponse/qr-falls-history",
+    "resource" : {
+      "resourceType" : "QuestionnaireResponse",
+      "id" : "qr-falls-history",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"QuestionnaireResponse_qr-falls-history\"> </a><p class=\"res-header-id\"><b>Generated Narrative: QuestionnaireResponse qr-falls-history</b></p><a name=\"qr-falls-history\"> </a><a name=\"hcqr-falls-history\"> </a><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\">LinkID</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\">Text</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\">Definition</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\">Answer</a><span style=\"float: right\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireResponseRoot\" class=\"hierarchy\"/> qr-falls-history</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Questionnaire:<a href=\"Questionnaire-falls-history.html\">Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> falls-count</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">How many times have you fallen in the last 12 months?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">2</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> fear-of-falling</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Are you worried about falling? (ABC scale)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span><span><a href=\"http://snomed.info/id/373066001\">SNOMED CT: 373066001</a> (Yes)</span></span></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> adl-independence</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Activities of Daily Living (ADL): functional independence</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Slight assistance needed</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> walking-ability</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Walking ability and use of walking aids</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">With aids</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> alcohol-use</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Alcohol use (units per week)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span><span>2 units/week<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code/wk = '/wk')</span></span></span></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> physical-activity</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Current physical activity level</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Low activity</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> tug-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Timed Up &amp; Go test result (seconds)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">14.2</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> chair-stand-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Sit to stand frequency in 30 seconds (repetitions)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">8</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> balance-4stage</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">4-Stage Balance Test result (highest stage reached)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">3</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Group\" class=\"hierarchy\"/> ehr-fallback-group</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Clinical History Data (EHR-derived)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> medications</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Total medication count (including FRIDs flag)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">3:FRID</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> comorbidities</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Number of active diagnoses (comorbidities)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">3</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> cognitive-status</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">MMSE score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">24</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> vision-impairment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Vision or hearing impairment present?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">true</td></tr>\r\n<tr><td colspan=\"4\" class=\"hierarchy\"><br/><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+      },
+      "questionnaire" : "https://example.org/fhir/fall-risk/Questionnaire/falls-history",
+      "status" : "completed",
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "authored" : "2024-11-15T10:00:00+01:00",
+      "item" : [{
+        "linkId" : "falls-count",
+        "text" : "How many times have you fallen in the last 12 months?",
+        "answer" : [{
+          "valueInteger" : 2
+        }]
+      },
+      {
+        "linkId" : "fear-of-falling",
+        "text" : "Are you worried about falling? (ABC scale)",
+        "answer" : [{
+          "valueCoding" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "373066001",
+            "display" : "Yes"
+          }
+        }]
+      },
+      {
+        "linkId" : "adl-independence",
+        "text" : "Activities of Daily Living (ADL): functional independence",
+        "answer" : [{
+          "valueString" : "Slight assistance needed"
+        }]
+      },
+      {
+        "linkId" : "walking-ability",
+        "text" : "Walking ability and use of walking aids",
+        "answer" : [{
+          "valueString" : "With aids"
+        }]
+      },
+      {
+        "linkId" : "alcohol-use",
+        "text" : "Alcohol use (units per week)",
+        "answer" : [{
+          "valueQuantity" : {
+            "value" : 2,
+            "unit" : "units/week",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "/wk"
+          }
+        }]
+      },
+      {
+        "linkId" : "physical-activity",
+        "text" : "Current physical activity level",
+        "answer" : [{
+          "valueString" : "Low activity"
+        }]
+      },
+      {
+        "linkId" : "tug-score",
+        "text" : "Timed Up & Go test result (seconds)",
+        "answer" : [{
+          "valueDecimal" : 14.2
+        }]
+      },
+      {
+        "linkId" : "chair-stand-score",
+        "text" : "Sit to stand frequency in 30 seconds (repetitions)",
+        "answer" : [{
+          "valueInteger" : 8
+        }]
+      },
+      {
+        "linkId" : "balance-4stage",
+        "text" : "4-Stage Balance Test result (highest stage reached)",
+        "answer" : [{
+          "valueInteger" : 3
+        }]
+      },
+      {
+        "linkId" : "ehr-fallback-group",
+        "text" : "Clinical History Data (EHR-derived)",
+        "item" : [{
+          "linkId" : "medications",
+          "text" : "Total medication count (including FRIDs flag)",
+          "answer" : [{
+            "valueString" : "3:FRID"
+          }]
+        },
+        {
+          "linkId" : "comorbidities",
+          "text" : "Number of active diagnoses (comorbidities)",
+          "answer" : [{
+            "valueInteger" : 3
+          }]
+        },
+        {
+          "linkId" : "cognitive-status",
+          "text" : "MMSE score",
+          "answer" : [{
+            "valueInteger" : 24
+          }]
+        },
+        {
+          "linkId" : "vision-impairment",
+          "text" : "Vision or hearing impairment present?",
+          "answer" : [{
+            "valueBoolean" : true
+          }]
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-falls-history",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-falls-history",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-falls-history\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-falls-history</b></p><a name=\"obs-falls-history\"> </a><a name=\"hcobs-falls-history\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 428942009}\">History of fall (situation)</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 2</p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-qr-falls-history.html\">Response to Questionnaire '-&gt;Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]' about '-&gt;Maria Mueller  Female, DoB: 1946-03-12'</a></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "survey",
+          "display" : "Survey"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "428942009",
+          "display" : "History of fall (situation)"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T10:30:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueInteger" : 2,
+      "derivedFrom" : [{
+        "reference" : "QuestionnaireResponse/qr-falls-history"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-fear-of-falling",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-fear-of-falling",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-fear-of-falling\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fear-of-falling</b></p><a name=\"obs-fear-of-falling\"> </a><a name=\"hcobs-fear-of-falling\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 97878-3}\">Worried about falling</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 373066001}\">Yes (qualifier value)</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "survey",
+          "display" : "Survey"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "97878-3",
+          "display" : "Worried about falling"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T10:30:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "373066001",
+          "display" : "Yes (qualifier value)"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-adl",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-adl",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-adl\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-adl</b></p><a name=\"obs-adl\"> </a><a name=\"hcobs-adl\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 284545001}\">Ability to perform activities of everyday life</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:\">SLIGHT</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-qr-falls-history.html\">Response to Questionnaire '-&gt;Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]' about '-&gt;Maria Mueller  Female, DoB: 1946-03-12'</a></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "survey",
+          "display" : "Survey"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "284545001",
+          "display" : "Ability to perform activities of everyday life"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T10:30:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueCodeableConcept" : {
+        "text" : "SLIGHT"
+      },
+      "derivedFrom" : [{
+        "reference" : "QuestionnaireResponse/qr-falls-history"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-walking",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-walking",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-walking\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-walking</b></p><a name=\"obs-walking\"> </a><a name=\"hcobs-walking\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 282097004}\">Ability to walk (observable entity)</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:\">WITH_AID</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-qr-falls-history.html\">Response to Questionnaire '-&gt;Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]' about '-&gt;Maria Mueller  Female, DoB: 1946-03-12'</a></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "survey",
+          "display" : "Survey"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "282097004",
+          "display" : "Ability to walk (observable entity)"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T10:30:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueCodeableConcept" : {
+        "text" : "WITH_AID"
+      },
+      "derivedFrom" : [{
+        "reference" : "QuestionnaireResponse/qr-falls-history"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-tug-test",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-tug-test",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-tug-test\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-tug-test</b></p><a name=\"obs-tug-test\"> </a><a name=\"hcobs-tug-test\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-performance-observation.html\">Fall Risk Performance Test Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89423-8}\">Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:45:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 14.2 s<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codes = 's')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "exam",
+          "display" : "Exam"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "89423-8",
+          "display" : "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T10:45:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueQuantity" : {
+        "value" : 14.2,
+        "unit" : "s",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "s"
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-chair-stand",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-chair-stand",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-chair-stand\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-chair-stand</b></p><a name=\"obs-chair-stand\"> </a><a name=\"hcobs-chair-stand\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-performance-observation.html\">Fall Risk Performance Test Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 66247-8}\">Sit to stand frequency in 30 seconds</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:50:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 8 {count}<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{count} = '{count}')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "exam",
+          "display" : "Exam"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "66247-8",
+          "display" : "Sit to stand frequency in 30 seconds"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T10:50:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueQuantity" : {
+        "value" : 8,
+        "unit" : "{count}",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "{count}"
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-fall-risk-score",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-fall-risk-score",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-fall-risk-score\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fall-risk-score</b></p><a name=\"obs-fall-risk-score\"> </a><a name=\"hcobs-fall-risk-score\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-score-observation.html\">Fall Risk Score Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes fall-risk-score}\">Fall Risk Score</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 11:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 20 {score}<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p><p><b>interpretation</b>: <span title=\"Codes:{https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes score-moderate}\">Moderate fall risk threshold met</span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-obs-fear-of-falling.html\">Observation Worried about falling</a></li><li><a href=\"Observation-obs-tug-test.html\">Observation Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</a></li><li><a href=\"Observation-obs-chair-stand.html\">Observation Sit to stand frequency in 30 seconds</a></li><li><a href=\"Observation-obs-falls-history.html\">Observation History of fall (situation)</a></li><li><a href=\"Observation-obs-adl.html\">Observation Ability to perform activities of everyday life</a></li><li><a href=\"Observation-obs-walking.html\">Observation Ability to walk (observable entity)</a></li></ul></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "survey",
+          "display" : "Survey"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "fall-risk-score",
+          "display" : "Fall Risk Score"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T11:00:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueQuantity" : {
+        "value" : 20,
+        "unit" : "{score}",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "{score}"
+      },
+      "interpretation" : [{
+        "coding" : [{
+          "system" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+          "code" : "score-moderate",
+          "display" : "Moderate fall risk threshold met"
+        }]
+      }],
+      "hasMember" : [{
+        "reference" : "Observation/obs-fear-of-falling"
+      },
+      {
+        "reference" : "Observation/obs-tug-test"
+      },
+      {
+        "reference" : "Observation/obs-chair-stand"
+      },
+      {
+        "reference" : "Observation/obs-falls-history"
+      },
+      {
+        "reference" : "Observation/obs-adl"
+      },
+      {
+        "reference" : "Observation/obs-walking"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Observation/obs-fall-risk-result",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "obs-fall-risk-result",
+      "meta" : {
+        "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-fall-risk-result\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fall-risk-result</b></p><a name=\"obs-fall-risk-result\"> </a><a name=\"hcobs-fall-risk-result\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-observation.html\">Fall Risk Observation</a></p></div><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 129839007}\">At risk for falls</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 11:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 332721351000132106}\">At moderate risk for fall (finding)</span></p><p><b>derivedFrom</b>: <a href=\"Observation-obs-fall-risk-score.html\">Observation Fall Risk Score</a></p></div>"
+      },
+      "status" : "final",
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "129839007",
+          "display" : "At risk for falls"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "effectiveDateTime" : "2024-11-15T11:00:00+01:00",
+      "performer" : [{
+        "reference" : "Practitioner/example-practitioner"
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "332721351000132106",
+          "display" : "At moderate risk for fall (finding)"
+        }]
+      },
+      "derivedFrom" : [{
+        "reference" : "Observation/obs-fall-risk-score"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Condition/condition-fall-risk",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "condition-fall-risk",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_condition-fall-risk\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition condition-fall-risk</b></p><a name=\"condition-fall-risk\"> </a><a name=\"hccondition-fall-risk\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 129839007}\">At risk for falls</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>onset</b>: 2024-11-15</p><h3>Evidences</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Detail</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Observation-obs-fall-risk-result.html\">Observation At risk for falls</a></td></tr></table></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code" : "confirmed"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "129839007",
+          "display" : "At risk for falls"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/example-patient"
+      },
+      "onsetDateTime" : "2024-11-15",
+      "evidence" : [{
+        "detail" : [{
+          "reference" : "Observation/obs-fall-risk-result"
+        }]
+      }]
+    }
+  }]
+}
+
+```

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="fall-risk-score-threshold-map"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ConceptMap fall-risk-score-threshold-map</b></p><a name="fall-risk-score-threshold-map"> </a><a name="hcfall-risk-score-threshold-map"> </a><p>Mapping from <a href="ValueSet-fall-risk-threshold-vs.html">Fall Risk Score Threshold ValueSet</a> to <a href="ValueSet-fall-risk-category-vs.html">Fall Risk Category ValueSet</a></p><br/><p><b>Group 1 </b>Mapping from <a href="CodeSystem-fall-risk-codes.html">Fall Risk Local Code System</a> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>score-low (Total score 0–11)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>439430008 (Low risk (qualifier value))</td></tr><tr><td>score-moderate (Total score 12–22)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>332721351000132106 (Moderate risk (qualifier value))</td></tr><tr><td>score-high (Total score 23–34)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>455201601000132100 (High risk (qualifier value))</td></tr></table></div>
+  </text>
+  <url value="https://example.org/fhir/fall-risk/ConceptMap/fall-risk-score-threshold-map"/>
+  <version value="0.1.0"/>
+  <title value="Fall Risk Score Threshold ConceptMap"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2026-06-11T13:45:29+00:00"/>
+  <publisher value="Fall Risk IG Authors"/>
+  <contact>
+    <name value="Fall Risk IG Authors"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://example.org/fall-risk"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="info@example.org"/>
+    </telecom>
+  </contact>
+  <description value="Maps local score-band codes (score-low / score-moderate / score-high) to the&#xA;corresponding SNOMED risk category codes in FallRiskCategoryVS.&#xA;The numeric cutoffs encoded in the comments and group.element.display fields&#xA;are the authoritative thresholds for this IG:&#xA;  score-low      = total score 0–11&#xA;  score-moderate = total score 12–22&#xA;  score-high     = total score 23–34"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <sourceCanonical value="https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs"/>
+  <targetCanonical value="https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs"/>
+  <group>
+    <source value="https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"/>
+    <target value="http://snomed.info/sct"/>
+    <element>
+      <code value="score-low"/>
+      <display value="Total score 0–11"/>
+      <target>
+        <code value="439430008"/>
+        <display value="Low risk (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="score-moderate"/>
+      <display value="Total score 12–22"/>
+      <target>
+        <code value="332721351000132106"/>
+        <display value="Moderate risk (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="score-high"/>
+      <display value="Total score 23–34"/>
+      <target>
+        <code value="455201601000132100"/>
+        <display value="High risk (qualifier value)"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

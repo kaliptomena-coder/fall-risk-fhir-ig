@@ -1,0 +1,22 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "example-practitioner",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner example-practitioner</b></p><a name=\"example-practitioner\"> </a><a name=\"hcexample-practitioner\"> </a><p><b>name</b>: Anna Huber </p><h3>Qualifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 36682004}\">Physiotherapist (occupation)</span></td></tr></table></div>"
+  },
+  "name" : [{
+    "family" : "Huber",
+    "given" : ["Anna"]
+  }],
+  "qualification" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "36682004",
+        "display" : "Physiotherapist (occupation)"
+      }]
+    }
+  }]
+}

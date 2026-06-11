@@ -1,0 +1,96 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://example.org/fhir/fall-risk/Observation/obs-fall-risk-score> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "obs-fall-risk-score"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fall-risk-score</b></p><a name=\"obs-fall-risk-score\"> </a><a name=\"hcobs-fall-risk-score\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-score-observation.html\">Fall Risk Score Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes fall-risk-score}\">Fall Risk Score</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 11:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 20 {score}<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p><p><b>interpretation</b>: <span title=\"Codes:{https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes score-moderate}\">Moderate fall risk threshold met</span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-obs-fear-of-falling.html\">Observation Worried about falling</a></li><li><a href=\"Observation-obs-tug-test.html\">Observation Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</a></li><li><a href=\"Observation-obs-chair-stand.html\">Observation Sit to stand frequency in 30 seconds</a></li><li><a href=\"Observation-obs-falls-history.html\">Observation History of fall (situation)</a></li><li><a href=\"Observation-obs-adl.html\">Observation Ability to perform activities of everyday life</a></li><li><a href=\"Observation-obs-walking.html\">Observation Ability to walk (observable entity)</a></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "survey" ] ;
+       fhir:display [ fhir:v "Survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"^^xsd:anyURI ;
+         fhir:l <https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes>
+       ] ;
+       fhir:code [ fhir:v "fall-risk-score" ] ;
+       fhir:display [ fhir:v "Fall Risk Score" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T11:00:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "20"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "{score}" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "{score}" ]
+  ] ; # 
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"^^xsd:anyURI ;
+         fhir:l <https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes>
+       ] ;
+       fhir:code [ fhir:v "score-moderate" ] ;
+       fhir:display [ fhir:v "Moderate fall risk threshold met" ]
+     ] )
+  ] ) ; # 
+  fhir:hasMember ( [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-fear-of-falling> ;
+     fhir:reference [ fhir:v "Observation/obs-fear-of-falling" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-tug-test> ;
+     fhir:reference [ fhir:v "Observation/obs-tug-test" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-chair-stand> ;
+     fhir:reference [ fhir:v "Observation/obs-chair-stand" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-falls-history> ;
+     fhir:reference [ fhir:v "Observation/obs-falls-history" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-adl> ;
+     fhir:reference [ fhir:v "Observation/obs-adl" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-walking> ;
+     fhir:reference [ fhir:v "Observation/obs-walking" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

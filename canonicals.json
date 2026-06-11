@@ -1,0 +1,82 @@
+[{
+  "id" : "fall-risk-codes",
+  "type" : "CodeSystem",
+  "url" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+  "version" : "0.1.0",
+  "name" : "FallRiskLocalCS"
+},
+{
+  "id" : "fall-risk-score-threshold-map",
+  "type" : "ConceptMap",
+  "url" : "https://example.org/fhir/fall-risk/ConceptMap/fall-risk-score-threshold-map",
+  "version" : "0.1.0"
+},
+{
+  "id" : "hl7.fhir.uv.fall-risk",
+  "type" : "ImplementationGuide",
+  "url" : "https://example.org/fhir/fall-risk/ImplementationGuide/hl7.fhir.uv.fall-risk",
+  "version" : "0.1.0",
+  "name" : "FallRiskAssessmentIG"
+},
+{
+  "id" : "falls-history",
+  "type" : "Questionnaire",
+  "url" : "https://example.org/fhir/fall-risk/Questionnaire/falls-history",
+  "version" : "0.1.0"
+},
+{
+  "id" : "fall-risk-factor-observation",
+  "type" : "StructureDefinition",
+  "url" : "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation",
+  "version" : "0.1.0",
+  "name" : "FallRiskFactorObservation"
+},
+{
+  "id" : "fall-risk-observation",
+  "type" : "StructureDefinition",
+  "url" : "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation",
+  "version" : "0.1.0",
+  "name" : "FallRiskObservation"
+},
+{
+  "id" : "fall-risk-performance-observation",
+  "type" : "StructureDefinition",
+  "url" : "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation",
+  "version" : "0.1.0",
+  "name" : "FallRiskPerformanceObservation"
+},
+{
+  "id" : "fall-risk-score-observation",
+  "type" : "StructureDefinition",
+  "url" : "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation",
+  "version" : "0.1.0",
+  "name" : "FallRiskScoreObservation"
+},
+{
+  "id" : "fall-risk-category-vs",
+  "type" : "ValueSet",
+  "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs",
+  "version" : "0.1.0",
+  "name" : "FallRiskCategoryVS"
+},
+{
+  "id" : "fall-risk-factors-vs",
+  "type" : "ValueSet",
+  "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs",
+  "version" : "0.1.0",
+  "name" : "FallRiskFactorsVS"
+},
+{
+  "id" : "fall-risk-performance-tests-vs",
+  "type" : "ValueSet",
+  "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-performance-tests-vs",
+  "version" : "0.1.0",
+  "name" : "FallRiskPerformanceTestsVS"
+},
+{
+  "id" : "fall-risk-threshold-vs",
+  "type" : "ValueSet",
+  "url" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+  "version" : "0.1.0",
+  "name" : "FallRiskThresholdVS"
+}]

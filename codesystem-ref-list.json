@@ -1,0 +1,41 @@
+{
+  "codeSystems" : [{
+    "url" : "http://loinc.org",
+    "version" : "2.82",
+    "status" : "active",
+    "name" : "LOINC",
+    "title" : null,
+    "description" : "This is a place holder for the code system which is fully supported through internal means (not by this code system)",
+    "uses" : {
+    },
+    "ValueSet-fall-risk-factors-vs.html" : "Fall Risk Factors ValueSet",
+    "ValueSet-fall-risk-performance-tests-vs.html" : "Fall Risk Performance Tests ValueSet"
+  },
+  {
+    "url" : "http://snomed.info/sct",
+    "version" : null,
+    "status" : "active",
+    "name" : "SNOMED_CT",
+    "title" : "SNOMED CT (all versions)",
+    "description" : "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+    "oids" : ["2.16.840.1.113883.6.96"],
+    "uses" : {
+    },
+    "ValueSet-fall-risk-category-vs.html" : "Fall Risk Category ValueSet",
+    "ConceptMap-fall-risk-score-threshold-map.html" : "Fall Risk Score Threshold ConceptMap",
+    "ValueSet-fall-risk-factors-vs.html" : "Fall Risk Factors ValueSet"
+  },
+  {
+    "url" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "FallRiskLocalCS",
+    "title" : "Fall Risk Local Code System",
+    "description" : "Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT.",
+    "uses" : {
+    },
+    "ValueSet-fall-risk-threshold-vs.html" : "Fall Risk Score Threshold ValueSet",
+    "ConceptMap-fall-risk-score-threshold-map.html" : "Fall Risk Score Threshold ConceptMap",
+    "ValueSet-fall-risk-performance-tests-vs.html" : "Fall Risk Performance Tests ValueSet"
+  }]
+}

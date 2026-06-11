@@ -1,0 +1,831 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://example.org/fhir/fall-risk/Bundle/fall-risk-bundle-example> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fall-risk-bundle-example"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:type [ fhir:v "collection"] ; # 
+  fhir:timestamp [ fhir:v "2024-11-15T11:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Patient/example-patient"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Patient/example-patient>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Patient/example-patient> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Practitioner/example-practitioner"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Practitioner/example-practitioner>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Practitioner/example-practitioner> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/QuestionnaireResponse/qr-falls-history"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/QuestionnaireResponse/qr-falls-history>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/QuestionnaireResponse/qr-falls-history> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-falls-history"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-falls-history>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-falls-history> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-fear-of-falling"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-fear-of-falling>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-fear-of-falling> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-adl"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-adl>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-adl> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-walking"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-walking>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-walking> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-tug-test"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-tug-test>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-tug-test> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-chair-stand"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-chair-stand>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-chair-stand> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-fall-risk-score"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-fall-risk-score>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-fall-risk-score> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Observation/obs-fall-risk-result"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Observation/obs-fall-risk-result>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Observation/obs-fall-risk-result> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.org/fhir/Condition/condition-fall-risk"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/Condition/condition-fall-risk>
+     ] ;
+     fhir:resource ( <https://example.org/fhir/Condition/condition-fall-risk> )
+  ] ) . # 
+
+<https://example.org/fhir/Patient/example-patient> a fhir:Patient ;
+  fhir:id [ fhir:v "example-patient"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_example-patient\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient example-patient</b></p><a name=\"example-patient\"> </a><a name=\"hcexample-patient\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Maria Mueller  Female, DoB: 1946-03-12</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Hauptstrasse 15 Vienna AT </td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Mueller" ] ;
+     fhir:given ( [ fhir:v "Maria" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "female"] ; # 
+  fhir:birthDate [ fhir:v "1946-03-12"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:line ( [ fhir:v "Hauptstrasse 15" ] ) ;
+     fhir:city [ fhir:v "Vienna" ] ;
+     fhir:country [ fhir:v "AT" ]
+  ] ) . # 
+
+<https://example.org/fhir/Practitioner/example-practitioner> a fhir:Practitioner ;
+  fhir:id [ fhir:v "example-practitioner"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_example-practitioner\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner example-practitioner</b></p><a name=\"example-practitioner\"> </a><a name=\"hcexample-practitioner\"> </a><p><b>name</b>: Anna Huber </p><h3>Qualifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 36682004}\">Physiotherapist (occupation)</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Huber" ] ;
+     fhir:given ( [ fhir:v "Anna" ] )
+  ] ) ; # 
+  fhir:qualification ( [
+     fhir:code [
+       fhir:coding ( [
+         a sct:36682004 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "36682004" ] ;
+         fhir:display [ fhir:v "Physiotherapist (occupation)" ]
+       ] )
+     ]
+  ] ) . # 
+
+<https://example.org/fhir/QuestionnaireResponse/qr-falls-history> a fhir:QuestionnaireResponse ;
+  fhir:id [ fhir:v "qr-falls-history"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"QuestionnaireResponse_qr-falls-history\"> </a><p class=\"res-header-id\"><b>Generated Narrative: QuestionnaireResponse qr-falls-history</b></p><a name=\"qr-falls-history\"> </a><a name=\"hcqr-falls-history\"> </a><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\">LinkID</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\">Text</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\">Definition</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\">Answer</a><span style=\"float: right\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireResponseRoot\" class=\"hierarchy\"/> qr-falls-history</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Questionnaire:<a href=\"Questionnaire-falls-history.html\">Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> falls-count</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">How many times have you fallen in the last 12 months?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">2</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> fear-of-falling</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Are you worried about falling? (ABC scale)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span><span><a href=\"http://snomed.info/id/373066001\">SNOMED CT: 373066001</a> (Yes)</span></span></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> adl-independence</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Activities of Daily Living (ADL): functional independence</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Slight assistance needed</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> walking-ability</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Walking ability and use of walking aids</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">With aids</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> alcohol-use</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Alcohol use (units per week)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span><span>2 units/week<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code/wk = '/wk')</span></span></span></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> physical-activity</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Current physical activity level</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Low activity</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> tug-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Timed Up &amp; Go test result (seconds)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">14.2</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> chair-stand-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Sit to stand frequency in 30 seconds (repetitions)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">8</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> balance-4stage</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">4-Stage Balance Test result (highest stage reached)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">3</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Group\" class=\"hierarchy\"/> ehr-fallback-group</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Clinical History Data (EHR-derived)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> medications</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Total medication count (including FRIDs flag)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">3:FRID</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> comorbidities</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Number of active diagnoses (comorbidities)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">3</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> cognitive-status</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">MMSE score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">24</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Item\" class=\"hierarchy\"/> vision-impairment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Vision or hearing impairment present?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">true</td></tr>#xD;\n<tr><td colspan=\"4\" class=\"hierarchy\"><br/><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:questionnaire [
+     fhir:v "https://example.org/fhir/fall-risk/Questionnaire/falls-history"^^xsd:anyURI ;
+     fhir:l <https://example.org/fhir/fall-risk/Questionnaire/falls-history>
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:authored [ fhir:v "2024-11-15T10:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:item ( [
+     fhir:linkId [ fhir:v "falls-count" ] ;
+     fhir:text [ fhir:v "How many times have you fallen in the last 12 months?" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:Integer ;
+         fhir:v 2
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "fear-of-falling" ] ;
+     fhir:text [ fhir:v "Are you worried about falling? (ABC scale)" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:Coding, sct:373066001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "373066001" ] ;
+         fhir:display [ fhir:v "Yes" ]
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "adl-independence" ] ;
+     fhir:text [ fhir:v "Activities of Daily Living (ADL): functional independence" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Slight assistance needed"
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "walking-ability" ] ;
+     fhir:text [ fhir:v "Walking ability and use of walking aids" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:String ;
+         fhir:v "With aids"
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "alcohol-use" ] ;
+     fhir:text [ fhir:v "Alcohol use (units per week)" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "2"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "units/week" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "/wk" ]
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "physical-activity" ] ;
+     fhir:text [ fhir:v "Current physical activity level" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Low activity"
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "tug-score" ] ;
+     fhir:text [ fhir:v "Timed Up & Go test result (seconds)" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:Decimal ;
+         fhir:v 14.2
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "chair-stand-score" ] ;
+     fhir:text [ fhir:v "Sit to stand frequency in 30 seconds (repetitions)" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:Integer ;
+         fhir:v 8
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "balance-4stage" ] ;
+     fhir:text [ fhir:v "4-Stage Balance Test result (highest stage reached)" ] ;
+     fhir:answer ( [
+       fhir:value [
+         a fhir:Integer ;
+         fhir:v 3
+       ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "ehr-fallback-group" ] ;
+     fhir:text [ fhir:v "Clinical History Data (EHR-derived)" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "medications" ] ;
+       fhir:text [ fhir:v "Total medication count (including FRIDs flag)" ] ;
+       fhir:answer ( [
+         fhir:value [
+           a fhir:String ;
+           fhir:v "3:FRID"
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "comorbidities" ] ;
+       fhir:text [ fhir:v "Number of active diagnoses (comorbidities)" ] ;
+       fhir:answer ( [
+         fhir:value [
+           a fhir:Integer ;
+           fhir:v 3
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "cognitive-status" ] ;
+       fhir:text [ fhir:v "MMSE score" ] ;
+       fhir:answer ( [
+         fhir:value [
+           a fhir:Integer ;
+           fhir:v 24
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "vision-impairment" ] ;
+       fhir:text [ fhir:v "Vision or hearing impairment present?" ] ;
+       fhir:answer ( [
+         fhir:value [
+           a fhir:Boolean ;
+           fhir:v true
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+<https://example.org/fhir/Observation/obs-falls-history> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-falls-history"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-falls-history\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-falls-history</b></p><a name=\"obs-falls-history\"> </a><a name=\"hcobs-falls-history\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 428942009}\">History of fall (situation)</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 2</p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-qr-falls-history.html\">Response to Questionnaire '-&gt;Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]' about '-&gt;Maria Mueller  Female, DoB: 1946-03-12'</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "survey" ] ;
+       fhir:display [ fhir:v "Survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:428942009 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "428942009" ] ;
+       fhir:display [ fhir:v "History of fall (situation)" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T10:30:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Integer ;
+     fhir:v 2
+  ] ; # 
+  fhir:derivedFrom ( [
+     fhir:l <https://example.org/fhir/fall-risk/QuestionnaireResponse/qr-falls-history> ;
+     fhir:reference [ fhir:v "QuestionnaireResponse/qr-falls-history" ]
+  ] ) . # 
+
+<https://example.org/fhir/Observation/obs-fear-of-falling> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-fear-of-falling"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-fear-of-falling\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fear-of-falling</b></p><a name=\"obs-fear-of-falling\"> </a><a name=\"hcobs-fear-of-falling\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 97878-3}\">Worried about falling</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 373066001}\">Yes (qualifier value)</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "survey" ] ;
+       fhir:display [ fhir:v "Survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:97878-3 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "97878-3" ] ;
+       fhir:display [ fhir:v "Worried about falling" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T10:30:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       a sct:373066001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "373066001" ] ;
+       fhir:display [ fhir:v "Yes (qualifier value)" ]
+     ] )
+  ] . # 
+
+<https://example.org/fhir/Observation/obs-adl> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-adl"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-adl\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-adl</b></p><a name=\"obs-adl\"> </a><a name=\"hcobs-adl\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 284545001}\">Ability to perform activities of everyday life</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:\">SLIGHT</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-qr-falls-history.html\">Response to Questionnaire '-&gt;Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]' about '-&gt;Maria Mueller  Female, DoB: 1946-03-12'</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "survey" ] ;
+       fhir:display [ fhir:v "Survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:284545001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "284545001" ] ;
+       fhir:display [ fhir:v "Ability to perform activities of everyday life" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T10:30:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:text [ fhir:v "SLIGHT" ]
+  ] ; # 
+  fhir:derivedFrom ( [
+     fhir:l <https://example.org/fhir/fall-risk/QuestionnaireResponse/qr-falls-history> ;
+     fhir:reference [ fhir:v "QuestionnaireResponse/qr-falls-history" ]
+  ] ) . # 
+
+<https://example.org/fhir/Observation/obs-walking> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-walking"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-walking\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-walking</b></p><a name=\"obs-walking\"> </a><a name=\"hcobs-walking\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 282097004}\">Ability to walk (observable entity)</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:\">WITH_AID</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-qr-falls-history.html\">Response to Questionnaire '-&gt;Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]' about '-&gt;Maria Mueller  Female, DoB: 1946-03-12'</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "survey" ] ;
+       fhir:display [ fhir:v "Survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:282097004 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "282097004" ] ;
+       fhir:display [ fhir:v "Ability to walk (observable entity)" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T10:30:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:text [ fhir:v "WITH_AID" ]
+  ] ; # 
+  fhir:derivedFrom ( [
+     fhir:l <https://example.org/fhir/fall-risk/QuestionnaireResponse/qr-falls-history> ;
+     fhir:reference [ fhir:v "QuestionnaireResponse/qr-falls-history" ]
+  ] ) . # 
+
+<https://example.org/fhir/Observation/obs-tug-test> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-tug-test"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-tug-test\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-tug-test</b></p><a name=\"obs-tug-test\"> </a><a name=\"hcobs-tug-test\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-performance-observation.html\">Fall Risk Performance Test Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89423-8}\">Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:45:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 14.2 s<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codes = 's')</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "exam" ] ;
+       fhir:display [ fhir:v "Exam" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:89423-8 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "89423-8" ] ;
+       fhir:display [ fhir:v "Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T10:45:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v 14.2 ] ;
+     fhir:unit [ fhir:v "s" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "s" ]
+  ] . # 
+
+<https://example.org/fhir/Observation/obs-chair-stand> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-chair-stand"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-performance-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-chair-stand\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-chair-stand</b></p><a name=\"obs-chair-stand\"> </a><a name=\"hcobs-chair-stand\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-performance-observation.html\">Fall Risk Performance Test Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 66247-8}\">Sit to stand frequency in 30 seconds</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:50:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 8 {count}<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{count} = '{count}')</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "exam" ] ;
+       fhir:display [ fhir:v "Exam" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:66247-8 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "66247-8" ] ;
+       fhir:display [ fhir:v "Sit to stand frequency in 30 seconds" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T10:50:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "8"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "{count}" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "{count}" ]
+  ] . # 
+
+<https://example.org/fhir/Observation/obs-fall-risk-score> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-fall-risk-score"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-score-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-fall-risk-score\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fall-risk-score</b></p><a name=\"obs-fall-risk-score\"> </a><a name=\"hcobs-fall-risk-score\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-score-observation.html\">Fall Risk Score Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes fall-risk-score}\">Fall Risk Score</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 11:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: 20 {score}<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p><p><b>interpretation</b>: <span title=\"Codes:{https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes score-moderate}\">Moderate fall risk threshold met</span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-obs-fear-of-falling.html\">Observation Worried about falling</a></li><li><a href=\"Observation-obs-tug-test.html\">Observation Time to rise from chair, walk 10 feet and back, and return to sitting [TUG]</a></li><li><a href=\"Observation-obs-chair-stand.html\">Observation Sit to stand frequency in 30 seconds</a></li><li><a href=\"Observation-obs-falls-history.html\">Observation History of fall (situation)</a></li><li><a href=\"Observation-obs-adl.html\">Observation Ability to perform activities of everyday life</a></li><li><a href=\"Observation-obs-walking.html\">Observation Ability to walk (observable entity)</a></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "survey" ] ;
+       fhir:display [ fhir:v "Survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"^^xsd:anyURI ;
+         fhir:l <https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes>
+       ] ;
+       fhir:code [ fhir:v "fall-risk-score" ] ;
+       fhir:display [ fhir:v "Fall Risk Score" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T11:00:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "20"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "{score}" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "{score}" ]
+  ] ; # 
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"^^xsd:anyURI ;
+         fhir:l <https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes>
+       ] ;
+       fhir:code [ fhir:v "score-moderate" ] ;
+       fhir:display [ fhir:v "Moderate fall risk threshold met" ]
+     ] )
+  ] ) ; # 
+  fhir:hasMember ( [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-fear-of-falling> ;
+     fhir:reference [ fhir:v "Observation/obs-fear-of-falling" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-tug-test> ;
+     fhir:reference [ fhir:v "Observation/obs-tug-test" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-chair-stand> ;
+     fhir:reference [ fhir:v "Observation/obs-chair-stand" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-falls-history> ;
+     fhir:reference [ fhir:v "Observation/obs-falls-history" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-adl> ;
+     fhir:reference [ fhir:v "Observation/obs-adl" ]
+  ] [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-walking> ;
+     fhir:reference [ fhir:v "Observation/obs-walking" ]
+  ] ) . # 
+
+<https://example.org/fhir/Observation/obs-fall-risk-result> a fhir:Observation ;
+  fhir:id [ fhir:v "obs-fall-risk-result"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-observation>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_obs-fall-risk-result\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-fall-risk-result</b></p><a name=\"obs-fall-risk-result\"> </a><a name=\"hcobs-fall-risk-result\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-observation.html\">Fall Risk Observation</a></p></div><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 129839007}\">At risk for falls</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 11:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 332721351000132106}\">At moderate risk for fall (finding)</span></p><p><b>derivedFrom</b>: <a href=\"Observation-obs-fall-risk-score.html\">Observation Fall Risk Score</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:129839007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "129839007" ] ;
+       fhir:display [ fhir:v "At risk for falls" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15T11:00:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://example.org/fhir/fall-risk/Practitioner/example-practitioner> ;
+     fhir:reference [ fhir:v "Practitioner/example-practitioner" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       a sct:332721351000132106 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "332721351000132106" ] ;
+       fhir:display [ fhir:v "At moderate risk for fall (finding)" ]
+     ] )
+  ] ; # 
+  fhir:derivedFrom ( [
+     fhir:l <https://example.org/fhir/fall-risk/Observation/obs-fall-risk-score> ;
+     fhir:reference [ fhir:v "Observation/obs-fall-risk-score" ]
+  ] ) . # 
+
+<https://example.org/fhir/Condition/condition-fall-risk> a fhir:Condition ;
+  fhir:id [ fhir:v "condition-fall-risk"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_condition-fall-risk\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition condition-fall-risk</b></p><a name=\"condition-fall-risk\"> </a><a name=\"hccondition-fall-risk\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 129839007}\">At risk for falls</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>onset</b>: 2024-11-15</p><h3>Evidences</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Detail</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Observation-obs-fall-risk-result.html\">Observation At risk for falls</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-clinical>
+       ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-ver-status>
+       ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-category>
+       ] ;
+       fhir:code [ fhir:v "problem-list-item" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:129839007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "129839007" ] ;
+       fhir:display [ fhir:v "At risk for falls" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://example.org/fhir/fall-risk/Patient/example-patient> ;
+     fhir:reference [ fhir:v "Patient/example-patient" ]
+  ] ; # 
+  fhir:onset [
+     a fhir:DateTime ;
+     fhir:v "2024-11-15"^^xsd:date
+  ] ; # 
+  fhir:evidence ( [
+     fhir:detail ( [
+       fhir:l <https://example.org/fhir/fall-risk/Observation/obs-fall-risk-result> ;
+       fhir:reference [ fhir:v "Observation/obs-fall-risk-result" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="fall-risk-codes"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem fall-risk-codes</b></p><a name="fall-risk-codes"> </a><a name="hcfall-risk-codes"> </a><p>This  code system <code>https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">fall-risk-score<a name="fall-risk-codes-fall-risk-score"> </a></td><td>Fall Risk Score</td><td>Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations.</td></tr><tr><td style="white-space:nowrap">balance-4stage<a name="fall-risk-codes-balance-4stage"> </a></td><td>4-Stage Balance Test</td><td>Highest balance stage achieved (1–4) in the 4-Stage Balance Test.</td></tr><tr><td style="white-space:nowrap">score-low<a name="fall-risk-codes-score-low"> </a></td><td>Low fall risk threshold met</td><td>Total score falls within the Low risk band (0–11).</td></tr><tr><td style="white-space:nowrap">score-moderate<a name="fall-risk-codes-score-moderate"> </a></td><td>Moderate fall risk threshold met</td><td>Total score falls within the Moderate risk band (12–22).</td></tr><tr><td style="white-space:nowrap">score-high<a name="fall-risk-codes-score-high"> </a></td><td>High fall risk threshold met</td><td>Total score falls within the High risk band (23–34).</td></tr></table></div>
+  </text>
+  <url value="https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes"/>
+  <version value="0.1.0"/>
+  <name value="FallRiskLocalCS"/>
+  <title value="Fall Risk Local Code System"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2026-06-11T13:45:29+00:00"/>
+  <publisher value="Fall Risk IG Authors"/>
+  <contact>
+    <name value="Fall Risk IG Authors"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://example.org/fall-risk"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="info@example.org"/>
+    </telecom>
+  </contact>
+  <description value="Local codes for physical performance tests, aggregate scores, and fall risk factors not available in LOINC or SNOMED CT."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="fall-risk-score"/>
+    <display value="Fall Risk Score"/>
+    <definition value="Aggregated fall risk score (0–34) computed from all individual Fall Risk Factor Observations."/>
+  </concept>
+  <concept>
+    <code value="balance-4stage"/>
+    <display value="4-Stage Balance Test"/>
+    <definition value="Highest balance stage achieved (1–4) in the 4-Stage Balance Test."/>
+  </concept>
+  <concept>
+    <code value="score-low"/>
+    <display value="Low fall risk threshold met"/>
+    <definition value="Total score falls within the Low risk band (0–11)."/>
+  </concept>
+  <concept>
+    <code value="score-moderate"/>
+    <display value="Moderate fall risk threshold met"/>
+    <definition value="Total score falls within the Moderate risk band (12–22)."/>
+  </concept>
+  <concept>
+    <code value="score-high"/>
+    <display value="High fall risk threshold met"/>
+    <definition value="Total score falls within the High risk band (23–34)."/>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fall-risk-factors-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet fall-risk-factors-vs</b></p><a name=\"fall-risk-factors-vs\"> </a><a name=\"hcfall-risk-factors-vs\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/97878-3/\">97878-3</a></td><td>Worried about falling</td></tr><tr><td><a href=\"https://loinc.org/72107-6/\">72107-6</a></td><td>Mini-Mental State Examination [MMSE]</td></tr><tr><td><a href=\"https://loinc.org/74013-4/\">74013-4</a></td><td>Alcoholic drinks per day</td></tr><tr><td><a href=\"https://loinc.org/10160-0/\">10160-0</a></td><td>History of Medication use Narrative</td></tr><tr><td><a href=\"https://loinc.org/99285-9/\">99285-9</a></td><td>Current activity level</td></tr></table></li><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/428942009\">428942009</a></td><td>History of fall (situation)</td></tr><tr><td><a href=\"http://snomed.info/id/397540003\">397540003</a></td><td>Visual impairment</td></tr><tr><td><a href=\"http://snomed.info/id/284545001\">284545001</a></td><td>Ability to perform activities of everyday life (observable entity)</td></tr><tr><td><a href=\"http://snomed.info/id/446363004\">446363004</a></td><td>Adult comorbidity evaluation-27 score</td></tr><tr><td><a href=\"http://snomed.info/id/282097004\">282097004</a></td><td>Ability to walk (observable entity)</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs"^^xsd:anyURI ;
+     fhir:l <https://example.org/fhir/fall-risk/ValueSet/fall-risk-factors-vs>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "FallRiskFactorsVS"] ; # 
+  fhir:title [ fhir:v "Fall Risk Factors ValueSet"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2026-06-11T13:45:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Fall Risk IG Authors"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Fall Risk IG Authors" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://example.org/fall-risk" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "info@example.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Standardized LOINC and SNOMED codes for fall risk assessment inputs (factors 1–10)."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ;
+         fhir:l <http://unstats.un.org/unsd/methods/m49/m49.htm>
+       ] ;
+       fhir:code [ fhir:v "001" ] ;
+       fhir:display [ fhir:v "World" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "97878-3" ] ;
+         fhir:display [ fhir:v "Worried about falling" ]
+       ] [
+         fhir:code [ fhir:v "72107-6" ] ;
+         fhir:display [ fhir:v "Mini-Mental State Examination [MMSE]" ]
+       ] [
+         fhir:code [ fhir:v "74013-4" ] ;
+         fhir:display [ fhir:v "Alcoholic drinks per day" ]
+       ] [
+         fhir:code [ fhir:v "10160-0" ] ;
+         fhir:display [ fhir:v "History of Medication use Narrative" ]
+       ] [
+         fhir:code [ fhir:v "99285-9" ] ;
+         fhir:display [ fhir:v "Current activity level" ]
+       ] )
+     ] [
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "428942009" ] ;
+         fhir:display [ fhir:v "History of fall (situation)" ]
+       ] [
+         fhir:code [ fhir:v "397540003" ] ;
+         fhir:display [ fhir:v "Visual impairment" ]
+       ] [
+         fhir:code [ fhir:v "284545001" ] ;
+         fhir:display [ fhir:v "Ability to perform activities of everyday life (observable entity)" ]
+       ] [
+         fhir:code [ fhir:v "446363004" ] ;
+         fhir:display [ fhir:v "Adult comorbidity evaluation-27 score" ]
+       ] [
+         fhir:code [ fhir:v "282097004" ] ;
+         fhir:display [ fhir:v "Ability to walk (observable entity)" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

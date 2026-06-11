@@ -1,0 +1,39 @@
+{
+  "resourceType" : "Observation",
+  "id" : "obs-walking",
+  "meta" : {
+    "profile" : ["https://example.org/fhir/fall-risk/StructureDefinition/fall-risk-factor-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation obs-walking</b></p><a name=\"obs-walking\"> </a><a name=\"hcobs-walking\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fall-risk-factor-observation.html\">Fall Risk Factor Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 282097004}\">Ability to walk (observable entity)</span></p><p><b>subject</b>: <a href=\"Patient-example-patient.html\">Maria Mueller  Female, DoB: 1946-03-12</a></p><p><b>effective</b>: 2024-11-15 10:30:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-example-practitioner.html\">Practitioner Anna Huber </a></p><p><b>value</b>: <span title=\"Codes:\">WITH_AID</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-qr-falls-history.html\">Response to Questionnaire '-&gt;Questionnaire[https://example.org/fhir/fall-risk/Questionnaire/falls-history|0.1.0]' about '-&gt;Maria Mueller  Female, DoB: 1946-03-12'</a></p></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "survey",
+      "display" : "Survey"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "282097004",
+      "display" : "Ability to walk (observable entity)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example-patient"
+  },
+  "effectiveDateTime" : "2024-11-15T10:30:00+01:00",
+  "performer" : [{
+    "reference" : "Practitioner/example-practitioner"
+  }],
+  "valueCodeableConcept" : {
+    "text" : "WITH_AID"
+  },
+  "derivedFrom" : [{
+    "reference" : "QuestionnaireResponse/qr-falls-history"
+  }]
+}

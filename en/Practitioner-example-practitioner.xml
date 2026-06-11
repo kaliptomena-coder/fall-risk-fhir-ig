@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="example-practitioner"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Practitioner example-practitioner</b></p><a name="example-practitioner"> </a><a name="hcexample-practitioner"> </a><p><b>name</b>: Anna Huber </p><h3>Qualifications</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://snomed.info/sct 36682004}">Physiotherapist (occupation)</span></td></tr></table></div>
+  </text>
+  <name>
+    <family value="Huber"/>
+    <given value="Anna"/>
+  </name>
+  <qualification>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="36682004"/>
+        <display value="Physiotherapist (occupation)"/>
+      </coding>
+    </code>
+  </qualification>
+</Practitioner>

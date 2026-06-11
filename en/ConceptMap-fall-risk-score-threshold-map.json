@@ -1,0 +1,68 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "fall-risk-score-threshold-map",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap fall-risk-score-threshold-map</b></p><a name=\"fall-risk-score-threshold-map\"> </a><a name=\"hcfall-risk-score-threshold-map\"> </a><p>Mapping from <a href=\"ValueSet-fall-risk-threshold-vs.html\">Fall Risk Score Threshold ValueSet</a> to <a href=\"ValueSet-fall-risk-category-vs.html\">Fall Risk Category ValueSet</a></p><br/><p><b>Group 1 </b>Mapping from <a href=\"CodeSystem-fall-risk-codes.html\">Fall Risk Local Code System</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>score-low (Total score 0–11)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>439430008 (Low risk (qualifier value))</td></tr><tr><td>score-moderate (Total score 12–22)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>332721351000132106 (Moderate risk (qualifier value))</td></tr><tr><td>score-high (Total score 23–34)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>455201601000132100 (High risk (qualifier value))</td></tr></table></div>"
+  },
+  "url" : "https://example.org/fhir/fall-risk/ConceptMap/fall-risk-score-threshold-map",
+  "version" : "0.1.0",
+  "title" : "Fall Risk Score Threshold ConceptMap",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2026-06-11T13:45:29+00:00",
+  "publisher" : "Fall Risk IG Authors",
+  "contact" : [{
+    "name" : "Fall Risk IG Authors",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://example.org/fall-risk"
+    },
+    {
+      "system" : "email",
+      "value" : "info@example.org"
+    }]
+  }],
+  "description" : "Maps local score-band codes (score-low / score-moderate / score-high) to the\ncorresponding SNOMED risk category codes in FallRiskCategoryVS.\nThe numeric cutoffs encoded in the comments and group.element.display fields\nare the authoritative thresholds for this IG:\n  score-low      = total score 0–11\n  score-moderate = total score 12–22\n  score-high     = total score 23–34",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001",
+      "display" : "World"
+    }]
+  }],
+  "sourceCanonical" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-threshold-vs",
+  "targetCanonical" : "https://example.org/fhir/fall-risk/ValueSet/fall-risk-category-vs",
+  "group" : [{
+    "source" : "https://example.org/fhir/fall-risk/CodeSystem/fall-risk-codes",
+    "target" : "http://snomed.info/sct",
+    "element" : [{
+      "code" : "score-low",
+      "display" : "Total score 0–11",
+      "target" : [{
+        "code" : "439430008",
+        "display" : "Low risk (qualifier value)",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "score-moderate",
+      "display" : "Total score 12–22",
+      "target" : [{
+        "code" : "332721351000132106",
+        "display" : "Moderate risk (qualifier value)",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "score-high",
+      "display" : "Total score 23–34",
+      "target" : [{
+        "code" : "455201601000132100",
+        "display" : "High risk (qualifier value)",
+        "equivalence" : "equivalent"
+      }]
+    }]
+  }]
+}
