@@ -1,0 +1,16 @@
+name: Publish FHIR IG
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and Publish IG
+        uses: fhir-shorthand/ig-publisher-action@v1
+        with:
+          ig-parameters: '-tx https://tx.fhir.org/r4'
