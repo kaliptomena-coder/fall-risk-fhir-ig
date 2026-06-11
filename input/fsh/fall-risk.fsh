@@ -255,7 +255,7 @@ Description: "Risk classification outcomes for fall risk assessment using SNOMED
 * $SNOMED#455201601000132100    "High risk (qualifier value)"
 
 
-// ADDED: ValueSet for score threshold interpretation codes.
+// ValueSet for score threshold interpretation codes.
 // Used by the scoring algorithm to record which band a computed score falls into.
 ValueSet: FallRiskThresholdVS
 Id: fall-risk-threshold-vs
